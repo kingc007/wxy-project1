@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site-brief",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/app", "run", "dev", "--", "-p", "3101"],
+      "port": 3101
+    },
+    {
+      "name": "massing-studio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "Project-3_AI-Massing-Generation/3A_Massing-Studio/app", "run", "dev", "--", "-p", "3301"],
+      "port": 3301
+    }
+  ]
+}

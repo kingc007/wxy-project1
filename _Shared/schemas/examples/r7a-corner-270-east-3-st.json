@@ -1,0 +1,877 @@
+{
+  "schemaVersion": "1.0.0",
+  "envelopeId": "site-brief-1003720008-2026-10-26T20:19:40.938Z",
+  "generatedAt": "2026-10-26T20:19:40.938Z",
+  "generator": {
+    "name": "WXY Site Brief zoning engine",
+    "version": "0.1.0"
+  },
+  "flags": {
+    "draft": true,
+    "sample": false,
+    "simplified": true,
+    "simplifications": [
+      "Street setbacks applied at max base height",
+      "Rear yard step at 75 ft modelled as a setback plane",
+      "Six-story limit in ZR 23-736 not modelled",
+      "Lot width taken as PLUTO lot frontage",
+      "Eligible-site, special-district, landmark and historic-district rules not modelled"
+    ]
+  },
+  "jurisdiction": {
+    "id": "nyc",
+    "name": "New York City",
+    "code": {
+      "name": "NYC Zoning Resolution",
+      "versionLabel": "zr.planning.nyc.gov — sections as last amended (per-citation lastAmended)",
+      "url": "https://zr.planning.nyc.gov"
+    }
+  },
+  "site": {
+    "parcelId": "1003720008",
+    "bbl": "1003720008",
+    "address": "270 EAST 3 STREET",
+    "borough": "MN"
+  },
+  "lot": {
+    "crs": {
+      "reference": "EPSG:2263",
+      "lengthUnit": "ft"
+    },
+    "origin": {
+      "x": 989590.403995037,
+      "y": 202075.6339674
+    },
+    "polygonLocal": [
+      [
+        0,
+        12.349057196988724
+      ],
+      [
+        22.280162811046466,
+        0
+      ],
+      [
+        66.03499126399402,
+        79.09399032598594
+      ],
+      [
+        43.76403379405383,
+        91.45880603799014
+      ]
+    ],
+    "polygonReference": [
+      [
+        989590.403995037,
+        202087.983024597
+      ],
+      [
+        989612.684157848,
+        202075.6339674
+      ],
+      [
+        989656.438986301,
+        202154.727957726
+      ],
+      [
+        989634.168028831,
+        202167.092773438
+      ]
+    ],
+    "geometrySource": {
+      "dataset": "MapPLUTO (DCP ArcGIS)",
+      "version": "26v2",
+      "field": "geometry",
+      "rawValue": {
+        "BBL": 1003720008
+      },
+      "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/MAPPLUTO/FeatureServer/0/query?where=BBL%3D1003720008&outFields=BBL%2CAddress%2CVersion&outSR=2263&f=geojson",
+      "fetchedAt": "2026-10-26T01:34:01.908Z"
+    },
+    "area": {
+      "value": 2021,
+      "unit": "sf",
+      "status": "data",
+      "confidence": "cited",
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lotarea",
+          "rawValue": "2021",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+          "fetchedAt": "2026-10-26T01:34:01.976Z"
+        }
+      ]
+    },
+    "frontage": {
+      "value": 23.25,
+      "unit": "ft",
+      "status": "data",
+      "confidence": "cited",
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lotfront",
+          "rawValue": "23.2500000",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+          "fetchedAt": "2026-10-26T01:34:01.976Z"
+        }
+      ]
+    },
+    "depth": {
+      "value": 86.92,
+      "unit": "ft",
+      "status": "data",
+      "confidence": "cited",
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lotdepth",
+          "rawValue": "86.9200000",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+          "fetchedAt": "2026-10-26T01:34:01.976Z"
+        }
+      ]
+    },
+    "lotType": {
+      "value": "corner",
+      "status": "assumed",
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lottype",
+          "rawValue": "3",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+          "fetchedAt": "2026-10-26T01:34:01.976Z"
+        }
+      ],
+      "assumptionIds": [
+        "lotType"
+      ]
+    },
+    "edges": [
+      {
+        "index": 0,
+        "kind": "side"
+      },
+      {
+        "index": 1,
+        "kind": "side"
+      },
+      {
+        "index": 2,
+        "kind": "front",
+        "street": {
+          "name": "East 3 Street",
+          "width": "narrow"
+        }
+      },
+      {
+        "index": 3,
+        "kind": "front",
+        "street": {
+          "name": "Avenue C",
+          "width": "narrow",
+          "assumptionIds": [
+            "street"
+          ]
+        }
+      }
+    ]
+  },
+  "districts": [
+    {
+      "code": "R7A",
+      "kind": "base",
+      "share": 1,
+      "provenance": [
+        {
+          "dataset": "DCP Zoning Districts (nyzd)",
+          "version": null,
+          "field": "ZONEDIST",
+          "rawValue": "R7A",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/nyzd/FeatureServer/0/query?where=1%3D1&geometry=%7B%22rings%22%3A%5B%5B%5B989634.17%2C202167.09%5D%2C%5B989656.44%2C202154.73%5D%2C%5B989612.68%2C202075.63%5D%2C%5B989590.4%2C202087.98%5D%2C%5B989634.17%2C202167.09%5D%5D%5D%2C%22spatialReference%22%3A%7B%22wkid%22%3A2263%7D%7D&geometryType=esriGeometryPolygon&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CZONEDIST&outSR=2263&f=geojson",
+          "fetchedAt": "2026-10-26T01:34:02.324Z"
+        }
+      ]
+    },
+    {
+      "code": "C2-5",
+      "kind": "commercial_overlay",
+      "share": 0.8285340397311464,
+      "provenance": [
+        {
+          "dataset": "DCP Commercial Overlays (nyco)",
+          "version": null,
+          "field": "OVERLAY",
+          "rawValue": "C2-5",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/nyco/FeatureServer/0/query?where=1%3D1&geometry=%7B%22rings%22%3A%5B%5B%5B989634.17%2C202167.09%5D%2C%5B989656.44%2C202154.73%5D%2C%5B989612.68%2C202075.63%5D%2C%5B989590.4%2C202087.98%5D%2C%5B989634.17%2C202167.09%5D%5D%5D%2C%22spatialReference%22%3A%7B%22wkid%22%3A2263%7D%7D&geometryType=esriGeometryPolygon&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2COVERLAY&outSR=2263&f=geojson",
+          "fetchedAt": "2026-10-26T01:34:02.312Z"
+        }
+      ]
+    }
+  ],
+  "controls": {
+    "intendedUse": "residential",
+    "programs": [],
+    "maxFar": {
+      "residential": {
+        "value": 4,
+        "unit": "ratio",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-22",
+            "quote": "R7A R7-1¹ R7-2¹ | 4.00 | 5.01",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          },
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "34-111",
+            "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+          }
+        ],
+        "note": null
+      }
+    },
+    "maxFloorArea": {
+      "residential": {
+        "value": 8084,
+        "unit": "sf",
+        "status": "computed",
+        "confidence": "cited",
+        "formula": "2,021 sf × 4.00 FAR = 8,084 sf",
+        "inputs": [
+          "lot.area",
+          "controls.maxFar.residential"
+        ],
+        "note": null
+      }
+    },
+    "baseHeight": {
+      "min": {
+        "value": 40,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-432",
+            "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          },
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "34-111",
+            "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+          }
+        ],
+        "note": null
+      },
+      "max": {
+        "value": 75,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-432",
+            "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          },
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "34-111",
+            "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+          }
+        ],
+        "note": null,
+        "assumptionIds": [
+          "program"
+        ]
+      }
+    },
+    "maxBuildingHeight": {
+      "value": 85,
+      "unit": "ft",
+      "status": "cited",
+      "confidence": "cited",
+      "citations": [
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "23-432",
+          "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+          "title": "Last amended 12/5/2024",
+          "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+          "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+        },
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "34-111",
+          "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+          "title": "Last amended 12/5/2024",
+          "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+          "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+        }
+      ],
+      "note": null,
+      "assumptionIds": [
+        "program"
+      ]
+    },
+    "maxStories": {
+      "value": null,
+      "unit": "stories",
+      "status": "not_applicable",
+      "confidence": "cited",
+      "note": "ZR §23-432 sets heights, not a story limit"
+    },
+    "setbacks": [
+      {
+        "id": "street-setback-edge2",
+        "appliesTo": "narrow_street_frontage",
+        "edgeIndices": [
+          2
+        ],
+        "startHeight": {
+          "value": 75,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "cited",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-432",
+              "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+              "title": "Last amended 12/5/2024",
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+              "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+            },
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "34-111",
+              "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+              "title": "Last amended 12/5/2024",
+              "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+              "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+            }
+          ],
+          "note": "Modelled at the maximum base height; the text allows the setback at a height not lower than the minimum base height or higher than the maximum base height.",
+          "assumptionIds": [
+            "program"
+          ]
+        },
+        "depth": {
+          "value": 15,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "inferred",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-433",
+              "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+              "title": "Last amended 12/5/2024",
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+              "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+            },
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "34-111",
+              "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+              "title": "Last amended 12/5/2024",
+              "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+              "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+            }
+          ],
+          "note": null,
+          "assumptionIds": [
+            "street"
+          ]
+        }
+      },
+      {
+        "id": "street-setback-edge3",
+        "appliesTo": "narrow_street_frontage",
+        "edgeIndices": [
+          3
+        ],
+        "startHeight": {
+          "value": 75,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "cited",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-432",
+              "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+              "title": "Last amended 12/5/2024",
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+              "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+            },
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "34-111",
+              "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+              "title": "Last amended 12/5/2024",
+              "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+              "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+            }
+          ],
+          "note": "Modelled at the maximum base height; the text allows the setback at a height not lower than the minimum base height or higher than the maximum base height.",
+          "assumptionIds": [
+            "program"
+          ]
+        },
+        "depth": {
+          "value": 15,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "inferred",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-433",
+              "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+              "title": "Last amended 12/5/2024",
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+              "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+            },
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "34-111",
+              "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+              "title": "Last amended 12/5/2024",
+              "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+              "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+            }
+          ],
+          "note": null,
+          "assumptionIds": [
+            "street"
+          ]
+        }
+      }
+    ],
+    "yards": {
+      "front": {
+        "value": 0,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-322",
+            "quote": "In the districts indicated, no front yard requirements shall apply.",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-322",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          },
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "34-111",
+            "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+          }
+        ],
+        "note": "No front yard required (value 0 = none required)."
+      },
+      "rear": {
+        "value": null,
+        "unit": "ft",
+        "status": "needs_input",
+        "confidence": "unverified",
+        "note": "No rule in this prototype's rule set for R7A/yards.rear under current assumptions"
+      },
+      "side": {
+        "value": 0,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "inferred",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-335",
+            "quote": "no side yards shall be required. However, if any open area extending along a side lot line is provided at any level, it shall have a minimum width of five feet",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-335",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          },
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "34-111",
+            "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+          }
+        ],
+        "note": "No side yard required; any side open area provided must be at least 5 ft wide.",
+        "assumptionIds": [
+          "buildingType"
+        ]
+      }
+    },
+    "lotCoverage": {
+      "max": {
+        "value": 100,
+        "unit": "percent",
+        "status": "cited",
+        "confidence": "inferred",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-362",
+            "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          },
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "34-111",
+            "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md"
+          }
+        ],
+        "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify.",
+        "assumptionIds": [
+          "lotType",
+          "siteCategory"
+        ]
+      }
+    },
+    "skyExposure": {
+      "status": "not_applicable",
+      "note": "ZR 23-731: applies to R6 through R10 Districts without a letter suffix",
+      "planes": []
+    }
+  },
+  "assumptions": [
+    {
+      "id": "lotType",
+      "statement": "Assumed corner lot",
+      "reason": "PLUTO lottype = 3 — \"3 Corner – a tax lot bordering on two intersecting streets\" (PLUTO data dictionary 26v2).",
+      "state": "proposed",
+      "affects": [
+        "/controls/lotCoverage/max"
+      ],
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lottype",
+          "rawValue": "3",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+          "fetchedAt": "2026-10-26T01:34:01.976Z"
+        }
+      ]
+    },
+    {
+      "id": "street",
+      "statement": "Assumed primary frontage is on a narrow street",
+      "reason": "DCM Streetwidth = \"60\" for Avenue C. ZR 12-10: wide street = \"any street 75 feet or more in width\".",
+      "state": "proposed",
+      "affects": [
+        "/controls/setbacks/0/depth",
+        "/controls/setbacks/1/depth"
+      ],
+      "provenance": [
+        {
+          "dataset": "DCM Street Center Line",
+          "version": null,
+          "field": "Streetwidth",
+          "rawValue": "60",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/DCM_Street_Center_Line/FeatureServer/0/query?where=1%3D1&geometry=989552.29%2C202067.54%2C989672.29%2C202187.54&geometryType=esriGeometryEnvelope&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=Street_NM%2CStreetwidth%2CFeat_Type%2CBuild_Status&outSR=2263&f=geojson",
+          "fetchedAt": "2026-10-26T01:34:02.224Z"
+        }
+      ]
+    },
+    {
+      "id": "within100ftWideStreet",
+      "statement": "Assumed lot is not within 100 ft of a wide street",
+      "reason": "All front edges are on narrow streets per DCM Streetwidth; wide streets elsewhere nearby are not checked.",
+      "state": "proposed",
+      "provenance": [
+        {
+          "dataset": "DCM Street Center Line",
+          "version": null,
+          "field": "Streetwidth",
+          "rawValue": "60",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/DCM_Street_Center_Line/FeatureServer/0/query?where=1%3D1&geometry=989585.3%2C202100.91%2C989705.3%2C202220.91&geometryType=esriGeometryEnvelope&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=Street_NM%2CStreetwidth%2CFeat_Type%2CBuild_Status&outSR=2263&f=geojson",
+          "fetchedAt": "2026-10-26T01:34:02.222Z"
+        },
+        {
+          "dataset": "DCM Street Center Line",
+          "version": null,
+          "field": "Streetwidth",
+          "rawValue": "60",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/DCM_Street_Center_Line/FeatureServer/0/query?where=1%3D1&geometry=989552.29%2C202067.54%2C989672.29%2C202187.54&geometryType=esriGeometryEnvelope&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=Street_NM%2CStreetwidth%2CFeat_Type%2CBuild_Status&outSR=2263&f=geojson",
+          "fetchedAt": "2026-10-26T01:34:02.224Z"
+        }
+      ]
+    },
+    {
+      "id": "buildingType",
+      "statement": "Assumed attached building (no side yards)",
+      "reason": "Default assumption: no dataset gives the intended building type.",
+      "state": "proposed",
+      "affects": [
+        "/controls/yards/side"
+      ]
+    },
+    {
+      "id": "siteCategory",
+      "statement": "Assumed standard lot (not an eligible site under ZR 23-434)",
+      "reason": "PLUTO lot area is 2,021 sf; eligible-site criteria are not evaluated.",
+      "state": "proposed",
+      "affects": [
+        "/controls/lotCoverage/max"
+      ],
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lotarea",
+          "rawValue": "2021",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+          "fetchedAt": "2026-10-26T01:34:01.976Z"
+        }
+      ]
+    },
+    {
+      "id": "program",
+      "statement": "Standard program (no affordable-housing bonus)",
+      "reason": "Selected by the user.",
+      "state": "accepted",
+      "affects": [
+        "/controls/baseHeight/max",
+        "/controls/maxBuildingHeight",
+        "/controls/setbacks/0/startHeight",
+        "/controls/setbacks/1/startHeight"
+      ]
+    },
+    {
+      "id": "intendedUse",
+      "statement": "Intended use: residential",
+      "reason": "Selected by the user.",
+      "state": "accepted"
+    }
+  ],
+  "reviewFlags": [],
+  "provenance": {
+    "datasets": [
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "borough",
+        "rawValue": "MN",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "address",
+        "rawValue": "270 EAST 3 STREET",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "lotarea",
+        "rawValue": "2021",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "lotfront",
+        "rawValue": "23.2500000",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "lotdepth",
+        "rawValue": "86.9200000",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "bldgarea",
+        "rawValue": "1419",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "numfloors",
+        "rawValue": "2.0000000",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "zonedist1,zonedist2,zonedist3,zonedist4",
+        "rawValue": [
+          "R7A",
+          null,
+          null,
+          null
+        ],
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "overlay1,overlay2",
+        "rawValue": [
+          "C2-5",
+          null
+        ],
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "spdist1,spdist2,spdist3",
+        "rawValue": [
+          null,
+          null,
+          null
+        ],
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "ltdheight",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "splitzone",
+        "rawValue": false,
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "landmark",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "histdist",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "lottype",
+        "rawValue": "3",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "irrlotcode",
+        "rawValue": false,
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003720008",
+        "fetchedAt": "2026-10-26T01:34:01.976Z"
+      },
+      {
+        "dataset": "MapPLUTO (DCP ArcGIS)",
+        "version": "26v2",
+        "field": "geometry",
+        "rawValue": {
+          "BBL": 1003720008
+        },
+        "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/MAPPLUTO/FeatureServer/0/query?where=BBL%3D1003720008&outFields=BBL%2CAddress%2CVersion&outSR=2263&f=geojson",
+        "fetchedAt": "2026-10-26T01:34:01.908Z"
+      },
+      {
+        "dataset": "DCP Zoning Districts (nyzd)",
+        "version": null,
+        "field": "ZONEDIST",
+        "rawValue": "R7A",
+        "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/nyzd/FeatureServer/0/query?where=1%3D1&geometry=%7B%22rings%22%3A%5B%5B%5B989634.17%2C202167.09%5D%2C%5B989656.44%2C202154.73%5D%2C%5B989612.68%2C202075.63%5D%2C%5B989590.4%2C202087.98%5D%2C%5B989634.17%2C202167.09%5D%5D%5D%2C%22spatialReference%22%3A%7B%22wkid%22%3A2263%7D%7D&geometryType=esriGeometryPolygon&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CZONEDIST&outSR=2263&f=geojson",
+        "fetchedAt": "2026-10-26T01:34:02.324Z"
+      },
+      {
+        "dataset": "DCP Commercial Overlays (nyco)",
+        "version": null,
+        "field": "OVERLAY",
+        "rawValue": "C2-5",
+        "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/nyco/FeatureServer/0/query?where=1%3D1&geometry=%7B%22rings%22%3A%5B%5B%5B989634.17%2C202167.09%5D%2C%5B989656.44%2C202154.73%5D%2C%5B989612.68%2C202075.63%5D%2C%5B989590.4%2C202087.98%5D%2C%5B989634.17%2C202167.09%5D%5D%5D%2C%22spatialReference%22%3A%7B%22wkid%22%3A2263%7D%7D&geometryType=esriGeometryPolygon&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2COVERLAY&outSR=2263&f=geojson",
+        "fetchedAt": "2026-10-26T01:34:02.312Z"
+      },
+      {
+        "dataset": "DCM Street Center Line",
+        "version": null,
+        "field": "Streetwidth",
+        "rawValue": "60",
+        "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/DCM_Street_Center_Line/FeatureServer/0/query?where=1%3D1&geometry=989585.3%2C202100.91%2C989705.3%2C202220.91&geometryType=esriGeometryEnvelope&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=Street_NM%2CStreetwidth%2CFeat_Type%2CBuild_Status&outSR=2263&f=geojson",
+        "fetchedAt": "2026-10-26T01:34:02.222Z"
+      },
+      {
+        "dataset": "DCM Street Center Line",
+        "version": null,
+        "field": "Streetwidth",
+        "rawValue": "60",
+        "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/DCM_Street_Center_Line/FeatureServer/0/query?where=1%3D1&geometry=989552.29%2C202067.54%2C989672.29%2C202187.54&geometryType=esriGeometryEnvelope&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=Street_NM%2CStreetwidth%2CFeat_Type%2CBuild_Status&outSR=2263&f=geojson",
+        "fetchedAt": "2026-10-26T01:34:02.224Z"
+      }
+    ],
+    "notes": [
+      "Draft for review by a licensed professional; not a zoning determination."
+    ]
+  }
+}

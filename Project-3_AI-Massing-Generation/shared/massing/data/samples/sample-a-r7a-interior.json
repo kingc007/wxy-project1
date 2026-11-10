@@ -1,0 +1,573 @@
+{
+  "schemaVersion": "1.0.0",
+  "envelopeId": "sample-a-r7a-interior",
+  "generatedAt": "2026-10-25T00:00:00Z",
+  "generator": {
+    "name": "Project 3 sample builder",
+    "version": "0.1"
+  },
+  "flags": {
+    "draft": true,
+    "sample": true,
+    "simplified": true,
+    "simplifications": [
+      "Setback taken at the max base height (75 ft); designers may set back lower between 40 and 75 ft (ZR 23-432/23-433).",
+      "Setback depth measured from the street line (street wall assumed at the street line).",
+      "Street wall location (70% within 10 ft, ZR 23-431) checked by a simplified street-wall test.",
+      "Qualifying affordable/senior housing variants (FAR 5.01, base height 85 ft, height 115 ft) not modelled."
+    ]
+  },
+  "jurisdiction": {
+    "id": "nyc",
+    "name": "New York City",
+    "code": {
+      "name": "NYC Zoning Resolution",
+      "versionLabel": "Sections as Last Amended 12/5/2024 (12-10: 3/26/2026)",
+      "effectiveDate": null,
+      "retrievedAt": "2026-10-25T00:00:00Z",
+      "url": "https://zr.planning.nyc.gov"
+    }
+  },
+  "site": {
+    "parcelId": "SAMPLE-sample-a-r7a-interior",
+    "bbl": null,
+    "address": null,
+    "borough": "Brooklyn"
+  },
+  "lot": {
+    "crs": {
+      "reference": "EPSG:2263",
+      "lengthUnit": "ft"
+    },
+    "origin": {
+      "x": 991044.501,
+      "y": 190298.665
+    },
+    "polygonLocal": [
+      [
+        -42.06,
+        -56.841
+      ],
+      [
+        56.841,
+        -42.06
+      ],
+      [
+        42.06,
+        56.841
+      ],
+      [
+        -56.841,
+        42.06
+      ]
+    ],
+    "polygonReference": [
+      [
+        991002.44,
+        190241.82
+      ],
+      [
+        991101.34,
+        190256.6
+      ],
+      [
+        991086.56,
+        190355.51
+      ],
+      [
+        990987.66,
+        190340.72
+      ]
+    ],
+    "geometrySource": {
+      "dataset": "SAMPLE — hypothetical lot",
+      "fetchedAt": "2026-10-25T00:00:00Z"
+    },
+    "area": {
+      "value": 9999.89,
+      "unit": "sf",
+      "status": "computed",
+      "confidence": "inferred",
+      "formula": "100 ft × 100 ft = 10,000 sf",
+      "inputs": [
+        "/lot/polygonLocal"
+      ]
+    },
+    "frontage": {
+      "value": 100,
+      "unit": "ft",
+      "status": "computed",
+      "confidence": "inferred",
+      "formula": "front edge length = 100 ft",
+      "inputs": [
+        "/lot/polygonLocal"
+      ]
+    },
+    "depth": {
+      "value": 100,
+      "unit": "ft",
+      "status": "computed",
+      "confidence": "inferred",
+      "formula": "lot depth = 100 ft",
+      "inputs": [
+        "/lot/polygonLocal"
+      ]
+    },
+    "lotType": {
+      "value": "interior",
+      "status": "assumed",
+      "assumptionIds": [
+        "asm-a-lottype"
+      ]
+    },
+    "edges": [
+      {
+        "index": 0,
+        "kind": "front",
+        "street": {
+          "name": null,
+          "width": "narrow",
+          "assumptionIds": [
+            "asm-a-street"
+          ]
+        }
+      },
+      {
+        "index": 1,
+        "kind": "side",
+        "street": null
+      },
+      {
+        "index": 2,
+        "kind": "rear",
+        "street": null
+      },
+      {
+        "index": 3,
+        "kind": "side",
+        "street": null
+      }
+    ]
+  },
+  "districts": [
+    {
+      "code": "R7A",
+      "kind": "base",
+      "provenance": [
+        {
+          "dataset": "SAMPLE — hypothetical district assignment",
+          "fetchedAt": "2026-10-25T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "controls": {
+    "intendedUse": "residential",
+    "programs": [],
+    "maxFar": {
+      "residential": {
+        "value": 4,
+        "unit": "ratio",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-22",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "R7A R7-11 R7-21 | 4.00 | 5.01",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#10"
+          }
+        ]
+      },
+      "community_facility": {
+        "value": 4,
+        "unit": "ratio",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "24-11",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "R7A | 4.00 | 80 | 65",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#19"
+          }
+        ]
+      }
+    },
+    "maxFloorArea": {
+      "residential": {
+        "value": 39999.54,
+        "unit": "sf",
+        "status": "computed",
+        "confidence": "cited",
+        "formula": "9,999.89 sf × 4.00 = 39,999.54 sf",
+        "inputs": [
+          "/lot/area",
+          "/controls/maxFar/residential"
+        ]
+      },
+      "community_facility": {
+        "value": 39999.54,
+        "unit": "sf",
+        "status": "computed",
+        "confidence": "cited",
+        "formula": "9,999.89 sf × 4.00 = 39,999.54 sf",
+        "inputs": [
+          "/lot/area",
+          "/controls/maxFar/community_facility"
+        ]
+      }
+    },
+    "baseHeight": {
+      "min": {
+        "value": 40,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-432",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "R7A R7-11 R7-21 | 40 | 75 | 85 | 85 | 115",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#27"
+          }
+        ]
+      },
+      "max": {
+        "value": 75,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-432",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "R7A R7-11 R7-21 | 40 | 75 | 85 | 85 | 115",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#27"
+          },
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-432",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "a setback shall be provided at a height not lower than the minimum base height or higher than the maximum base height in accordance with Section 23-433.",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#31"
+          }
+        ]
+      }
+    },
+    "maxBuildingHeight": {
+      "value": 85,
+      "unit": "ft",
+      "status": "cited",
+      "confidence": "cited",
+      "citations": [
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "23-432",
+          "paragraph": null,
+          "title": null,
+          "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+          "effectiveDate": "Last Amended 12/5/2024",
+          "retrievedAt": "2026-10-25",
+          "quote": "R7A R7-11 R7-21 | 40 | 75 | 85 | 85 | 115",
+          "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#27"
+        }
+      ]
+    },
+    "maxStories": {
+      "value": null,
+      "unit": "stories",
+      "status": "not_applicable",
+      "confidence": "inferred",
+      "note": "23-432 limits height in feet only; no stories limit found (research note: NOT FOUND)"
+    },
+    "setbacks": [
+      {
+        "id": "setback-narrow-front",
+        "appliesTo": "narrow_street_frontage",
+        "edgeIndices": [
+          0
+        ],
+        "startHeight": {
+          "value": 75,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "cited",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-432",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "R7A R7-11 R7-21 | 40 | 75 | 85 | 85 | 115",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#27"
+            },
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-432",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "a setback shall be provided at a height not lower than the minimum base height or higher than the maximum base height in accordance with Section 23-433.",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#31"
+            }
+          ]
+        },
+        "depth": {
+          "value": 15,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "cited",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-433",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#32"
+            }
+          ]
+        }
+      },
+      {
+        "id": "setback-upper-rear",
+        "appliesTo": "rear",
+        "edgeIndices": [
+          2
+        ],
+        "startHeight": {
+          "value": 75,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "cited",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-342",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "a rear yard with a depth of not less than 20 feet shall be provided at every rear lot line on any zoning lot, and for portions above 75 feet, where permitted, a rear yard with a depth of 30 feet shall be provided",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#54"
+            }
+          ]
+        },
+        "depth": {
+          "value": 30,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "cited",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-342",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "a rear yard with a depth of not less than 20 feet shall be provided at every rear lot line on any zoning lot, and for portions above 75 feet, where permitted, a rear yard with a depth of 30 feet shall be provided",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#54"
+            }
+          ],
+          "note": "Upper rear yard: 30 ft above 75 ft."
+        }
+      }
+    ],
+    "yards": {
+      "front": {
+        "value": 0,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-322",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-322",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "In the districts indicated, no front yard requirements shall apply.",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#52"
+          }
+        ]
+      },
+      "rear": {
+        "value": 20,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-342",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "a rear yard with a depth of not less than 20 feet shall be provided at every rear lot line on any zoning lot, and for portions above 75 feet, where permitted, a rear yard with a depth of 30 feet shall be provided",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#54"
+          }
+        ]
+      },
+      "side": {
+        "value": 0,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-335",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-335",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "for zoning lots containing all other types of residences, no side yards shall be required. However, if any open area extending along a side lot line is provided at any level, it shall have a minimum width of five feet, measured perpendicular to the side lot line.",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#53"
+          }
+        ]
+      }
+    },
+    "lotCoverage": {
+      "max": {
+        "value": 80,
+        "unit": "percent",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-362",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#22"
+          }
+        ]
+      }
+    },
+    "skyExposure": {
+      "status": "not_applicable",
+      "note": "R7A has a letter suffix; sky exposure plane option applies only to districts without a suffix (ZR 12-10 'sky exposure plane building'; research note row 8)."
+    }
+  },
+  "assumptions": [
+    {
+      "id": "asm-a-street",
+      "statement": "The front street is a narrow street (< 75 ft wide).",
+      "reason": "SAMPLE lot has no real street; street width is assumed so the narrow-street setback depth (15 ft) applies.",
+      "state": "accepted",
+      "affects": [
+        "/lot/edges/0/street/width",
+        "/controls/setbacks/0/depth"
+      ],
+      "citations": [
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "12-10 (street, narrow)",
+          "paragraph": null,
+          "title": null,
+          "url": "https://zr.planning.nyc.gov/article-i/chapter-2/12-10",
+          "effectiveDate": "Last Amended 12/15/1961",
+          "retrievedAt": "2026-10-25",
+          "quote": "A \"narrow street\" is any street less than 75 feet wide.",
+          "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#3"
+        }
+      ]
+    },
+    {
+      "id": "asm-a-lottype",
+      "statement": "The lot is an interior lot (one street frontage, no corner).",
+      "reason": "SAMPLE lot is hypothetical; interior lot type is assumed.",
+      "state": "accepted",
+      "affects": [
+        "/lot/lotType",
+        "/controls/yards/rear",
+        "/controls/lotCoverage/max"
+      ],
+      "citations": [
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "12-10 (lot, interior)",
+          "paragraph": null,
+          "title": null,
+          "url": "https://zr.planning.nyc.gov/article-i/chapter-2/12-10",
+          "effectiveDate": "Last Amended 3/26/2026 (page 12-10)",
+          "retrievedAt": "2026-10-25",
+          "quote": "An \"interior lot\" is any zoning lot neither a corner lot nor a through lot.",
+          "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#5"
+        }
+      ]
+    }
+  ],
+  "reviewFlags": [
+    {
+      "kind": "other",
+      "message": "SAMPLE lot: no use regulations checked; R7A without a commercial overlay has no commercial FAR."
+    }
+  ],
+  "provenance": {
+    "datasets": [
+      {
+        "dataset": "NYC Building Footprints (5zhs-2jue)",
+        "version": "rowsUpdatedAt 2026-10-25T08:21:07Z",
+        "field": "the_geom, height_roof",
+        "url": "https://data.cityofnewyork.us/resource/5zhs-2jue.geojson?$where=within_circle(the_geom,40.6890,-73.9755,180)&$limit=1000",
+        "fetchedAt": "2026-10-25T19:37:07Z"
+      },
+      {
+        "dataset": "SAMPLE — hypothetical lot",
+        "fetchedAt": "2026-10-25T00:00:00Z"
+      }
+    ],
+    "notes": [
+      "SAMPLE: hypothetical lot, not a real parcel. Placed at lat 40.6890, lng -73.9755 (south of Fort Greene Park, Brooklyn) for context.",
+      "Street-grid angle theta = 8.5° (length-weighted histogram of context footprint edge directions mod 90°, 1° bins, ±2° smoothing). Lot edge 0 (front) direction angle = 8.5° from east; front outward normal points closest to south (park is north).",
+      "Context footprints that intersect the lot were removed (SAMPLE: existing buildings on the hypothetical lot removed); see the .site.json sidecar."
+    ]
+  },
+  "massingLink": null
+}

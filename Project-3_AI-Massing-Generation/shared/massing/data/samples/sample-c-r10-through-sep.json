@@ -1,0 +1,785 @@
+{
+  "schemaVersion": "1.0.0",
+  "envelopeId": "sample-c-r10-through-sep",
+  "generatedAt": "2026-10-25T00:00:00Z",
+  "generator": {
+    "name": "Project 3 sample builder",
+    "version": "0.1"
+  },
+  "flags": {
+    "draft": true,
+    "sample": true,
+    "simplified": true,
+    "simplifications": [
+      "Optional sky exposure plane regulations (23-73) used; tower penetration of the plane (23-737) not modelled.",
+      "Sky exposure plane evaluated per floor at the floor's top.",
+      "Rear yard equivalent split equally along both street lines (SAMPLE design choice).",
+      "Street wall rules for sky exposure plane buildings not researched."
+    ]
+  },
+  "jurisdiction": {
+    "id": "nyc",
+    "name": "New York City",
+    "code": {
+      "name": "NYC Zoning Resolution",
+      "versionLabel": "Sections as Last Amended 12/5/2024 (12-10: 3/26/2026)",
+      "effectiveDate": null,
+      "retrievedAt": "2026-10-25T00:00:00Z",
+      "url": "https://zr.planning.nyc.gov"
+    }
+  },
+  "site": {
+    "parcelId": "SAMPLE-sample-c-r10-through-sep",
+    "bbl": null,
+    "address": null,
+    "borough": "Brooklyn"
+  },
+  "lot": {
+    "crs": {
+      "reference": "EPSG:2263",
+      "lengthUnit": "ft"
+    },
+    "origin": {
+      "x": 991044.501,
+      "y": 190298.665
+    },
+    "polygonLocal": [
+      [
+        -84.121,
+        -113.683
+      ],
+      [
+        113.683,
+        -84.121
+      ],
+      [
+        84.121,
+        113.683
+      ],
+      [
+        -113.683,
+        84.121
+      ]
+    ],
+    "polygonReference": [
+      [
+        990960.38,
+        190184.98
+      ],
+      [
+        991158.18,
+        190214.54
+      ],
+      [
+        991128.62,
+        190412.35
+      ],
+      [
+        990930.82,
+        190382.79
+      ]
+    ],
+    "geometrySource": {
+      "dataset": "SAMPLE — hypothetical lot",
+      "fetchedAt": "2026-10-25T00:00:00Z"
+    },
+    "area": {
+      "value": 40000.33,
+      "unit": "sf",
+      "status": "computed",
+      "confidence": "inferred",
+      "formula": "200 ft × 200 ft = 40,000 sf",
+      "inputs": [
+        "/lot/polygonLocal"
+      ]
+    },
+    "frontage": {
+      "value": 200,
+      "unit": "ft",
+      "status": "computed",
+      "confidence": "inferred",
+      "formula": "front edge length = 200 ft",
+      "inputs": [
+        "/lot/polygonLocal"
+      ]
+    },
+    "depth": {
+      "value": 200,
+      "unit": "ft",
+      "status": "computed",
+      "confidence": "inferred",
+      "formula": "lot depth = 200 ft",
+      "inputs": [
+        "/lot/polygonLocal"
+      ]
+    },
+    "lotType": {
+      "value": "through",
+      "status": "assumed",
+      "assumptionIds": [
+        "asm-c-lottype"
+      ]
+    },
+    "edges": [
+      {
+        "index": 0,
+        "kind": "front",
+        "street": {
+          "name": null,
+          "width": "wide",
+          "assumptionIds": [
+            "asm-c-wide"
+          ]
+        }
+      },
+      {
+        "index": 1,
+        "kind": "side",
+        "street": null
+      },
+      {
+        "index": 2,
+        "kind": "front",
+        "street": {
+          "name": null,
+          "width": "narrow",
+          "assumptionIds": [
+            "asm-c-narrow"
+          ]
+        }
+      },
+      {
+        "index": 3,
+        "kind": "side",
+        "street": null
+      }
+    ]
+  },
+  "districts": [
+    {
+      "code": "R10",
+      "kind": "base",
+      "provenance": [
+        {
+          "dataset": "SAMPLE — hypothetical district assignment",
+          "fetchedAt": "2026-10-25T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "controls": {
+    "intendedUse": "residential",
+    "programs": [],
+    "maxFar": {
+      "residential": {
+        "value": 10,
+        "unit": "ratio",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-733",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-733",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "In R10 Districts, the maximum floor area ratio on a zoning lot shall be 12.0 for qualifying affordable housing or qualifying senior housing and 10.0 for other residences.",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#13"
+          }
+        ]
+      },
+      "community_facility": {
+        "value": 10,
+        "unit": "ratio",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "24-11",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "R10 | 10.00 | 75 | 65",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#21"
+          }
+        ]
+      }
+    },
+    "maxFloorArea": {
+      "residential": {
+        "value": 400003.34,
+        "unit": "sf",
+        "status": "computed",
+        "confidence": "cited",
+        "formula": "40,000.33 sf × 10.00 = 400,003.34 sf",
+        "inputs": [
+          "/lot/area",
+          "/controls/maxFar/residential"
+        ]
+      },
+      "community_facility": {
+        "value": 400003.34,
+        "unit": "sf",
+        "status": "computed",
+        "confidence": "cited",
+        "formula": "40,000.33 sf × 10.00 = 400,003.34 sf",
+        "inputs": [
+          "/lot/area",
+          "/controls/maxFar/community_facility"
+        ]
+      }
+    },
+    "baseHeight": {
+      "min": {
+        "value": null,
+        "unit": "ft",
+        "status": "needs_input",
+        "confidence": "unverified",
+        "note": "Minimum base height for buildings using the sky exposure plane option was not researched"
+      },
+      "max": {
+        "value": 85,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-736",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "R8 R9 or R10 Districts | 20 | 15 | 85 feet or nine stories, whichever is less | 85 | 2.7 | to 1 | 5.6 | to 1",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#47"
+          }
+        ],
+        "note": "Maximum front wall height under the sky exposure plane option: '85 feet or nine stories, whichever is less'."
+      }
+    },
+    "maxBuildingHeight": {
+      "value": null,
+      "unit": "ft",
+      "status": "not_applicable",
+      "confidence": "inferred",
+      "citations": [
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "23-736",
+          "paragraph": null,
+          "title": null,
+          "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+          "effectiveDate": "Last Amended 12/5/2024",
+          "retrievedAt": "2026-10-25",
+          "quote": "R8 R9 or R10 Districts | 20 | 15 | 85 feet or nine stories, whichever is less | 85 | 2.7 | to 1 | 5.6 | to 1",
+          "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#47"
+        }
+      ],
+      "note": "Height governed by the sky exposure plane under the optional regulations"
+    },
+    "maxStories": {
+      "value": null,
+      "unit": "stories",
+      "status": "not_applicable",
+      "confidence": "inferred",
+      "note": "No stories limit researched; height governed by the sky exposure plane (front wall limit is '85 feet or nine stories, whichever is less', row 47)."
+    },
+    "setbacks": [
+      {
+        "id": "rey-open-area-low",
+        "appliesTo": "street_frontage",
+        "edgeIndices": [
+          0,
+          2
+        ],
+        "startHeight": {
+          "value": 0,
+          "unit": "ft",
+          "status": "assumed",
+          "confidence": "inferred",
+          "assumptionIds": [
+            "asm-c-rey"
+          ],
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-343",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-343",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "On any through lot that is 190 feet or more in maximum depth from street to street, for buildings or portions thereof at or below a height of 75 feet, a rear yard equivalent consisting of an open area with a minimum depth of 40 feet shall be provided, and above a height of 75 feet, where permitted, a rear yard equivalent of 60 feet shall be provided.",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#58"
+            },
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-343",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-343",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "open areas adjoining and extending along the full length of either or both street lines, where the combined depth of such open areas is equivalent to the depth of the required rear yard equivalent;",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#61"
+            }
+          ]
+        },
+        "depth": {
+          "value": 20,
+          "unit": "ft",
+          "status": "assumed",
+          "confidence": "inferred",
+          "assumptionIds": [
+            "asm-c-rey"
+          ],
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-343",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-343",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "On any through lot that is 190 feet or more in maximum depth from street to street, for buildings or portions thereof at or below a height of 75 feet, a rear yard equivalent consisting of an open area with a minimum depth of 40 feet shall be provided, and above a height of 75 feet, where permitted, a rear yard equivalent of 60 feet shall be provided.",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#58"
+            },
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-343",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-343",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "open areas adjoining and extending along the full length of either or both street lines, where the combined depth of such open areas is equivalent to the depth of the required rear yard equivalent;",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#61"
+            }
+          ],
+          "note": "Rear yard equivalent (40 ft) as 20 ft open area at each street line, at or below 75 ft."
+        }
+      },
+      {
+        "id": "rey-open-area-high",
+        "appliesTo": "street_frontage",
+        "edgeIndices": [
+          0,
+          2
+        ],
+        "startHeight": {
+          "value": 75,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "cited",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-343",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-343",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "On any through lot that is 190 feet or more in maximum depth from street to street, for buildings or portions thereof at or below a height of 75 feet, a rear yard equivalent consisting of an open area with a minimum depth of 40 feet shall be provided, and above a height of 75 feet, where permitted, a rear yard equivalent of 60 feet shall be provided.",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#58"
+            }
+          ]
+        },
+        "depth": {
+          "value": 30,
+          "unit": "ft",
+          "status": "assumed",
+          "confidence": "inferred",
+          "assumptionIds": [
+            "asm-c-rey"
+          ],
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-343",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-343",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "On any through lot that is 190 feet or more in maximum depth from street to street, for buildings or portions thereof at or below a height of 75 feet, a rear yard equivalent consisting of an open area with a minimum depth of 40 feet shall be provided, and above a height of 75 feet, where permitted, a rear yard equivalent of 60 feet shall be provided.",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#58"
+            },
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-343",
+              "paragraph": null,
+              "title": null,
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-343",
+              "effectiveDate": "Last Amended 12/5/2024",
+              "retrievedAt": "2026-10-25",
+              "quote": "open areas adjoining and extending along the full length of either or both street lines, where the combined depth of such open areas is equivalent to the depth of the required rear yard equivalent;",
+              "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#61"
+            }
+          ],
+          "note": "Rear yard equivalent (60 ft) as 30 ft open area at each street line, above 75 ft."
+        }
+      }
+    ],
+    "yards": {
+      "front": {
+        "value": 0,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-322",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-322",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "In the districts indicated, no front yard requirements shall apply.",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#52"
+          }
+        ]
+      },
+      "rear": {
+        "value": null,
+        "unit": "ft",
+        "status": "not_applicable",
+        "confidence": "inferred",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-343",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-343",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "On any through lot that is 190 feet or more in maximum depth from street to street, for buildings or portions thereof at or below a height of 75 feet, a rear yard equivalent consisting of an open area with a minimum depth of 40 feet shall be provided, and above a height of 75 feet, where permitted, a rear yard equivalent of 60 feet shall be provided.",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#58"
+          }
+        ],
+        "note": "Through lot: no rear lot line; rear yard equivalent encoded in setbacks[] (see asm-c-rey)"
+      },
+      "side": {
+        "value": 0,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-335",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-335",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "for zoning lots containing all other types of residences, no side yards shall be required. However, if any open area extending along a side lot line is provided at any level, it shall have a minimum width of five feet, measured perpendicular to the side lot line.",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#53"
+          }
+        ]
+      }
+    },
+    "lotCoverage": {
+      "max": {
+        "value": null,
+        "unit": "percent",
+        "status": "not_applicable",
+        "confidence": "inferred",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-735",
+            "paragraph": null,
+            "title": null,
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-735",
+            "effectiveDate": "Last Amended 12/5/2024",
+            "retrievedAt": "2026-10-25",
+            "quote": "the maximum lot coverages set forth in Section 23-36, inclusive, need not apply;",
+            "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#51"
+          }
+        ],
+        "note": "For sky exposure plane buildings the lot coverages of 23-36 need not apply (ZR 23-735)."
+      }
+    },
+    "skyExposure": {
+      "status": "implemented",
+      "note": "Optional sky exposure plane regulations (ZR 23-73), R8/R9/R10 row of ZR 23-736 (standard front setbacks); SIMPLIFIED, see flags.simplifications.",
+      "planes": [
+        {
+          "id": "sep-wide",
+          "appliesTo": "wide_street_frontage",
+          "edgeIndices": [
+            0
+          ],
+          "startHeight": {
+            "value": 85,
+            "unit": "ft",
+            "status": "cited",
+            "confidence": "cited",
+            "citations": [
+              {
+                "source": "NYC Zoning Resolution",
+                "section": "23-736",
+                "paragraph": null,
+                "title": null,
+                "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+                "effectiveDate": "Last Amended 12/5/2024",
+                "retrievedAt": "2026-10-25",
+                "quote": "R8 R9 or R10 Districts | 20 | 15 | 85 feet or nine stories, whichever is less | 85 | 2.7 | to 1 | 5.6 | to 1",
+                "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#47"
+              }
+            ]
+          },
+          "initialSetback": {
+            "value": 15,
+            "unit": "ft",
+            "status": "cited",
+            "confidence": "cited",
+            "citations": [
+              {
+                "source": "NYC Zoning Resolution",
+                "section": "23-736",
+                "paragraph": null,
+                "title": null,
+                "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+                "effectiveDate": "Last Amended 12/5/2024",
+                "retrievedAt": "2026-10-25",
+                "quote": "R8 R9 or R10 Districts | 20 | 15 | 85 feet or nine stories, whichever is less | 85 | 2.7 | to 1 | 5.6 | to 1",
+                "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#47"
+              }
+            ]
+          },
+          "slopeVerticalPerHorizontal": {
+            "value": 5.6,
+            "unit": "ratio",
+            "status": "cited",
+            "confidence": "cited",
+            "citations": [
+              {
+                "source": "NYC Zoning Resolution",
+                "section": "23-736",
+                "paragraph": null,
+                "title": null,
+                "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+                "effectiveDate": "Last Amended 12/5/2024",
+                "retrievedAt": "2026-10-25",
+                "quote": "R8 R9 or R10 Districts | 20 | 15 | 85 feet or nine stories, whichever is less | 85 | 2.7 | to 1 | 5.6 | to 1",
+                "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#47"
+              }
+            ]
+          }
+        },
+        {
+          "id": "sep-narrow",
+          "appliesTo": "narrow_street_frontage",
+          "edgeIndices": [
+            2
+          ],
+          "startHeight": {
+            "value": 85,
+            "unit": "ft",
+            "status": "cited",
+            "confidence": "cited",
+            "citations": [
+              {
+                "source": "NYC Zoning Resolution",
+                "section": "23-736",
+                "paragraph": null,
+                "title": null,
+                "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+                "effectiveDate": "Last Amended 12/5/2024",
+                "retrievedAt": "2026-10-25",
+                "quote": "R8 R9 or R10 Districts | 20 | 15 | 85 feet or nine stories, whichever is less | 85 | 2.7 | to 1 | 5.6 | to 1",
+                "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#47"
+              }
+            ]
+          },
+          "initialSetback": {
+            "value": 20,
+            "unit": "ft",
+            "status": "cited",
+            "confidence": "cited",
+            "citations": [
+              {
+                "source": "NYC Zoning Resolution",
+                "section": "23-736",
+                "paragraph": null,
+                "title": null,
+                "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+                "effectiveDate": "Last Amended 12/5/2024",
+                "retrievedAt": "2026-10-25",
+                "quote": "R8 R9 or R10 Districts | 20 | 15 | 85 feet or nine stories, whichever is less | 85 | 2.7 | to 1 | 5.6 | to 1",
+                "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#47"
+              }
+            ]
+          },
+          "slopeVerticalPerHorizontal": {
+            "value": 2.7,
+            "unit": "ratio",
+            "status": "cited",
+            "confidence": "cited",
+            "citations": [
+              {
+                "source": "NYC Zoning Resolution",
+                "section": "23-736",
+                "paragraph": null,
+                "title": null,
+                "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+                "effectiveDate": "Last Amended 12/5/2024",
+                "retrievedAt": "2026-10-25",
+                "quote": "R8 R9 or R10 Districts | 20 | 15 | 85 feet or nine stories, whichever is less | 85 | 2.7 | to 1 | 5.6 | to 1",
+                "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#47"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "assumptions": [
+    {
+      "id": "asm-c-wide",
+      "statement": "The south front street (edge 0) is a wide street (>= 75 ft wide).",
+      "reason": "SAMPLE lot has no real street; width is assumed so the wide-street sky exposure plane values apply.",
+      "state": "accepted",
+      "affects": [
+        "/lot/edges/0/street/width",
+        "/controls/skyExposure/planes/0"
+      ],
+      "citations": [
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "12-10 (street, wide)",
+          "paragraph": null,
+          "title": null,
+          "url": "https://zr.planning.nyc.gov/article-i/chapter-2/12-10",
+          "effectiveDate": "Last Amended 3/26/2026",
+          "retrievedAt": "2026-10-25",
+          "quote": "A \"wide street\" is any street 75 feet or more in width.",
+          "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#1"
+        }
+      ]
+    },
+    {
+      "id": "asm-c-narrow",
+      "statement": "The north front street (edge 2) is a narrow street (< 75 ft wide).",
+      "reason": "SAMPLE lot has no real street; width is assumed so the narrow-street sky exposure plane values apply.",
+      "state": "accepted",
+      "affects": [
+        "/lot/edges/2/street/width",
+        "/controls/skyExposure/planes/1"
+      ],
+      "citations": [
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "12-10 (street, narrow)",
+          "paragraph": null,
+          "title": null,
+          "url": "https://zr.planning.nyc.gov/article-i/chapter-2/12-10",
+          "effectiveDate": "Last Amended 12/15/1961",
+          "retrievedAt": "2026-10-25",
+          "quote": "A \"narrow street\" is any street less than 75 feet wide.",
+          "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#3"
+        }
+      ]
+    },
+    {
+      "id": "asm-c-lottype",
+      "statement": "The lot is a through lot (two opposite street frontages, 200 ft apart).",
+      "reason": "SAMPLE lot is hypothetical; through lot type is assumed.",
+      "state": "accepted",
+      "affects": [
+        "/lot/lotType",
+        "/controls/yards/rear"
+      ],
+      "citations": [
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "12-10 (lot, through)",
+          "paragraph": null,
+          "title": null,
+          "url": "https://zr.planning.nyc.gov/article-i/chapter-2/12-10",
+          "effectiveDate": "Last Amended 3/26/2026 (page 12-10)",
+          "retrievedAt": "2026-10-25",
+          "quote": "A \"through lot\" is any zoning lot, not a corner lot, which adjoins two street lines opposite to each other and parallel or within 45 degrees of being parallel to each other.",
+          "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#6"
+        }
+      ]
+    },
+    {
+      "id": "asm-c-rey",
+      "statement": "Rear yard equivalent provided as open areas along both street lines (ZR 23-343 alternative): 40 ft combined → 20 ft at each street line at or below 75 ft; 60 ft combined → 30 ft each above 75 ft",
+      "reason": "ZR 23-343 requires a rear yard equivalent of 40 ft (at or below 75 ft) / 60 ft (above 75 ft) on through lots 190 ft or more deep and allows open areas along both street lines; splitting equally is a SAMPLE design choice.",
+      "state": "accepted",
+      "affects": [
+        "/controls/setbacks/0",
+        "/controls/setbacks/1",
+        "/controls/yards/rear"
+      ],
+      "citations": [
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "23-343",
+          "paragraph": null,
+          "title": null,
+          "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-343",
+          "effectiveDate": "Last Amended 12/5/2024",
+          "retrievedAt": "2026-10-25",
+          "quote": "On any through lot that is 190 feet or more in maximum depth from street to street, for buildings or portions thereof at or below a height of 75 feet, a rear yard equivalent consisting of an open area with a minimum depth of 40 feet shall be provided, and above a height of 75 feet, where permitted, a rear yard equivalent of 60 feet shall be provided.",
+          "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#58"
+        },
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "23-343",
+          "paragraph": null,
+          "title": null,
+          "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-343",
+          "effectiveDate": "Last Amended 12/5/2024",
+          "retrievedAt": "2026-10-25",
+          "quote": "open areas adjoining and extending along the full length of either or both street lines, where the combined depth of such open areas is equivalent to the depth of the required rear yard equivalent;",
+          "researchNote": "_Shared/research/nyc-zoning-sample-envelope-values.md#61"
+        }
+      ]
+    }
+  ],
+  "reviewFlags": [
+    {
+      "kind": "other",
+      "message": "Towers (ZR 23-435 / 23-737) not modelled in this SAMPLE."
+    },
+    {
+      "kind": "other",
+      "message": "Lot is 40,000 sf: large-lot street wall rule (50% within 15 ft, ZR 23-431) may apply; not checked."
+    }
+  ],
+  "provenance": {
+    "datasets": [
+      {
+        "dataset": "NYC Building Footprints (5zhs-2jue)",
+        "version": "rowsUpdatedAt 2026-10-25T08:21:07Z",
+        "field": "the_geom, height_roof",
+        "url": "https://data.cityofnewyork.us/resource/5zhs-2jue.geojson?$where=within_circle(the_geom,40.6890,-73.9755,180)&$limit=1000",
+        "fetchedAt": "2026-10-25T19:37:07Z"
+      },
+      {
+        "dataset": "SAMPLE — hypothetical lot",
+        "fetchedAt": "2026-10-25T00:00:00Z"
+      }
+    ],
+    "notes": [
+      "SAMPLE: hypothetical lot, not a real parcel. Placed at lat 40.6890, lng -73.9755 (south of Fort Greene Park, Brooklyn) for context.",
+      "Street-grid angle theta = 8.5° (length-weighted histogram of context footprint edge directions mod 90°, 1° bins, ±2° smoothing). Lot edge 0 (front) direction angle = 8.5° from east; front outward normal points closest to south (park is north).",
+      "Context footprints that intersect the lot were removed (SAMPLE: existing buildings on the hypothetical lot removed); see the .site.json sidecar."
+    ]
+  },
+  "massingLink": null
+}

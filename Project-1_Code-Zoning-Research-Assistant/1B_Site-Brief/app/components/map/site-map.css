@@ -1,0 +1,36 @@
+/* Drawing-set styling for the plan map. Colours come from the sheet tokens so the blueprint theme works. */
+.site-map { background: var(--paper-2); color: var(--ink); }
+.site-map .maplibregl-canvas { outline-offset: -2px; }
+.site-map .maplibregl-ctrl-bottom-left { left: 8px; bottom: 8px; }
+.site-map .maplibregl-ctrl-scale {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-top: none;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: 2px 8px;
+  margin: 0;
+  border-radius: 0;
+}
+.site-map-north {
+  position: absolute; top: 8px; right: 8px; color: var(--ink); pointer-events: none;
+  background: var(--sheet); border: 1px solid var(--rule-strong); border-radius: 6px; padding: 4px;
+}
+/* Map key: a small panel, readable at a glance. Sits top-left; the scale bar sits bottom-left. */
+.site-map-legend {
+  position: absolute; top: 8px; left: 8px; margin: 0; padding: 8px 10px; list-style: none;
+  background: var(--sheet); border: 1px solid var(--rule-strong); border-radius: 6px; color: var(--ink);
+  font-size: 13px; line-height: 1.3; pointer-events: none;
+}
+.site-map-legend li { display: flex; align-items: center; gap: 8px; min-height: 22px; }
+.site-map-legend svg { flex-shrink: 0; }
+/* District codes are literal codes, so they stay in the mono face; 13px keeps them readable over the plan. */
+.site-map-district-label {
+  font-family: var(--font-mono), ui-monospace, monospace; font-size: 13px; font-weight: 500; line-height: 1;
+  color: var(--ink); background: var(--sheet); border: 1px solid var(--ink-2); border-radius: 4px;
+  padding: 3px 6px; pointer-events: none; white-space: nowrap;
+}
+.site-map-district-label[data-overlay="true"] { border-style: dotted; }

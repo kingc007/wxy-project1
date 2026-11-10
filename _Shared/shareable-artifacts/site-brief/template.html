@@ -1,0 +1,580 @@
+<title>Site Brief</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--paper:#F3F4F2;--paper-2:#E8EAE7;--sheet:#FFFFFF;--ink:#15191D;--ink-2:#3D444B;--ink-3:#555D65;--rule:#D5D9D6;--rule-strong:#868C92;--signal:#1F3FBF;--signal-ink:#FFFFFF;--ok:#17663F;--ok-wash:#E5F2EA;--warn:#8A5300;--warn-wash:#FBF0DA;--flag:#B42318;--flag-wash:#FCE9E7;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#121417;--paper-2:#1D2126;--sheet:#181B1F;--ink:#E8E6E1;--ink-2:#B0B3B8;--ink-3:#9AA0A7;--rule:#2A2E34;--rule-strong:#6B7078;--signal:#9DB4FF;--signal-ink:#0B1020;--ok:#6FD39C;--ok-wash:rgb(111 211 156 / .14);--warn:#F2B85B;--warn-wash:rgb(242 184 91 / .14);--flag:#FF9A80;--flag-wash:rgb(255 154 128 / .14);color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#121417;--paper-2:#1D2126;--sheet:#181B1F;--ink:#E8E6E1;--ink-2:#B0B3B8;--ink-3:#9AA0A7;--rule:#2A2E34;--rule-strong:#6B7078;--signal:#9DB4FF;--signal-ink:#0B1020;--ok:#6FD39C;--ok-wash:rgb(111 211 156 / .14);--warn:#F2B85B;--warn-wash:rgb(242 184 91 / .14);--flag:#FF9A80;--flag-wash:rgb(255 154 128 / .14);color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.5;font-variant-numeric:tabular-nums;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono,code{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.95em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+a{color:var(--signal)}
+:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+button{font:inherit;color:inherit}
+h1,h2,h3{font-stretch:118%;font-weight:650;letter-spacing:-.01em}
+#root{position:relative;max-width:1320px;margin:0 auto;padding:0 0 48px}
+header.top{padding:36px 0 22px;border-bottom:1px solid var(--rule)}
+header.top h1{font-size:clamp(30px,4vw,44px);line-height:1.1;margin:0 0 10px}
+.lede{margin:0 0 6px;font-size:18px;max-width:62ch}
+.capture{margin:0;color:var(--ink-2);font-size:15px;max-width:70ch}
+.layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:32px;padding-top:28px;align-items:start}
+nav.lots{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
+nav.lots h2{font-size:17px;margin:0 0 10px}
+.lot-btn{display:flex;align-items:center;gap:8px;width:100%;min-height:56px;text-align:left;background:none;border:0;border-left:4px solid transparent;border-top:1px solid var(--rule);padding:8px 8px 8px 12px;cursor:pointer}
+.lot-btn:last-child{border-bottom:1px solid var(--rule)}
+.lot-btn:hover{background:var(--paper-2)}
+.lot-btn[aria-pressed="true"]{border-left-color:var(--signal);background:var(--sheet)}
+.lot-btn .t{flex:1;min-width:0}
+.lot-btn .a{display:block;font-weight:500}
+.lot-btn[aria-pressed="true"] .a{font-weight:700}
+.lot-btn .n{display:block;font-size:14px;color:var(--ink-2)}
+.lot-btn .ck{display:none;flex:none;color:var(--signal)}
+.lot-btn[aria-pressed="true"] .ck{display:block}
+.lot-select{display:none;width:100%;min-height:44px;font:inherit;padding:8px 12px;color:var(--ink);background:var(--sheet);border:1px solid var(--rule-strong);border-radius:6px}
+.lot-select-label{display:none;font-size:14px;color:var(--ink-2);margin-bottom:6px}
+main#brief{--pad:clamp(16px,3vw,40px);background:var(--sheet);border:1px solid var(--rule);padding:0 var(--pad) 40px;min-width:0}
+/* section index: sticky bar above the brief */
+nav.idx{position:sticky;top:0;z-index:15;margin:0 calc(var(--pad)*-1);padding:0 var(--pad);background:var(--sheet);border-bottom:1px solid var(--rule-strong)}
+nav.idx ol{display:flex;gap:2px;margin:0;padding:0;list-style:none;overflow-x:auto;scrollbar-width:thin}
+nav.idx li{flex:none}
+nav.idx a{display:inline-flex;align-items:center;gap:6px;min-height:48px;padding:0 12px;color:var(--ink-2);text-decoration:none;font-size:15px;white-space:nowrap;border-bottom:4px solid transparent}
+nav.idx a:hover{color:var(--ink);background:var(--paper-2)}
+nav.idx a[aria-current="location"]{color:var(--ink);font-weight:700;border-bottom-color:var(--signal)}
+nav.idx a:focus-visible{outline-offset:-4px}
+nav.idx .m{font-size:13px;font-weight:600;padding:0 6px;border-radius:6px;line-height:20px}
+.tone-ok{background:var(--ok-wash);color:var(--ok)}.tone-warn{background:var(--warn-wash);color:var(--warn)}.tone-flag{background:var(--flag-wash);color:var(--flag)}.tone-neutral{background:var(--paper-2);color:var(--ink-2)}
+.brief-head{padding-top:28px}
+.brief-head h2{font-size:clamp(26px,3.6vw,40px);line-height:1.12;margin:0 0 10px;overflow-wrap:anywhere}
+.meta{margin:0;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px}
+.meta b{font-weight:600;color:var(--ink)}
+.banner{display:flex;gap:10px;align-items:flex-start;margin:16px 0 0;padding:10px 14px;background:var(--warn-wash);color:var(--warn);border-radius:6px;font-weight:600;font-size:15px}
+.banner svg{flex:none;margin-top:3px}
+.note-line{color:var(--ink-2);font-size:15px;margin:10px 0 0}
+section.blk{margin-top:44px;scroll-margin-top:64px}
+section.blk>h3{font-size:22px;line-height:1.2;margin:0 0 6px}
+section.blk>h3:focus{outline:none}
+section.blk>h3:focus-visible{outline:2px solid var(--signal);outline-offset:4px}
+section.blk>p.sub{margin:0 0 16px;color:var(--ink-2);font-size:15px;max-width:70ch}
+.key{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:0 0 4px}
+/* status pill */
+.pill{display:inline-flex;align-items:center;gap:5px;min-height:24px;padding:0 8px;border-radius:6px;font-size:13px;font-weight:600;line-height:1;white-space:nowrap}
+.pill svg{flex:none}
+/* dimension strings */
+.dims{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 28px;margin-top:20px}
+.dim{min-width:0}
+.dim .val{font-size:30px;font-weight:550;line-height:1.1;letter-spacing:-.01em;min-height:33px;overflow-wrap:anywhere}
+.dim .val small{font-size:15px;color:var(--ink-2);font-weight:400;margin-left:3px}
+.dim .val.txt{font-size:20px;line-height:1.3;color:var(--ink-2);font-weight:500}
+.dim .line{position:relative;height:11px;margin:6px 0 4px}
+.dim .line::before{content:"";position:absolute;left:0;right:0;top:5px;height:1px;background:var(--ink);transform-origin:left center;transform:scaleX(0);animation:draw .6s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*45ms)}
+.dim .line::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;background:linear-gradient(var(--ink),var(--ink)) left/1px 100% no-repeat,linear-gradient(var(--ink),var(--ink)) right/1px 100% no-repeat;opacity:0;animation:tick .2s forwards;animation-delay:calc(var(--i)*45ms + 350ms)}
+@keyframes draw{to{transform:scaleX(1)}}
+@keyframes tick{to{opacity:1}}
+.dim .lbl{font-size:15px;margin-bottom:6px}
+@media (prefers-reduced-motion: reduce){.dim .line::before{animation:none;transform:scaleX(1)}.dim .line::after{animation:none;opacity:1}}
+/* review summary */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;padding:0;list-style:none}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border-radius:6px;font-size:15px;font-weight:600;text-decoration:none}
+.chip:hover{text-decoration:underline;text-underline-offset:4px}
+/* plan */
+.plan-wrap{border:1px solid var(--rule);background:var(--paper)}
+.plan-wrap svg{display:block;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin:10px 0 0;padding:0;list-style:none;font-size:14px;color:var(--ink-2)}
+.legend li{display:flex;align-items:center;gap:8px}
+.sw{display:inline-block;width:28px;height:16px;flex:none}
+.sw.lot{border:2px solid var(--ink);background:repeating-linear-gradient(45deg,var(--ink-2) 0 1px,transparent 1px 5px)}
+.sw.dist{height:0;border-top:2px dashed var(--signal)}
+.sw.nb{border:1px solid var(--ink-3)}
+.plan-note{font-size:13px;color:var(--ink-3);margin:8px 0 0}
+/* tables */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:10px 16px 10px 0;border-bottom:1px solid var(--rule)}
+th{font-weight:600;color:var(--ink-2);font-size:14px;white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums}
+td small,.muted{color:var(--ink-2);font-size:13px;display:block}
+td.pc{white-space:nowrap}
+.bulk{min-width:820px}.bulk th:first-child{min-width:170px}.facts th[scope="row"]{width:34%;color:var(--ink);font-weight:400;white-space:normal}
+.tag{white-space:nowrap;font:inherit;font-size:13.5px;font-weight:500;background:var(--paper-2);border:1px solid var(--rule-strong);color:var(--signal);padding:0 10px;min-height:32px;cursor:pointer;margin:0 6px 6px 0;border-radius:6px}
+.tag:hover,.tag[aria-expanded="true"]{border-color:var(--signal);text-decoration:underline;text-underline-offset:3px}
+.pop{position:absolute;z-index:20;width:min(420px,calc(100vw - 32px));background:var(--sheet);color:var(--ink);border:1px solid var(--ink);padding:14px 16px;box-shadow:0 8px 24px color-mix(in srgb,var(--ink) 18%,transparent)}
+.pop[hidden]{display:none}
+.pop h4{margin:0 0 8px;font-size:15px;font-weight:650;padding-right:64px}
+.pop blockquote{margin:0 0 8px;padding-left:10px;border-left:3px solid var(--signal);font-size:14px}
+.pop .amend{font-size:13px;color:var(--ink-2);margin:0 0 8px}
+.pop .x{position:absolute;top:6px;right:6px;background:none;border:1px solid var(--rule-strong);border-radius:6px;cursor:pointer;color:var(--ink);font-size:13px;min-height:32px;padding:0 10px}
+.calc,.asm,.flags{margin:0;padding:0;list-style:none}
+.calc li,.asm li{padding:12px 0;border-bottom:1px solid var(--rule)}
+.calc .top,.asm .top{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;justify-content:space-between}
+.calc .l{font-size:14px;color:var(--ink-2)}
+.calc .f{font-size:15px;margin-top:2px}
+.asm .s{font-weight:600;flex:1;min-width:min(100%,260px)}
+.asm .r{font-size:14px;color:var(--ink-2);margin-top:4px;max-width:80ch}
+.flags li{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule)}
+.flags .k{font-weight:650}
+.flags .msg{flex:1 1 100%;max-width:80ch}
+.env{font-size:15px}
+footer{margin-top:32px;padding:20px 0 0;border-top:1px solid var(--rule);color:var(--ink-2);font-size:14px}
+@media (max-width:1000px){.dims{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:20px}
+  nav.lots{position:static;max-height:none;overflow:visible}
+  nav.lots h2,.lots .lot-list{display:none}
+  .lot-select,.lot-select-label{display:block}
+  header.top{padding-top:24px}
+  main#brief{--pad:16px;padding-bottom:28px}
+  .dims{gap:26px 20px}
+}
+@media (max-width:420px){.dims{grid-template-columns:minmax(0,1fr)}}
+</style>
+<div id="root">
+<header class="top">
+  <h1>Site Brief</h1>
+  <p class="lede">Cited zoning briefs for NYC lots, drafted by WXY's Site Brief prototype.</p>
+  <p class="capture">These are 10 real evaluation lots captured from the live app on 2026-10-30, residential use. New addresses can't be entered here.</p>
+</header>
+<div class="layout">
+  <nav class="lots" aria-label="Evaluation lots">
+    <h2>Evaluation lots</h2>
+    <label class="lot-select-label" for="lotSelect">Evaluation lot</label>
+    <select class="lot-select" id="lotSelect"></select>
+    <div class="lot-list" id="lotList"></div>
+  </nav>
+  <main id="brief" aria-live="polite" tabindex="-1"></main>
+</div>
+<footer>Built by WXY Architecture + Urban Design, Project 1B prototype. Everything here is draft research for a licensed professional to review, not a zoning determination.</footer>
+<div class="pop" id="pop" role="dialog" aria-label="Citation" hidden></div>
+</div>
+<script type="application/json" id="data">__DATA__</script>
+<script>
+(function(){
+"use strict";
+document.documentElement.lang=document.documentElement.lang||'en';
+var LOTS = JSON.parse(document.getElementById('data').textContent);
+var $ = function(id){return document.getElementById(id)};
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function slug(q){return String(q).split(',')[0].toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}
+LOTS.forEach(function(l){l.token=slug(l.query)});
+
+/* ---------- formatting ---------- */
+function num(v,max){return Number(v).toLocaleString('en-US',{maximumFractionDigits:max==null?2:max})}
+function fmt(pv){
+  if(!pv||pv.value==null)return null;
+  var v=pv.value,u=pv.unit;
+  if(typeof v!=='number')return {n:String(v),u:''};
+  if(u==='ratio')return {n:Number(v).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}),u:''};
+  if(u==='percent')return {n:num(v),u:'%'};
+  if(u==='sf')return {n:num(v),u:' sf'};
+  if(u==='ft')return {n:num(v),u:' ft'};
+  return {n:num(v),u:u?' '+u:''};
+}
+function fmtText(pv){var f=fmt(pv);return f?f.n+f.u:null}
+
+/* ---------- status pill (one vocabulary, mirrors the app's status-pill) ---------- */
+var IC={
+  check:'<circle cx="8" cy="8" r="6.5"/><path d="M5.2 8.2l2 2 3.6-4"/>',
+  alert:'<circle cx="8" cy="8" r="6.5"/><path d="M8 4.8v3.6M8 10.9v.1"/>',
+  help:'<circle cx="8" cy="8" r="6.5"/><path d="M6.2 6.4a1.9 1.9 0 1 1 2.7 1.7c-.6.3-.9.7-.9 1.3M8 11.6v.1"/>',
+  tri:'<path d="M8 2.2 14.6 13.6H1.4z" stroke-linejoin="round"/><path d="M8 6.6v3.2M8 11.7v.1"/>',
+  calc:'<rect x="3" y="1.8" width="10" height="12.4" rx="1.5"/><path d="M5.4 5h5.2M5.6 8.2v.1M8 8.2v.1M10.4 8.2v.1M5.6 10.9v.1M8 10.9v.1M10.4 10.9v.1"/>'
+};
+function svg(name,size){size=size||14;return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">'+IC[name]+'</svg>'}
+var STATUS={
+  cited:['Cited','ok','check'],
+  inferred:['Inferred','warn','alert'],
+  unverified:['Unverified','warn','help'],
+  needs:['Needs input','warn','help'],
+  conflicting:['Conflicting','flag','tri'],
+  computed:['Computed','neutral','calc'],
+  flag:['Flag','flag','tri'],
+  valid:['Valid','ok','check']
+};
+function pill(k,label){var m=STATUS[k];return '<span class="pill tone-'+m[1]+'">'+svg(m[2])+esc(label||m[0])+'</span>'}
+/* same classification as the app's markKind() */
+function kindOf(pv){
+  if(!pv)return 'needs';
+  if(pv.status==='manual'||pv.confidence==='conflicting')return 'conflicting';
+  if(pv.value==null||pv.status==='needs_input')return 'needs';
+  if(pv.status==='computed')return 'computed';
+  if(pv.confidence==='unverified')return 'unverified';
+  if(pv.confidence==='inferred')return 'inferred';
+  return 'cited';
+}
+function worst(a,b){var o=['conflicting','needs','unverified','inferred','computed','cited'];return o.indexOf(a)<o.indexOf(b)?a:b}
+function cites(pv){
+  if(!pv)return [];
+  var out=[];(pv.citations||[]).forEach(function(c){out.push(c)});return out;
+}
+function tagLabel(c){return /zoning resolution/i.test(c.source||'')?'ZR '+c.section:(c.source||'')+(c.section?' '+c.section:'')}
+
+/* ---------- review summary: same counting as the app's review.ts ---------- */
+var USER_SET={intendedUse:1,program:1};
+function openAssumptions(l){
+  return l.brief.assumptions.filter(function(a){return a.confidence!=='cited'||a.state!=='accepted'||!USER_SET[a.key]});
+}
+function summarize(l){
+  var s={cited:0,inferred:0,needs:0,unsettled:0,total:0,reviewed:0,flags:l.brief.flags.length};
+  l.brief.bulkTable.forEach(function(r){
+    var v=r.value;if(v.status==='not_applicable')return;
+    var k=kindOf(v);
+    if(k==='cited')s.cited++;else if(k==='inferred')s.inferred++;else if(k==='needs')s.needs++;else if(k==='unverified'||k==='conflicting')s.unsettled++;
+  });
+  openAssumptions(l).forEach(function(a){
+    if(USER_SET[a.key])return;
+    s.total++;if(a.state==='overridden')s.reviewed++;
+  });
+  return s;
+}
+function plural(n,one,many){return n+' '+(n===1?one:(many||one+'s'))}
+function summaryChips(s){
+  var out=[{t:s.cited+' cited',go:'sec-bulk',tone:'ok',ic:'check'}];
+  if(s.inferred>0)out.push({t:s.inferred+' inferred',go:'sec-bulk',tone:'warn',ic:'alert'});
+  if(s.needs>0)out.push({t:s.needs+(s.needs===1?' needs input':' need input'),go:'sec-bulk',tone:'warn',ic:'help'});
+  if(s.unsettled>0)out.push({t:s.unsettled+' unverified or conflicting',go:'sec-bulk',tone:'warn',ic:'tri'});
+  if(s.total>0){var left=s.total-s.reviewed;out.push(left>0?{t:plural(left,'assumption')+' to confirm',go:'sec-asm',tone:'warn',ic:'help'}:{t:'All assumptions reviewed',go:'sec-asm',tone:'ok',ic:'check'})}
+  out.push(s.flags>0?{t:plural(s.flags,'flag'),go:'sec-flag',tone:'flag',ic:'tri'}:{t:'0 flags',go:'sec-flag',tone:'ok',ic:'check'});
+  return out;
+}
+function reviewSummary(l){
+  var chips=summaryChips(summarize(l));
+  return '<section class="blk" id="sec-review" aria-labelledby="h-review"><h3 id="h-review" tabindex="-1">Review summary</h3><p class="sub">What a reviewer still has to deal with, counted from this lot\'s bulk table, assumptions and flags. Each item jumps to its section.</p><ul class="chips">'+chips.map(function(c){
+    return '<li><a class="chip tone-'+c.tone+'" href="#'+c.go+'" data-go="'+c.go+'">'+svg(c.ic,16)+esc(c.t)+'</a></li>';
+  }).join('')+'</ul></section>';
+}
+
+/* ---------- state ---------- */
+var cur=0;
+function indexByHash(){
+  var h=decodeURIComponent((location.hash||'').replace(/^#/,''));
+  for(var i=0;i<LOTS.length;i++)if(LOTS[i].token===h)return i;
+  return -1;
+}
+
+/* ---------- lot list ---------- */
+function buildList(){
+  var list=$('lotList'),sel=$('lotSelect');
+  var ck='<svg class="ck" width="18" height="18" viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 4.8"/></svg>';
+  list.innerHTML=LOTS.map(function(l,i){
+    return '<button type="button" class="lot-btn" data-i="'+i+'" aria-pressed="false"><span class="t"><span class="a">'+esc(l.query.split(',')[0])+', '+esc(l.query.split(',')[1]||'')+'</span><span class="n">'+esc(l.note)+'</span></span>'+ck+'</button>';
+  }).join('');
+  sel.innerHTML=LOTS.map(function(l,i){return '<option value="'+i+'">'+esc(l.query)+' ('+esc(l.note)+')</option>'}).join('');
+  list.addEventListener('click',function(e){var b=e.target.closest('.lot-btn');if(b)choose(+b.getAttribute('data-i'),true)});
+  sel.addEventListener('change',function(){choose(+sel.value,true)});
+}
+function syncList(){
+  Array.prototype.forEach.call(document.querySelectorAll('.lot-btn'),function(b){
+    var on=+b.getAttribute('data-i')===cur;b.setAttribute('aria-pressed',on?'true':'false');
+    if(on)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current');
+  });
+  $('lotSelect').value=String(cur);
+}
+function choose(i,push){
+  cur=i;closePop();
+  if(push){var t='#'+LOTS[i].token;if(location.hash!==t){try{history.replaceState(null,'',t)}catch(e){location.hash=t}}}
+  syncList();render();
+  if(push){var r=$('brief').getBoundingClientRect();if(r.top<0)window.scrollTo(0,window.scrollY+r.top-16)}
+}
+window.addEventListener('hashchange',function(){var i=indexByHash();if(i>=0&&i!==cur)choose(i,false)});
+
+/* ---------- plan drawing ---------- */
+function ringPath(r){return 'M'+r.map(function(p){return (+p[0]).toFixed(1)+','+(-p[1]).toFixed(1)}).join('L')+'Z'}
+function inRings(x,y,rings){
+  var c=false;
+  rings.forEach(function(r){for(var i=0,j=r.length-1;i<r.length;j=i++){
+    var xi=r[i][0],yi=r[i][1],xj=r[j][0],yj=r[j][1];
+    if(((yi>y)!==(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))c=!c;}});
+  return c;
+}
+/* pw = rendered width in CSS px. u = drawing units per CSS px, so every label is a true >=12px on screen. */
+function planSVG(l,pw){
+  var p=l.site.plan;
+  var xs=p.lot.map(function(q){return q[0]}),ys=p.lot.map(function(q){return q[1]});
+  var minx=Math.min.apply(0,xs),maxx=Math.max.apply(0,xs),miny=Math.min.apply(0,ys),maxy=Math.max.apply(0,ys);
+  var cx=(minx+maxx)/2,cy=(miny+maxy)/2,lw=maxx-minx,lh=maxy-miny;
+  var ASP=pw<520?1.1:1.55;
+  var W=Math.max(lw*1.9,lh*1.9*ASP,150),H=W/ASP;
+  var vx=cx-W/2,vy=-cy-H/2,u=W/pw;
+  var s='<svg viewBox="'+vx.toFixed(1)+' '+vy.toFixed(1)+' '+W.toFixed(1)+' '+H.toFixed(1)+'" role="img" aria-label="'+esc(planAria(l))+'" xmlns="http://www.w3.org/2000/svg">';
+  s+='<defs><pattern id="hatch" width="'+(7*u).toFixed(2)+'" height="'+(7*u).toFixed(2)+'" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="'+(7*u).toFixed(2)+'" stroke="var(--ink-2)" stroke-width="'+(1*u).toFixed(2)+'"/></pattern>';
+  s+='<clipPath id="vp"><rect x="'+vx.toFixed(1)+'" y="'+vy.toFixed(1)+'" width="'+W.toFixed(1)+'" height="'+H.toFixed(1)+'"/></clipPath></defs>';
+  s+='<g clip-path="url(#vp)">';
+  p.districts.forEach(function(d){
+    d.rings.forEach(function(r){s+='<path d="'+ringPath(r)+'" fill="none" stroke="var(--signal)" stroke-width="'+(2*u).toFixed(2)+'" stroke-dasharray="'+(9*u).toFixed(1)+' '+(6*u).toFixed(1)+'"/>'});
+  });
+  p.neighbors.forEach(function(r){s+='<path d="'+ringPath(r)+'" fill="none" stroke="var(--ink-3)" stroke-width="'+(1*u).toFixed(2)+'"/>'});
+  s+='<path d="'+ringPath(p.lot)+'" fill="url(#hatch)" stroke="var(--ink)" stroke-width="'+(3*u).toFixed(2)+'" stroke-linejoin="round"/>';
+  p.districts.forEach(function(d,di){
+    var pts=[],gx=28,gy=18;
+    for(var a=0;a<gx;a++)for(var b=0;b<gy;b++){
+      var x=vx+(a+.5)*W/gx,y=-(vy+(b+.5)*H/gy);
+      if(Math.hypot(x-cx,y-cy)<Math.max(lw,lh)*0.9)continue;
+      if(inRings(x,y,d.rings))pts.push([x,y]);
+    }
+    if(!pts.length)return;
+    var mx=0,my=0;pts.forEach(function(q){mx+=q[0];my+=q[1]});mx/=pts.length;my/=pts.length;
+    var best=pts[0],bd=1e18;pts.forEach(function(q){var dd=Math.hypot(q[0]-mx,q[1]-my);if(dd<bd){bd=dd;best=q}});
+    var lab=d.code+(d.kind==='commercial_overlay'?' overlay':d.kind==='special_purpose'?' special district':'');
+    var hw=lab.length*4.2*u+8*u;best[0]=Math.max(vx+hw,Math.min(vx+W-hw,best[0]));
+    s+='<text x="'+best[0].toFixed(1)+'" y="'+(-best[1]+di*17*u).toFixed(1)+'" text-anchor="middle" font-size="'+(13*u).toFixed(2)+'" font-weight="600" fill="var(--signal)" stroke="var(--paper)" stroke-width="'+(4*u).toFixed(2)+'" paint-order="stroke" font-family="IBM Plex Mono,ui-monospace,monospace">'+esc(lab)+'</text>';
+  });
+  p.edges.forEach(function(e){
+    if(!e.street)return;
+    var mx=(e.from[0]+e.to[0])/2,my=(e.from[1]+e.to[1])/2;
+    var d=Math.hypot(mx,my)||1,nx=mx/d,ny=my/d;
+    var off=17*u;
+    var tx=mx+nx*off,ty=-(my+ny*off);
+    var ang=Math.atan2(-(e.to[1]-e.from[1]),e.to[0]-e.from[0])*180/Math.PI;
+    if(ang>90)ang-=180;if(ang<-90)ang+=180;
+    var t=e.street.name+', '+(e.street.wide?'wide':'narrow')+(e.street.widthFt?' ('+num(e.street.widthFt,0)+' ft)':'');
+    s+='<text transform="translate('+tx.toFixed(1)+','+ty.toFixed(1)+') rotate('+ang.toFixed(1)+')" text-anchor="middle" dominant-baseline="middle" font-size="'+(13*u).toFixed(2)+'" font-weight="500" fill="var(--ink)" stroke="var(--paper)" stroke-width="'+(4*u).toFixed(2)+'" paint-order="stroke">'+esc(t)+'</text>';
+  });
+  s+='</g>';
+  var cand=[5,10,20,25,50,100,200,250,500],len=cand[0];
+  cand.forEach(function(c){if(c<=W*0.24)len=c});
+  var sx=vx+W-24*u-len,sy=vy+H-30*u;
+  s+='<g stroke="var(--ink)" stroke-width="'+(1.5*u).toFixed(2)+'" fill="none"><path d="M'+sx.toFixed(1)+','+(sy-6*u).toFixed(1)+'V'+sy.toFixed(1)+'H'+(sx+len).toFixed(1)+'V'+(sy-6*u).toFixed(1)+'M'+(sx+len/2).toFixed(1)+','+sy.toFixed(1)+'v'+(-3*u).toFixed(1)+'"/></g>';
+  s+='<g font-size="'+(12*u).toFixed(2)+'" fill="var(--ink)"><text x="'+sx.toFixed(1)+'" y="'+(sy+16*u).toFixed(1)+'" text-anchor="middle">0</text><text x="'+(sx+len).toFixed(1)+'" y="'+(sy+16*u).toFixed(1)+'" text-anchor="middle">'+len+' ft</text></g>';
+  var nx0=vx+W-34*u,ny0=vy+56*u;
+  s+='<g stroke="var(--ink)" stroke-width="'+(1.5*u).toFixed(2)+'"><path d="M'+nx0.toFixed(1)+','+(ny0+26*u).toFixed(1)+'V'+(ny0-20*u).toFixed(1)+'" fill="none"/><path d="M'+nx0.toFixed(1)+','+(ny0-26*u).toFixed(1)+'l'+(-7*u).toFixed(1)+','+(18*u).toFixed(1)+'h'+(14*u).toFixed(1)+'z" fill="var(--ink)"/></g>';
+  s+='<text x="'+nx0.toFixed(1)+'" y="'+(ny0-33*u).toFixed(1)+'" text-anchor="middle" font-size="'+(14*u).toFixed(2)+'" font-weight="600" fill="var(--ink)">N</text>';
+  s+='</svg>';
+  return s;
+}
+function planAria(l){
+  var p=l.site.pluto,fr=l.site.plan.edges.filter(function(e){return e.street}).map(function(e){return e.street.name+' ('+(e.street.wide?'wide':'narrow')+')'});
+  return 'Site plan, north up. Lot at '+titleCase(p.address)+', '+num(p.lotArea,0)+' square feet, hatched with a heavy outline, among neighbouring lots. Front edge on '+(fr.join(' and ')||'a street')+'. District boundaries dashed: '+l.site.plan.districts.map(function(d){return d.code}).join(', ')+'. Graphic scale bar in feet. Neighbours and districts are approximate.';
+}
+function titleCase(s){return String(s||'').toLowerCase().replace(/\b([a-z])/g,function(m){return m.toUpperCase()}).replace(/\b(\d+)(St|Nd|Rd|Th)\b/g,function(m,a,b){return a+b.toLowerCase()})}
+var planW=0,planRO=null;
+function drawPlan(){
+  var box=$('planBox');if(!box)return;
+  var w=Math.round(box.clientWidth)||640;if(w===planW&&box.firstChild)return;
+  planW=w;box.innerHTML=planSVG(LOTS[cur],Math.max(w,280));
+}
+function watchPlan(){
+  var box=$('planBox');planW=0;
+  if(planRO){planRO.disconnect();planRO=null}
+  drawPlan();
+  if(box&&typeof ResizeObserver!=='undefined'){planRO=new ResizeObserver(function(){drawPlan()});planRO.observe(box)}
+}
+
+/* ---------- sections ---------- */
+function dimItem(i,label,pv,opts){
+  opts=opts||{};
+  var k=opts.kind||kindOf(pv),val,cls='val';
+  if(opts.text){val=opts.text}
+  else{var f=fmt(pv);if(f&&k!=='conflicting'&&k!=='needs')val=esc(f.n)+(f.u?'<small>'+esc(f.u.trim())+'</small>':'');else val=null}
+  if(val==null){cls='val txt';val=k==='conflicting'?'Professional review needed':'Needs input'}
+  return '<div class="dim" style="--i:'+i+'"><div class="'+cls+'">'+val+'</div><div class="line" aria-hidden="true"></div><div class="lbl">'+esc(label)+'</div>'+pill(k)+'</div>';
+}
+function keyControls(l){
+  var c=l.brief.controls,out=[],i=0;
+  function res(o){return o&&(o.residential||o)}
+  out.push(dimItem(i++,'Max FAR, residential',res(c.maxFar)));
+  out.push(dimItem(i++,'Max floor area',res(c.maxFloorArea)));
+  var bmin=c.baseHeight&&c.baseHeight.min,bmax=c.baseHeight&&c.baseHeight.max;
+  var bk=worst(kindOf(bmin),kindOf(bmax));
+  var bt=null;
+  if(bk!=='conflicting'&&bk!=='needs'&&bmin&&bmax)bt=esc(num(bmin.value))+'–'+esc(num(bmax.value))+'<small>ft</small>';
+  out.push(dimItem(i++,'Base height, min to max',null,{kind:bk,text:bt}));
+  out.push(dimItem(i++,'Max building height',c.maxBuildingHeight));
+  out.push(dimItem(i++,'Rear yard',c.yards&&c.yards.rear));
+  out.push(dimItem(i++,'Lot coverage, max',c.lotCoverage&&c.lotCoverage.max));
+  return '<div class="dims">'+out.join('')+'</div>';
+}
+function valueCell(pv){
+  var k=kindOf(pv);
+  if(pv&&pv.status==='not_applicable')return '<td>Not applicable<small>'+esc(pv.note||'')+'</small></td><td class="pc"><span class="muted">None</span></td>';
+  if(k==='conflicting')return '<td>Professional review needed'+(pv&&pv.note?'<small>'+esc(pv.note)+'</small>':'')+'</td><td class="pc">'+pill(k)+'</td>';
+  if(k==='needs')return '<td>Needs input'+(pv&&pv.note?'<small>'+esc(pv.note)+'</small>':'')+'</td><td class="pc">'+pill(k)+'</td>';
+  return '<td class="num">'+esc(fmtText(pv))+'</td><td class="pc">'+pill(k)+'</td>';
+}
+var popData=[];
+function tagButtons(pv){
+  var cs=cites(pv);
+  if(!cs.length)return '<span class="muted">No citation</span>';
+  return cs.map(function(c){
+    popData.push(c);
+    var lab=tagLabel(c);
+    return '<button type="button" class="tag" aria-haspopup="dialog" aria-expanded="false" aria-label="'+esc(lab)+', show citation" data-p="'+(popData.length-1)+'">'+esc(lab)+'</button>';
+  }).join('');
+}
+function bulkTable(l){
+  var rows=l.brief.bulkTable.map(function(b){
+    var pv=b.value,why=pv&&(pv.appliesBecause||pv.formula)||'';
+    return '<tr><th scope="row">'+esc(b.label)+'</th>'+valueCell(pv)+'<td>'+esc(why)+'</td><td>'+tagButtons(pv)+'</td></tr>';
+  }).join('');
+  return '<div class="tw" tabindex="0" role="region" aria-label="Bulk regulations table"><table class="bulk"><thead><tr><th>Rule</th><th>Value</th><th>Status</th><th>Applies because</th><th>Citation</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+}
+function factsTable(l){
+  var p=l.site.pluto,pv=p.provenance||{};
+  function src(f){var o=pv[f];if(Array.isArray(o))o=o[0];return o?esc(o.dataset)+(o.version?' <span class="mono">'+esc(o.version)+'</span>':''):'PLUTO <span class="mono">'+esc(p.version)+'</span>'}
+  function list(a){return a&&a.length?a.join(', '):'None listed'}
+  var rows=[
+    ['Address',titleCase(p.address),'address'],
+    ['Lot area',num(p.lotArea,0)+' sf','lotArea'],
+    ['Lot frontage',num(p.lotFront)+' ft','lotFront'],
+    ['Lot depth',num(p.lotDepth)+' ft','lotDepth'],
+    ['Existing building area',p.bldgArea==null?'Not reported':num(p.bldgArea,0)+' sf','bldgArea'],
+    ['Number of floors',p.numFloors==null?'Not reported':num(p.numFloors),'numFloors'],
+    ['Zoning district',list(p.zoneDist),'zoneDist'],
+    ['Commercial overlay',list(p.overlays&&p.overlays.length?p.overlays:(l.site.districts||[]).filter(function(d){return d.kind==='commercial_overlay'}).map(function(d){return d.code})),'overlays'],
+    ['Special district',list(p.specialDistricts&&p.specialDistricts.length?p.specialDistricts:[]),'specialDistricts'],
+    ['Landmark',p.landmark?titleCase(p.landmark):'None listed','landmark'],
+    ['Historic district',p.histDist?titleCase(p.histDist):'None listed','histDist'],
+    ['Lot type (PLUTO code)',p.lotType==null?'Not reported':String(p.lotType),'lotType'],
+    ['Split zoning lot',p.splitZone?'Yes':'No','zoneDist']
+  ];
+  return '<div class="tw" tabindex="0" role="region" aria-label="Lot facts table"><table class="facts"><thead><tr><th>Fact</th><th>Value</th><th>Source</th></tr></thead><tbody>'+rows.map(function(r){
+    return '<tr><th scope="row">'+esc(r[0])+'</th><td>'+esc(r[1])+'</td><td>'+src(r[2])+'</td></tr>';
+  }).join('')+'</tbody></table></div>';
+}
+function calcs(l){
+  var a=l.brief.calculations;
+  if(!a.length)return '<p class="muted">No calculations for this lot. Controls that need professional analysis are not computed.</p>';
+  return '<ul class="calc">'+a.map(function(c){
+    var pv=c.pvalue,k=kindOf(pv),body;
+    if(k==='conflicting'||k==='needs')body='<div class="f">'+(k==='conflicting'?'Professional review needed':'Needs input')+'</div>'+(pv&&pv.note?'<div class="l">'+esc(pv.note)+'</div>':'');
+    else body='<div class="f">'+esc(pv.formula||fmtText(pv))+'</div>';
+    return '<li><div class="top"><div class="l">'+esc(c.label)+'</div>'+pill(k)+'</div>'+body+'</li>';
+  }).join('')+'</ul>';
+}
+function assumptions(l){
+  return '<ul class="asm">'+openAssumptions(l).map(function(a){
+    var k=a.confidence==='cited'?'cited':a.confidence==='inferred'?'inferred':a.confidence==='unverified'?'unverified':'needs';
+    return '<li><div class="top"><div class="s">'+esc(a.statement)+'</div>'+pill(k)+'</div><div class="r">'+esc(a.reason||'')+'</div></li>';
+  }).join('')+'</ul>';
+}
+function flags(l){
+  var f=l.brief.flags;
+  if(!f.length)return '<p class="muted">No flags were raised for this lot. A licensed professional still needs to review the brief.</p>';
+  return '<ul class="flags">'+f.map(function(x){
+    var kind=String(x.kind||'flag').replace(/_/g,' ');kind=kind.charAt(0).toUpperCase()+kind.slice(1);
+    return '<li>'+pill('flag')+'<span class="k">'+esc(kind)+'</span><span class="msg">'+esc(x.message)+'</span></li>';
+  }).join('')+'</ul>';
+}
+function districtLine(l){
+  // Inclusionary housing areas are not zoning districts; they get their own line (inclusionaryLine).
+  var d=(l.site.districts||[]).filter(function(x){return x.kind!=='inclusionary_area'}).map(function(x){return x.code+(x.kind==='commercial_overlay'?' overlay':x.kind==='special_purpose'?' special district':'')});
+  return d.length?d.join(', '):(l.site.pluto.zoneDist||[]).join(', ');
+}
+function inclusionaryLine(l){
+  var d=(l.site.districts||[]).filter(function(x){return x.kind==='inclusionary_area'});
+  return d.map(function(x){return (x.label?x.label+', ':'')+x.code}).join('; ');
+}
+function sectionIndex(l,asmCount){
+  var fl=l.brief.flags.length;
+  var items=[
+    ['sec-key','Key controls'],['sec-plan','Plan'],['sec-facts','Lot facts'],['sec-bulk','Bulk regulations'],['sec-calc','Calculations'],
+    ['sec-asm','Assumptions',{t:String(asmCount),tone:asmCount?'warn':'ok'}],
+    ['sec-flag','Flags',{t:fl?String(fl):'None',tone:fl?'flag':'ok'}],
+    ['sec-env','Envelope']
+  ];
+  return '<nav class="idx" aria-label="Brief sections"><ol>'+items.map(function(it){
+    return '<li><a href="#'+it[0]+'" data-go="'+it[0]+'">'+esc(it[1])+(it[2]?' <span class="m tone-'+it[2].tone+'">'+esc(it[2].t)+'</span>':'')+'</a></li>';
+  }).join('')+'</ol></nav>';
+}
+function sec(id,title,sub,body){
+  return '<section class="blk" id="'+id+'" aria-labelledby="h-'+id+'"><h3 id="h-'+id+'" tabindex="-1">'+title+'</h3>'+(sub?'<p class="sub">'+sub+'</p>':'')+body+'</section>';
+}
+
+function render(){
+  var l=LOTS[cur],p=l.site.pluto;popData=[];
+  var valid=l.envelopeValid&&l.brief.validation&&l.brief.validation.valid!==false;
+  var envTxt=valid?'Checked against':((l.brief.validation&&l.brief.validation.errors?l.brief.validation.errors.length:'Some')+' errors against');
+  var asmCount=openAssumptions(l).length;
+  var h=sectionIndex(l,asmCount);
+  h+='<div class="brief-head" id="sec-top"><h2>'+esc(titleCase(p.address))+', '+esc(l.query.split(',')[1]?l.query.split(',')[1].trim():'')+'</h2>';
+  h+='<p class="meta"><span>BBL <b class="mono">'+esc(p.bbl)+'</b></span><span>District <b>'+esc(districtLine(l))+'</b></span>'+(inclusionaryLine(l)?'<span>Inclusionary housing area <b>'+esc(inclusionaryLine(l))+'</b></span>':'')+'<span>PLUTO <b class="mono">'+esc(p.version)+'</b></span></p>';
+  h+='<div class="banner" role="note">'+svg('alert',18)+'<span>Draft for professional review. Not a zoning determination.</span></div>';
+  h+='<p class="note-line">'+esc(l.note.charAt(0).toUpperCase()+l.note.slice(1))+'. Residential use.</p></div>';
+  h+=sec('sec-key','Key controls','Each value carries one status: Cited from the rule text, Inferred from more than one clause, Unverified or Needs input where no source gives the value, Computed from the values above.',keyControls(l));
+  h+=reviewSummary(l);
+  h+=sec('sec-plan','Plan','The lot is hatched. Dashed lines are zoning district boundaries.','<div class="plan-wrap" id="planBox"></div><ul class="legend" aria-label="Plan legend"><li><span class="sw lot" aria-hidden="true"></span>Subject lot</li><li><span class="sw dist" aria-hidden="true"></span>Zoning district boundary</li><li><span class="sw nb" aria-hidden="true"></span>Neighbouring lots</li></ul><p class="plan-note">'+esc(l.site.plan.note)+'</p>');
+  h+=sec('sec-facts','Lot facts','',factsTable(l));
+  h+=sec('sec-bulk','Bulk regulations','Select a citation chip to read the quoted rule text.',bulkTable(l));
+  h+=sec('sec-calc','Calculations','',calcs(l));
+  h+=sec('sec-asm','Assumptions','The brief rests on these assumptions. In the live app each one can be accepted, rejected or edited, and the controls change with it.',assumptions(l));
+  h+=sec('sec-flag','Flags requiring professional review','',flags(l));
+  h+=sec('sec-env','Envelope status','','<p class="env">'+pill(valid?'valid':'flag',valid?'Valid':'Errors')+' '+envTxt+' <span class="mono">zoning-envelope.schema.json</span> v1.0.0.</p>');
+  $('brief').innerHTML=h;
+  watchPlan();observeSections();
+}
+
+/* ---------- section index: highlight the section crossing a reading line ---------- */
+var io=null,pickFn=null;
+window.addEventListener('scroll',function(){if(pickFn)pickFn()},{passive:true});
+function setActive(id){
+  var ol=document.querySelector('nav.idx ol');if(!ol)return;
+  var cur_=null;
+  Array.prototype.forEach.call(ol.querySelectorAll('a'),function(a){
+    var on=a.getAttribute('data-go')===id;
+    if(on){a.setAttribute('aria-current','location');cur_=a}else a.removeAttribute('aria-current');
+  });
+  if(cur_&&ol.scrollWidth>ol.clientWidth)ol.scrollLeft=cur_.offsetLeft-ol.clientWidth/2+cur_.offsetWidth/2;
+}
+function observeSections(){
+  if(io){io.disconnect();io=null}
+  pickFn=null;
+  var ids=['sec-key','sec-plan','sec-facts','sec-bulk','sec-calc','sec-asm','sec-flag','sec-env'];
+  setActive(ids[0]);
+  if(typeof IntersectionObserver==='undefined')return;
+  var els=ids.map($).filter(Boolean),vis={};
+  function pick(){
+    var atBottom=window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-8;
+    var hit=atBottom?ids[ids.length-1]:ids.slice().reverse().filter(function(id){return vis[id]})[0];
+    if(hit)setActive(hit);
+  }
+  pickFn=pick;
+  io=new IntersectionObserver(function(es){es.forEach(function(e){vis[e.target.id]=e.isIntersecting});pick()},{rootMargin:'-20% 0px -79% 0px'});
+  els.forEach(function(el){io.observe(el)});
+}
+
+/* ---------- popover ---------- */
+var pop=$('pop'),popOwner=null;
+function openPop(btn){
+  var c=popData[+btn.getAttribute('data-p')];if(!c)return;
+  if(popOwner===btn){closePop(true);return}
+  closePop();
+  popOwner=btn;btn.setAttribute('aria-expanded','true');
+  var q=c.quote?'<blockquote>'+esc(c.quote)+'</blockquote>':'<p class="amend">No verbatim quote recorded.</p>';
+  pop.innerHTML='<button type="button" class="x" aria-label="Close citation">Close</button><h4>'+esc((c.source||'Source')+(c.section?', section '+c.section:''))+'</h4>'+q+(c.lastAmended?'<p class="amend">Last amended '+esc(c.lastAmended)+'</p>':'')+(c.url?'<a href="'+esc(c.url)+'" target="_blank" rel="noopener">Open source text (new tab)</a>':'');
+  pop.hidden=false;
+  var root=$('root').getBoundingClientRect(),r=btn.getBoundingClientRect();
+  var w=Math.min(420,window.innerWidth-32);
+  var left=r.left-root.left;left=Math.max(0,Math.min(left,root.width-w));
+  var abs=root.left+left;if(abs<16)left+=16-abs;if(abs+w>window.innerWidth-16)left-=abs+w-(window.innerWidth-16);
+  pop.style.left=left+'px';pop.style.top=(r.bottom-root.top+6)+'px';
+  var x=pop.querySelector('.x');x.focus();
+  x.addEventListener('click',function(){closePop(true)});
+}
+function closePop(refocus){
+  if(pop.hidden&&!popOwner)return;
+  pop.hidden=true;
+  if(popOwner){popOwner.setAttribute('aria-expanded','false');var o=popOwner;popOwner=null;if(refocus===true)o.focus()}
+}
+document.addEventListener('click',function(e){
+  var g=e.target.closest&&e.target.closest('[data-go]');
+  if(g){
+    e.preventDefault();
+    var id=g.getAttribute('data-go'),el=$(id);
+    if(el){closePop();el.scrollIntoView({block:'start',behavior:'auto'});var hd=el.querySelector('h3');if(hd)hd.focus({preventScroll:true});setActive(id)}
+    return;
+  }
+  var t=e.target.closest&&e.target.closest('.tag[data-p]');
+  if(t){openPop(t);return}
+  if(!e.target.closest('#pop'))closePop();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&popOwner){e.preventDefault();closePop(true)}});
+pop.addEventListener('focusout',function(e){
+  if(popOwner&&e.relatedTarget&&!pop.contains(e.relatedTarget)&&e.relatedTarget!==popOwner)closePop();
+});
+
+buildList();
+cur=Math.max(0,indexByHash());
+choose(cur,false);
+})();
+</script>

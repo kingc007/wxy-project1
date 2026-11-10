@@ -1,0 +1,737 @@
+{
+  "schemaVersion": "1.0.0",
+  "envelopeId": "site-brief-1003450002-2026-10-26T20:19:40.884Z",
+  "generatedAt": "2026-10-26T20:19:40.884Z",
+  "generator": {
+    "name": "WXY Site Brief zoning engine",
+    "version": "0.1.0"
+  },
+  "flags": {
+    "draft": true,
+    "sample": false,
+    "simplified": true,
+    "simplifications": [
+      "Street setbacks applied at max base height",
+      "Rear yard step at 75 ft modelled as a setback plane",
+      "Six-story limit in ZR 23-736 not modelled",
+      "Lot width taken as PLUTO lot frontage",
+      "Eligible-site, special-district, landmark and historic-district rules not modelled"
+    ]
+  },
+  "jurisdiction": {
+    "id": "nyc",
+    "name": "New York City",
+    "code": {
+      "name": "NYC Zoning Resolution",
+      "versionLabel": "zr.planning.nyc.gov — sections as last amended (per-citation lastAmended)",
+      "url": "https://zr.planning.nyc.gov"
+    }
+  },
+  "site": {
+    "parcelId": "1003450002",
+    "bbl": "1003450002",
+    "address": "152 ATTORNEY STREET",
+    "borough": "MN"
+  },
+  "lot": {
+    "crs": {
+      "reference": "EPSG:2263",
+      "lengthUnit": "ft"
+    },
+    "origin": {
+      "x": 988851.607581615,
+      "y": 201654.595115185
+    },
+    "polygonLocal": [
+      [
+        47.413624764070846,
+        18.774224281019997
+      ],
+      [
+        72.3745388990501,
+        8.904170990019338
+      ],
+      [
+        94.89317751000635,
+        0
+      ],
+      [
+        103.85641860996839,
+        22.837551594013348
+      ],
+      [
+        8.963576317066327,
+        60.35911607701564
+      ],
+      [
+        0,
+        37.52190017700195
+      ]
+    ],
+    "polygonReference": [
+      [
+        988899.021206379,
+        201673.369339466
+      ],
+      [
+        988923.982120514,
+        201663.499286175
+      ],
+      [
+        988946.500759125,
+        201654.595115185
+      ],
+      [
+        988955.464000225,
+        201677.432666779
+      ],
+      [
+        988860.571157932,
+        201714.954231262
+      ],
+      [
+        988851.607581615,
+        201692.117015362
+      ]
+    ],
+    "geometrySource": {
+      "dataset": "MapPLUTO (DCP ArcGIS)",
+      "version": "26v2",
+      "field": "geometry",
+      "rawValue": {
+        "BBL": 1003450002
+      },
+      "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/MAPPLUTO/FeatureServer/0/query?where=BBL%3D1003450002&outFields=BBL%2CAddress%2CVersion&outSR=2263&f=geojson",
+      "fetchedAt": "2026-10-26T01:33:57.971Z"
+    },
+    "area": {
+      "value": 2500,
+      "unit": "sf",
+      "status": "data",
+      "confidence": "cited",
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lotarea",
+          "rawValue": "2500",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+          "fetchedAt": "2026-10-26T01:33:58.089Z"
+        }
+      ]
+    },
+    "frontage": {
+      "value": 25,
+      "unit": "ft",
+      "status": "data",
+      "confidence": "cited",
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lotfront",
+          "rawValue": "25.0000000",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+          "fetchedAt": "2026-10-26T01:33:58.089Z"
+        }
+      ]
+    },
+    "depth": {
+      "value": 100,
+      "unit": "ft",
+      "status": "data",
+      "confidence": "cited",
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lotdepth",
+          "rawValue": "100.0000000",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+          "fetchedAt": "2026-10-26T01:33:58.089Z"
+        }
+      ]
+    },
+    "lotType": {
+      "value": "interior",
+      "status": "assumed",
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lottype",
+          "rawValue": "5",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+          "fetchedAt": "2026-10-26T01:33:58.089Z"
+        }
+      ],
+      "assumptionIds": [
+        "lotType"
+      ]
+    },
+    "edges": [
+      {
+        "index": 0,
+        "kind": "side"
+      },
+      {
+        "index": 1,
+        "kind": "side"
+      },
+      {
+        "index": 2,
+        "kind": "rear"
+      },
+      {
+        "index": 3,
+        "kind": "side"
+      },
+      {
+        "index": 4,
+        "kind": "front",
+        "street": {
+          "name": "Attorney Street",
+          "width": "narrow",
+          "assumptionIds": [
+            "street"
+          ]
+        }
+      },
+      {
+        "index": 5,
+        "kind": "side"
+      }
+    ]
+  },
+  "districts": [
+    {
+      "code": "R7A",
+      "kind": "base",
+      "share": 1,
+      "provenance": [
+        {
+          "dataset": "DCP Zoning Districts (nyzd)",
+          "version": null,
+          "field": "ZONEDIST",
+          "rawValue": "R7A",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/nyzd/FeatureServer/0/query?where=1%3D1&geometry=%7B%22rings%22%3A%5B%5B%5B988851.61%2C201692.12%5D%2C%5B988860.57%2C201714.95%5D%2C%5B988955.46%2C201677.43%5D%2C%5B988946.5%2C201654.6%5D%2C%5B988923.98%2C201663.5%5D%2C%5B988899.02%2C201673.37%5D%2C%5B988851.61%2C201692.12%5D%5D%5D%2C%22spatialReference%22%3A%7B%22wkid%22%3A2263%7D%7D&geometryType=esriGeometryPolygon&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CZONEDIST&outSR=2263&f=geojson",
+          "fetchedAt": "2026-10-26T01:33:58.361Z"
+        }
+      ]
+    }
+  ],
+  "controls": {
+    "intendedUse": "residential",
+    "programs": [],
+    "maxFar": {
+      "residential": {
+        "value": 4,
+        "unit": "ratio",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-22",
+            "quote": "R7A R7-1¹ R7-2¹ | 4.00 | 5.01",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          }
+        ],
+        "note": null
+      }
+    },
+    "maxFloorArea": {
+      "residential": {
+        "value": 10000,
+        "unit": "sf",
+        "status": "computed",
+        "confidence": "cited",
+        "formula": "2,500 sf × 4.00 FAR = 10,000 sf",
+        "inputs": [
+          "lot.area",
+          "controls.maxFar.residential"
+        ],
+        "note": null
+      }
+    },
+    "baseHeight": {
+      "min": {
+        "value": 40,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-432",
+            "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          }
+        ],
+        "note": null
+      },
+      "max": {
+        "value": 75,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-432",
+            "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          }
+        ],
+        "note": null,
+        "assumptionIds": [
+          "program"
+        ]
+      }
+    },
+    "maxBuildingHeight": {
+      "value": 85,
+      "unit": "ft",
+      "status": "cited",
+      "confidence": "cited",
+      "citations": [
+        {
+          "source": "NYC Zoning Resolution",
+          "section": "23-432",
+          "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+          "title": "Last amended 12/5/2024",
+          "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+          "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+        }
+      ],
+      "note": null,
+      "assumptionIds": [
+        "program"
+      ]
+    },
+    "maxStories": {
+      "value": null,
+      "unit": "stories",
+      "status": "not_applicable",
+      "confidence": "cited",
+      "note": "ZR §23-432 sets heights, not a story limit"
+    },
+    "setbacks": [
+      {
+        "id": "street-setback-edge4",
+        "appliesTo": "narrow_street_frontage",
+        "edgeIndices": [
+          4
+        ],
+        "startHeight": {
+          "value": 75,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "cited",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-432",
+              "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+              "title": "Last amended 12/5/2024",
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+              "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+            }
+          ],
+          "note": "Modelled at the maximum base height; the text allows the setback at a height not lower than the minimum base height or higher than the maximum base height.",
+          "assumptionIds": [
+            "program"
+          ]
+        },
+        "depth": {
+          "value": 15,
+          "unit": "ft",
+          "status": "cited",
+          "confidence": "inferred",
+          "citations": [
+            {
+              "source": "NYC Zoning Resolution",
+              "section": "23-433",
+              "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+              "title": "Last amended 12/5/2024",
+              "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+              "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+            }
+          ],
+          "note": null,
+          "assumptionIds": [
+            "street"
+          ]
+        }
+      }
+    ],
+    "yards": {
+      "front": {
+        "value": 0,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "cited",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-322",
+            "quote": "In the districts indicated, no front yard requirements shall apply.",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-322",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          }
+        ],
+        "note": "No front yard required (value 0 = none required)."
+      },
+      "rear": {
+        "value": 30,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "inferred",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-342",
+            "quote": "for zoning lots with a lot width of less than 40 feet, a rear yard with a depth of not less than 30 feet shall be provided at every rear lot line on any zoning lot",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          }
+        ],
+        "note": null,
+        "assumptionIds": [
+          "lotType",
+          "buildingType"
+        ]
+      },
+      "side": {
+        "value": 0,
+        "unit": "ft",
+        "status": "cited",
+        "confidence": "inferred",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-335",
+            "quote": "no side yards shall be required. However, if any open area extending along a side lot line is provided at any level, it shall have a minimum width of five feet",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-335",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          }
+        ],
+        "note": "No side yard required; any side open area provided must be at least 5 ft wide.",
+        "assumptionIds": [
+          "buildingType"
+        ]
+      }
+    },
+    "lotCoverage": {
+      "max": {
+        "value": 80,
+        "unit": "percent",
+        "status": "cited",
+        "confidence": "inferred",
+        "citations": [
+          {
+            "source": "NYC Zoning Resolution",
+            "section": "23-362",
+            "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+            "title": "Last amended 12/5/2024",
+            "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+            "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md"
+          }
+        ],
+        "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify.",
+        "assumptionIds": [
+          "lotType",
+          "siteCategory"
+        ]
+      }
+    },
+    "skyExposure": {
+      "status": "not_applicable",
+      "note": "ZR 23-731: applies to R6 through R10 Districts without a letter suffix",
+      "planes": []
+    }
+  },
+  "assumptions": [
+    {
+      "id": "lotType",
+      "statement": "Assumed interior lot (not corner)",
+      "reason": "PLUTO lottype = 5 — \"5 Inside – a tax lot with frontage on only one street\" (PLUTO data dictionary 26v2).",
+      "state": "proposed",
+      "affects": [
+        "/controls/yards/rear",
+        "/controls/lotCoverage/max"
+      ],
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lottype",
+          "rawValue": "5",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+          "fetchedAt": "2026-10-26T01:33:58.089Z"
+        }
+      ]
+    },
+    {
+      "id": "street",
+      "statement": "Assumed primary frontage is on a narrow street",
+      "reason": "DCM Streetwidth = \"50\" for Attorney Street. ZR 12-10: wide street = \"any street 75 feet or more in width\".",
+      "state": "proposed",
+      "affects": [
+        "/controls/setbacks/0/depth"
+      ],
+      "provenance": [
+        {
+          "dataset": "DCM Street Center Line",
+          "version": null,
+          "field": "Streetwidth",
+          "rawValue": "50",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/DCM_Street_Center_Line/FeatureServer/0/query?where=1%3D1&geometry=988796.09%2C201643.54%2C988916.09%2C201763.54&geometryType=esriGeometryEnvelope&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=Street_NM%2CStreetwidth%2CFeat_Type%2CBuild_Status&outSR=2263&f=geojson",
+          "fetchedAt": "2026-10-26T01:33:58.264Z"
+        }
+      ]
+    },
+    {
+      "id": "within100ftWideStreet",
+      "statement": "Assumed lot is not within 100 ft of a wide street",
+      "reason": "All front edges are on narrow streets per DCM Streetwidth; wide streets elsewhere nearby are not checked.",
+      "state": "proposed",
+      "provenance": [
+        {
+          "dataset": "DCM Street Center Line",
+          "version": null,
+          "field": "Streetwidth",
+          "rawValue": "50",
+          "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/DCM_Street_Center_Line/FeatureServer/0/query?where=1%3D1&geometry=988796.09%2C201643.54%2C988916.09%2C201763.54&geometryType=esriGeometryEnvelope&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=Street_NM%2CStreetwidth%2CFeat_Type%2CBuild_Status&outSR=2263&f=geojson",
+          "fetchedAt": "2026-10-26T01:33:58.264Z"
+        }
+      ]
+    },
+    {
+      "id": "buildingType",
+      "statement": "Assumed attached building (no side yards)",
+      "reason": "Default assumption: no dataset gives the intended building type.",
+      "state": "proposed",
+      "affects": [
+        "/controls/yards/rear",
+        "/controls/yards/side"
+      ]
+    },
+    {
+      "id": "siteCategory",
+      "statement": "Assumed standard lot (not an eligible site under ZR 23-434)",
+      "reason": "PLUTO lot area is 2,500 sf; eligible-site criteria are not evaluated.",
+      "state": "proposed",
+      "affects": [
+        "/controls/lotCoverage/max"
+      ],
+      "provenance": [
+        {
+          "dataset": "PLUTO",
+          "version": "26v2",
+          "field": "lotarea",
+          "rawValue": "2500",
+          "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+          "fetchedAt": "2026-10-26T01:33:58.089Z"
+        }
+      ]
+    },
+    {
+      "id": "program",
+      "statement": "Standard program (no affordable-housing bonus)",
+      "reason": "Selected by the user.",
+      "state": "accepted",
+      "affects": [
+        "/controls/baseHeight/max",
+        "/controls/maxBuildingHeight",
+        "/controls/setbacks/0/startHeight"
+      ]
+    },
+    {
+      "id": "intendedUse",
+      "statement": "Intended use: residential",
+      "reason": "Selected by the user.",
+      "state": "accepted"
+    }
+  ],
+  "reviewFlags": [],
+  "provenance": {
+    "datasets": [
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "borough",
+        "rawValue": "MN",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "address",
+        "rawValue": "152 ATTORNEY STREET",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "lotarea",
+        "rawValue": "2500",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "lotfront",
+        "rawValue": "25.0000000",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "lotdepth",
+        "rawValue": "100.0000000",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "bldgarea",
+        "rawValue": "2500",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "numfloors",
+        "rawValue": "1.0000000",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "zonedist1,zonedist2,zonedist3,zonedist4",
+        "rawValue": [
+          "R7A",
+          null,
+          null,
+          null
+        ],
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "overlay1,overlay2",
+        "rawValue": [
+          null,
+          null
+        ],
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "spdist1,spdist2,spdist3",
+        "rawValue": [
+          null,
+          null,
+          null
+        ],
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "ltdheight",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "splitzone",
+        "rawValue": false,
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "landmark",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "histdist",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "lottype",
+        "rawValue": "5",
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "PLUTO",
+        "version": "26v2",
+        "field": "irrlotcode",
+        "rawValue": false,
+        "url": "https://data.cityofnewyork.us/resource/64uk-42ks.json?$where=bbl%3D1003450002",
+        "fetchedAt": "2026-10-26T01:33:58.089Z"
+      },
+      {
+        "dataset": "MapPLUTO (DCP ArcGIS)",
+        "version": "26v2",
+        "field": "geometry",
+        "rawValue": {
+          "BBL": 1003450002
+        },
+        "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/MAPPLUTO/FeatureServer/0/query?where=BBL%3D1003450002&outFields=BBL%2CAddress%2CVersion&outSR=2263&f=geojson",
+        "fetchedAt": "2026-10-26T01:33:57.971Z"
+      },
+      {
+        "dataset": "DCP Zoning Districts (nyzd)",
+        "version": null,
+        "field": "ZONEDIST",
+        "rawValue": "R7A",
+        "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/ArcGIS/rest/services/nyzd/FeatureServer/0/query?where=1%3D1&geometry=%7B%22rings%22%3A%5B%5B%5B988851.61%2C201692.12%5D%2C%5B988860.57%2C201714.95%5D%2C%5B988955.46%2C201677.43%5D%2C%5B988946.5%2C201654.6%5D%2C%5B988923.98%2C201663.5%5D%2C%5B988899.02%2C201673.37%5D%2C%5B988851.61%2C201692.12%5D%5D%5D%2C%22spatialReference%22%3A%7B%22wkid%22%3A2263%7D%7D&geometryType=esriGeometryPolygon&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=OBJECTID%2CZONEDIST&outSR=2263&f=geojson",
+        "fetchedAt": "2026-10-26T01:33:58.361Z"
+      },
+      {
+        "dataset": "DCM Street Center Line",
+        "version": null,
+        "field": "Streetwidth",
+        "rawValue": "50",
+        "url": "https://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/DCM_Street_Center_Line/FeatureServer/0/query?where=1%3D1&geometry=988796.09%2C201643.54%2C988916.09%2C201763.54&geometryType=esriGeometryEnvelope&inSR=2263&spatialRel=esriSpatialRelIntersects&outFields=Street_NM%2CStreetwidth%2CFeat_Type%2CBuild_Status&outSR=2263&f=geojson",
+        "fetchedAt": "2026-10-26T01:33:58.264Z"
+      }
+    ],
+    "notes": [
+      "Draft for review by a licensed professional; not a zoning determination."
+    ]
+  }
+}

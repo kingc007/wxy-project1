@@ -1,0 +1,368 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wxy.local/schemas/zoning-envelope.schema.json",
+  "title": "ZoningEnvelope",
+  "description": "Buildable-envelope controls for one zoning lot, produced by 1B Site Brief and consumed by Project 3 (3A/3B/3C). Every non-null value carries a citation (zoning text) or data provenance (dataset), or is a computed value whose inputs are listed. Values without support are status 'needs_input' with value null and must never be filled by a consumer. Owner: Project 1. Breaking changes bump schemaVersion (semver) and are logged in _Shared/ZoningEnvelope Contract.md.",
+  "type": "object",
+  "required": ["schemaVersion", "envelopeId", "generatedAt", "flags", "jurisdiction", "site", "lot", "districts", "controls", "assumptions", "reviewFlags", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "envelopeId": { "type": "string", "minLength": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "generator": {
+      "type": "object",
+      "properties": { "name": { "type": "string" }, "version": { "type": "string" } },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "description": "draft is always true: outputs are drafts for a licensed professional. sample = synthetic data (never present as real). simplified = rules simplified relative to the code text (see simplifications[]).",
+      "required": ["draft", "sample", "simplified"],
+      "additionalProperties": false,
+      "properties": {
+        "draft": { "const": true },
+        "sample": { "type": "boolean" },
+        "simplified": { "type": "boolean" },
+        "simplifications": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "jurisdiction": {
+      "type": "object",
+      "required": ["id", "name", "code"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "description": "Short id, e.g. 'nyc'. Non-NYC jurisdictions use their own id." },
+        "name": { "type": "string" },
+        "code": {
+          "type": "object",
+          "required": ["name", "versionLabel"],
+          "additionalProperties": false,
+          "properties": {
+            "name": { "type": "string", "description": "e.g. 'NYC Zoning Resolution'" },
+            "versionLabel": { "type": "string", "description": "Version / currency label exactly as the official source states it." },
+            "effectiveDate": { "type": ["string", "null"], "format": "date" },
+            "retrievedAt": { "type": ["string", "null"], "format": "date-time" },
+            "url": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "site": {
+      "type": "object",
+      "required": ["parcelId"],
+      "additionalProperties": false,
+      "properties": {
+        "parcelId": { "type": "string", "description": "Jurisdiction parcel id. NYC: 10-digit BBL." },
+        "bbl": { "type": ["string", "null"], "pattern": "^[1-5][0-9]{9}$" },
+        "address": { "type": ["string", "null"] },
+        "borough": { "type": ["string", "null"] }
+      }
+    },
+    "lot": {
+      "type": "object",
+      "required": ["crs", "origin", "polygonLocal", "area", "lotType", "edges"],
+      "additionalProperties": false,
+      "properties": {
+        "crs": {
+          "type": "object",
+          "required": ["reference", "lengthUnit"],
+          "additionalProperties": false,
+          "properties": {
+            "reference": { "type": "string", "description": "Reference CRS of origin and polygonReference, e.g. 'EPSG:2263'." },
+            "lengthUnit": { "const": "ft", "description": "All lengths, heights and local coordinates in this envelope are feet." }
+          }
+        },
+        "origin": {
+          "type": "object",
+          "description": "Local (0,0) expressed in the reference CRS. Local x = reference x - origin.x (east), local y = reference y - origin.y (north). No rotation.",
+          "required": ["x", "y"],
+          "additionalProperties": false,
+          "properties": { "x": { "type": "number" }, "y": { "type": "number" } }
+        },
+        "polygonLocal": {
+          "description": "Exterior ring in local feet, counter-clockwise, not closed (first point not repeated). Edge i runs from point i to point i+1 (wrapping).",
+          "type": "array", "minItems": 3,
+          "items": { "$ref": "#/$defs/point2" }
+        },
+        "polygonReference": {
+          "description": "Same ring in the reference CRS (optional, for GIS round-tripping).",
+          "type": ["array", "null"],
+          "items": { "$ref": "#/$defs/point2" }
+        },
+        "geometrySource": { "$ref": "#/$defs/dataProvenance" },
+        "area": { "$ref": "#/$defs/provenancedValue" },
+        "frontage": { "$ref": "#/$defs/provenancedValue" },
+        "depth": { "$ref": "#/$defs/provenancedValue" },
+        "lotType": {
+          "type": "object",
+          "required": ["value", "status"],
+          "additionalProperties": false,
+          "properties": {
+            "value": { "enum": ["interior", "corner", "through", "other", null] },
+            "status": { "$ref": "#/$defs/status" },
+            "provenance": { "type": "array", "items": { "$ref": "#/$defs/dataProvenance" } },
+            "assumptionIds": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "edges": {
+          "type": "array",
+          "description": "One entry per polygonLocal edge, same order.",
+          "items": {
+            "type": "object",
+            "required": ["index", "kind"],
+            "additionalProperties": false,
+            "properties": {
+              "index": { "type": "integer", "minimum": 0 },
+              "kind": { "enum": ["front", "side", "rear", "unknown"] },
+              "street": {
+                "type": ["object", "null"],
+                "additionalProperties": false,
+                "properties": {
+                  "name": { "type": ["string", "null"] },
+                  "width": { "enum": ["wide", "narrow", "unknown"] },
+                  "assumptionIds": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "districts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["code", "kind", "provenance"],
+        "additionalProperties": false,
+        "properties": {
+          "code": { "type": "string", "description": "e.g. 'R6A', 'C2-4', 'MiD'" },
+          "kind": { "enum": ["base", "commercial_overlay", "special_purpose", "limited_height", "inclusionary_area", "historic_district", "landmark", "other"] },
+          "share": { "type": ["number", "null"], "minimum": 0, "maximum": 1, "description": "Fraction of lot area, when known (split lots)." },
+          "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/dataProvenance" } }
+        }
+      }
+    },
+    "splitLot": {
+      "type": "object",
+      "description": "Present when the zoning lot lies in more than one district. Controls are then NOT resolved automatically: top-level controls covering conflicting portions are status 'manual' and portions[] lists each portion.",
+      "required": ["isSplit"],
+      "additionalProperties": false,
+      "properties": {
+        "isSplit": { "type": "boolean" },
+        "portions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["districtCodes"],
+            "additionalProperties": false,
+            "properties": {
+              "districtCodes": { "type": "array", "items": { "type": "string" } },
+              "share": { "type": ["number", "null"] },
+              "polygonLocal": { "type": ["array", "null"], "items": { "$ref": "#/$defs/point2" } },
+              "controls": { "$ref": "#/$defs/controls" }
+            }
+          }
+        }
+      }
+    },
+    "controls": { "$ref": "#/$defs/controls" },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "statement", "reason", "state"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "statement": { "type": "string" },
+          "reason": { "type": "string" },
+          "state": { "enum": ["proposed", "accepted", "rejected", "overridden"] },
+          "overrideValue": {},
+          "affects": { "type": "array", "items": { "type": "string" }, "description": "JSON-pointer-like paths, e.g. '/controls/yards/rear'." },
+          "citations": { "type": "array", "items": { "$ref": "#/$defs/citation" } },
+          "provenance": { "type": "array", "items": { "$ref": "#/$defs/dataProvenance" } }
+        }
+      }
+    },
+    "reviewFlags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "message"],
+        "additionalProperties": false,
+        "properties": {
+          "kind": { "enum": ["landmark", "historic_district", "special_district", "split_lot", "irregular_lot", "pending_rezoning", "unsupported_district", "manual_geometry", "data_conflict", "other"] },
+          "message": { "type": "string" },
+          "citations": { "type": "array", "items": { "$ref": "#/$defs/citation" } },
+          "provenance": { "type": "array", "items": { "$ref": "#/$defs/dataProvenance" } }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["datasets"],
+      "additionalProperties": false,
+      "properties": {
+        "datasets": { "type": "array", "items": { "$ref": "#/$defs/dataProvenance" } },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "massingLink": { "type": ["string", "null"], "description": "Placeholder deep link for 'Open in Massing'." }
+  },
+  "$defs": {
+    "point2": { "type": "array", "prefixItems": [{ "type": "number" }, { "type": "number" }], "minItems": 2, "maxItems": 2 },
+    "status": {
+      "description": "cited = value stated by zoning text (citations required); data = value from a dataset (provenance required); computed = arithmetic in code from other fields (formula + inputs required); assumed = from an accepted assumption; overridden = user override (original kept in override); needs_input = unknown, value null; not_applicable = rule does not apply, value null; manual = requires professional analysis (e.g. unsupported district geometry), value null.",
+      "enum": ["cited", "data", "computed", "assumed", "overridden", "needs_input", "not_applicable", "manual"]
+    },
+    "confidence": { "enum": ["cited", "inferred", "unverified", "conflicting"] },
+    "citation": {
+      "type": "object",
+      "required": ["source", "section", "quote"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string", "description": "e.g. 'NYC Zoning Resolution'" },
+        "section": { "type": "string", "description": "As printed, e.g. '23-22'" },
+        "paragraph": { "type": ["string", "null"] },
+        "title": { "type": ["string", "null"] },
+        "url": { "type": ["string", "null"] },
+        "effectiveDate": { "type": ["string", "null"] },
+        "retrievedAt": { "type": ["string", "null"] },
+        "quote": { "type": "string", "minLength": 1, "description": "Verbatim supporting passage." },
+        "researchNote": { "type": ["string", "null"], "description": "Vault path of the verified research note." }
+      }
+    },
+    "dataProvenance": {
+      "type": "object",
+      "required": ["dataset", "fetchedAt"],
+      "additionalProperties": false,
+      "properties": {
+        "dataset": { "type": "string", "description": "e.g. 'PLUTO'" },
+        "version": { "type": ["string", "null"], "description": "Release string, e.g. as returned by the dataset's version field." },
+        "field": { "type": ["string", "null"] },
+        "rawValue": {},
+        "url": { "type": ["string", "null"] },
+        "fetchedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "provenancedValue": {
+      "type": "object",
+      "required": ["value", "unit", "status", "confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": ["number", "null"] },
+        "unit": { "enum": ["ft", "sf", "ratio", "percent", "stories", "count"] },
+        "status": { "$ref": "#/$defs/status" },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "citations": { "type": "array", "items": { "$ref": "#/$defs/citation" } },
+        "provenance": { "type": "array", "items": { "$ref": "#/$defs/dataProvenance" } },
+        "formula": { "type": ["string", "null"], "description": "Human-readable arithmetic, e.g. '5,000 sf × 3.0 = 15,000 sf'." },
+        "inputs": { "type": "array", "items": { "type": "string" }, "description": "Paths of input fields for computed values." },
+        "assumptionIds": { "type": "array", "items": { "type": "string" } },
+        "override": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "originalValue": { "type": ["number", "null"] },
+            "by": { "type": ["string", "null"] },
+            "at": { "type": ["string", "null"] },
+            "reason": { "type": ["string", "null"] }
+          }
+        },
+        "note": { "type": ["string", "null"] }
+      },
+      "allOf": [
+        { "if": { "properties": { "status": { "const": "cited" } } }, "then": { "required": ["citations"], "properties": { "citations": { "minItems": 1 } } } },
+        { "if": { "properties": { "status": { "const": "data" } } }, "then": { "required": ["provenance"], "properties": { "provenance": { "minItems": 1 } } } },
+        { "if": { "properties": { "status": { "const": "computed" } } }, "then": { "required": ["formula", "inputs"], "properties": { "inputs": { "minItems": 1 } } } },
+        { "if": { "properties": { "status": { "const": "assumed" } } }, "then": { "required": ["assumptionIds"], "properties": { "assumptionIds": { "minItems": 1 } } } },
+        { "if": { "properties": { "status": { "const": "overridden" } } }, "then": { "required": ["override"] } },
+        { "if": { "properties": { "status": { "enum": ["needs_input", "not_applicable", "manual"] } } }, "then": { "properties": { "value": { "const": null } } } }
+      ]
+    },
+    "setbackPlane": {
+      "type": "object",
+      "description": "A required setback: above startHeight the building face must step back depth from the edge(s).",
+      "required": ["id", "appliesTo", "startHeight", "depth"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "appliesTo": { "enum": ["wide_street_frontage", "narrow_street_frontage", "street_frontage", "rear", "side"] },
+        "edgeIndices": { "type": "array", "items": { "type": "integer" } },
+        "startHeight": { "$ref": "#/$defs/provenancedValue" },
+        "depth": { "$ref": "#/$defs/provenancedValue" }
+      }
+    },
+    "skyExposurePlane": {
+      "type": "object",
+      "description": "Inclined plane rising from startHeight above the street line, sloping inward at slopeVerticalPerHorizontal (e.g. 2.7 means 2.7 ft up per 1 ft in). Implemented for a few district types only; others are status 'manual'.",
+      "required": ["id", "appliesTo", "startHeight", "slopeVerticalPerHorizontal"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "appliesTo": { "enum": ["wide_street_frontage", "narrow_street_frontage", "street_frontage"] },
+        "edgeIndices": { "type": "array", "items": { "type": "integer" } },
+        "startHeight": { "$ref": "#/$defs/provenancedValue" },
+        "initialSetback": { "$ref": "#/$defs/provenancedValue" },
+        "slopeVerticalPerHorizontal": { "$ref": "#/$defs/provenancedValue" }
+      }
+    },
+    "controls": {
+      "type": "object",
+      "required": ["maxFar", "maxFloorArea", "baseHeight", "maxBuildingHeight", "setbacks", "yards", "lotCoverage", "skyExposure"],
+      "additionalProperties": false,
+      "properties": {
+        "intendedUse": { "enum": ["residential", "commercial", "community_facility", "manufacturing", "mixed", null] },
+        "programs": { "type": "array", "items": { "type": "string" }, "description": "Toggled programs that change bulk rules, e.g. 'qualifying_affordable'." },
+        "maxFar": {
+          "type": "object",
+          "description": "Max FAR keyed by use: residential, commercial, community_facility, manufacturing, and program variants such as residential_qualifying_affordable.",
+          "additionalProperties": { "$ref": "#/$defs/provenancedValue" }
+        },
+        "maxFloorArea": {
+          "type": "object",
+          "description": "Max zoning floor area (sf) keyed like maxFar; status 'computed' (lot area × FAR).",
+          "additionalProperties": { "$ref": "#/$defs/provenancedValue" }
+        },
+        "baseHeight": {
+          "type": "object",
+          "required": ["min", "max"],
+          "additionalProperties": false,
+          "properties": { "min": { "$ref": "#/$defs/provenancedValue" }, "max": { "$ref": "#/$defs/provenancedValue" } }
+        },
+        "maxBuildingHeight": { "$ref": "#/$defs/provenancedValue" },
+        "maxStories": { "$ref": "#/$defs/provenancedValue" },
+        "setbacks": { "type": "array", "items": { "$ref": "#/$defs/setbackPlane" } },
+        "yards": {
+          "type": "object",
+          "required": ["front", "rear", "side"],
+          "additionalProperties": false,
+          "properties": {
+            "front": { "$ref": "#/$defs/provenancedValue" },
+            "rear": { "$ref": "#/$defs/provenancedValue" },
+            "side": { "$ref": "#/$defs/provenancedValue" },
+            "sideCount": { "$ref": "#/$defs/provenancedValue" }
+          }
+        },
+        "lotCoverage": {
+          "type": "object",
+          "required": ["max"],
+          "additionalProperties": false,
+          "properties": { "max": { "$ref": "#/$defs/provenancedValue" } }
+        },
+        "skyExposure": {
+          "type": "object",
+          "required": ["status"],
+          "additionalProperties": false,
+          "properties": {
+            "status": { "enum": ["implemented", "not_applicable", "manual"] },
+            "note": { "type": ["string", "null"] },
+            "planes": { "type": "array", "items": { "$ref": "#/$defs/skyExposurePlane" } }
+          }
+        }
+      }
+    }
+  }
+}

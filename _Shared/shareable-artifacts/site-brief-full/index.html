@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" class="h-full antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Site Brief</title>
+    <meta name="description" content="Draft, cited zoning research for an NYC address, for professional review. Shareable demo on preloaded lots." />
+    <style>
+      /* First-paint colours (same tokens as the app's --paper / --ink); the app stylesheet takes over after load. */
+      html, body { background: #f3f4f2; color: #16181b; }
+      @media (prefers-color-scheme: dark) { html:not([data-theme="light"]), html:not([data-theme="light"]) body { background: #121417; color: #e8eaed; } }
+      html[data-theme="dark"], html[data-theme="dark"] body { background: #121417; color: #e8eaed; }
+      #root { display: contents; }
+    </style>
+    <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}</script>
+  </head>
+  <body class="min-h-full flex flex-col">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,333 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Manual dark theme only; the OS-level preference is handled by the media query below. */
+@custom-variant dark (&:is(:root[data-theme="dark"] *));
+
+@theme inline {
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-heading: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-condensed: var(--font-archivo), sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sheet-set tokens as Tailwind colours: bg-paper, text-ink-3, border-rule, text-signal ... */
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-sheet: var(--sheet);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-signal: var(--signal);
+  --color-accent-wash: var(--accent-wash);
+  --color-flag: var(--flag);
+  --color-flag-wash: var(--flag-wash);
+  --color-ok: var(--ok);
+  --color-ok-wash: var(--ok-wash);
+  --color-warn: var(--warn);
+  --color-warn-wash: var(--warn-wash);
+  --color-signal-ink: var(--signal-ink);
+
+  /* Radius: 6px on controls, pills and inputs. Sheets, panels and tables stay square (they are paper). */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 6px;
+  --radius-xl: 6px;
+  --radius-2xl: 6px;
+  --radius-3xl: 6px;
+  --radius-4xl: 6px;
+
+  /* No drop shadows. */
+  --shadow-2xs: 0 0 #0000;
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
+  --shadow-md: 0 0 #0000;
+  --shadow-lg: 0 0 #0000;
+  --shadow-xl: 0 0 #0000;
+  --shadow-2xl: 0 0 #0000;
+}
+
+/*
+ * Token naming note: the design guide calls the blue token "--accent". shadcn already uses --accent for
+ * hover/selected fills, so the guide's accent is exposed as --signal and shadcn's --accent maps to --accent-wash.
+ */
+:root {
+  --paper: #f3f4f2;
+  --paper-2: #e8eae7;
+  --sheet: #ffffff;
+  --ink: #15191d;
+  --ink-2: #3d444b;
+  --ink-3: #555d65;
+  --rule: #d5d9d6;
+  --rule-strong: #868c92;
+  --grid: rgb(21 25 29 / 0.04);
+  --signal: #1f3fbf;
+  --signal-ink: #ffffff;
+  --accent-wash: rgb(31 63 191 / 0.09);
+  --ok: #17663f;
+  --ok-wash: #e5f2ea;
+  --warn: #8a5300;
+  --warn-wash: #fbf0da;
+  --flag: #b42318;
+  --flag-wash: #fce9e7;
+  color-scheme: light;
+}
+
+/* Graphite night (selected theme, not an inversion): warm-neutral graphite, light-cobalt accent.
+   Contrast of every text token on --paper / --sheet / --paper-2 is >= 4.5:1 (computed; see Motion & Feel notes). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121417;
+    --paper-2: #1d2126;
+    --sheet: #181b1f;
+    --ink: #e8e6e1;
+    --ink-2: #b0b3b8;
+    --ink-3: #9aa0a7;
+    --rule: #2a2e34;
+    --rule-strong: #6b7078;
+    --grid: rgb(232 230 225 / 0.04);
+    --signal: #9db4ff;
+    --signal-ink: #0b1020;
+    --accent-wash: rgb(157 180 255 / 0.14);
+    --ok: #6fd39c;
+    --ok-wash: rgb(111 211 156 / 0.14);
+    --warn: #f2b85b;
+    --warn-wash: rgb(242 184 91 / 0.14);
+    --flag: #ff9a80;
+    --flag-wash: rgb(255 154 128 / 0.14);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121417;
+  --paper-2: #1d2126;
+  --sheet: #181b1f;
+  --ink: #e8e6e1;
+  --ink-2: #b0b3b8;
+  --ink-3: #9aa0a7;
+  --rule: #2a2e34;
+  --rule-strong: #6b7078;
+  --grid: rgb(232 230 225 / 0.04);
+  --signal: #9db4ff;
+  --signal-ink: #0b1020;
+  --accent-wash: rgb(157 180 255 / 0.14);
+  --ok: #6fd39c;
+  --ok-wash: rgb(111 211 156 / 0.14);
+  --warn: #f2b85b;
+  --warn-wash: rgb(242 184 91 / 0.14);
+  --flag: #ff9a80;
+  --flag-wash: rgb(255 154 128 / 0.14);
+  color-scheme: dark;
+}
+
+/* Motion tokens. The same values live in lib/motion.ts for motion/react; keep them in step. */
+:root {
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-quint: cubic-bezier(0.64, 0, 0.78, 0);
+  --dur-enter: 420ms;
+  --dur-exit: 220ms;
+  --dur-draw: 380ms;
+  --dur-press: 100ms;
+  --stagger: 45ms;
+  --material-alpha: 72%;
+}
+
+/* shadcn variables mapped onto the sheet-set tokens (values follow the active theme automatically). */
+:root {
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--sheet);
+  --card-foreground: var(--ink);
+  --popover: var(--sheet);
+  --popover-foreground: var(--ink);
+  --primary: var(--signal);
+  --primary-foreground: var(--signal-ink);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--ink-3);
+  --accent: var(--accent-wash);
+  --accent-foreground: var(--ink);
+  --destructive: var(--flag);
+  --border: var(--rule);
+  --input: var(--rule-strong);
+  --ring: var(--signal);
+  --chart-1: var(--ink);
+  --chart-2: var(--ink-2);
+  --chart-3: var(--ink-3);
+  --chart-4: var(--rule-strong);
+  --chart-5: var(--rule);
+  --radius: 6px;
+  --sidebar: var(--paper-2);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--ink);
+  --sidebar-primary-foreground: var(--paper);
+  --sidebar-accent: var(--accent-wash);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--rule);
+  --sidebar-ring: var(--signal);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply font-sans;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 2px;
+  }
+  @media (prefers-contrast: more) {
+    :root {
+      --rule: var(--rule-strong);
+    }
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+  /* Display: Archivo at the wide end of its width axis, the one memorable typographic move (echoes title-block lettering).
+     font-stretch and the wdth axis are both set so it holds whichever the browser applies. */
+  .display {
+    font-size: clamp(28px, 2.6vw, 44px);
+    font-weight: 650;
+    font-stretch: 118%;
+    font-variation-settings: "wdth" 118;
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+  }
+  .heading-wide {
+    font-weight: 650;
+    font-stretch: 112%;
+    font-variation-settings: "wdth" 112;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  /* Hero values: sans with tabular figures, never mono. */
+  .hero-num {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+  /* Sentence-case field label (replaces tiny-caps eyebrows outside title blocks). */
+  .field-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--ink-2);
+  }
+  /* Plan-grid backdrop: 8px minor, 64px major. Moved by parallax in the memo; sheets above it are opaque. */
+  .plan-grid {
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 64px 64px, 64px 64px, 8px 8px, 8px 8px;
+  }
+  /* Translucent floating surface: blur 16px, 72% sheet, bright 1px top edge. Solid when transparency is reduced. */
+  .material {
+    background-color: color-mix(in srgb, var(--paper) var(--material-alpha), transparent);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    backdrop-filter: blur(16px) saturate(1.2);
+    box-shadow: inset 0 1px 0 0 color-mix(in srgb, var(--ink) 18%, transparent);
+    border: 1px solid var(--rule-strong);
+  }
+  @media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+    .material {
+      background-color: var(--paper);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      box-shadow: none;
+    }
+  }
+  .dim-dashed {
+    background-image: repeating-linear-gradient(90deg, var(--ink-3) 0 4px, transparent 4px 7px);
+  }
+  /* Label in a definition list (title block, hover cards). Sentence case, never all-caps. */
+  .title-block-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+}
+
+/* Theme toggle icon: moon while light, sun while dark. */
+.theme-icon-sun { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-icon-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-icon-moon { display: none; }
+}
+:root[data-theme="dark"] .theme-icon-sun { display: block; }
+:root[data-theme="dark"] .theme-icon-moon { display: none; }
+
+/* Step rail running arc and RefTag leader draw. Static under reduced motion. */
+@keyframes rail-spin { to { transform: rotate(360deg); } }
+.rail-arc { transform-origin: center; animation: rail-spin 1s linear infinite; }
+@keyframes leader-draw { from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; } }
+.leader-line { stroke-dasharray: 24; animation: leader-draw 180ms ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .rail-arc { animation: none; }
+  .leader-line { animation: none; stroke-dasharray: none; }
+}
+
+/* Focus indicator (WCAG 2.4.7): unlayered and !important so it wins over shadcn's outline-none / ring utilities. */
+:focus-visible {
+  outline: 2px solid var(--signal) !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}

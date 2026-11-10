@@ -1,0 +1,2510 @@
+{
+ "jurisdiction": "nyc",
+ "code": "NYC Zoning Resolution",
+ "source": "https://zr.planning.nyc.gov",
+ "retrieved": "2026-10-25",
+ "districtsCovered": [
+  "R5",
+  "R6",
+  "R6A",
+  "R6B",
+  "R7A",
+  "R8A"
+ ],
+ "provenanceRule": "Every rule cites a research-note claim with Verified = PASS (residence-bulk-rules.md rows 1-23, 25, 27-31) or a manager primary-source check (manager-checks.md M2). Rows 24 and 26 FAILED verification and are not used.",
+ "rules": [
+  {
+   "id": "R5.far.res.std",
+   "districts": [
+    "R5"
+   ],
+   "field": "maxFar.residential",
+   "value": 1.5,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-21",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-21",
+    "lastAmended": "12/5/2024",
+    "quote": "R5A R5B R5 | 1.50 | 2.00",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 1
+   },
+   "note": null
+  },
+  {
+   "id": "R5.far.res.qrs",
+   "districts": [
+    "R5"
+   ],
+   "field": "maxFar.residential_qualifying_residential_site",
+   "value": 2.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-21",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-21",
+    "lastAmended": "12/5/2024",
+    "quote": "R5A R5B R5 | 1.50 | 2.00",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 1
+   },
+   "note": "Applies only to qualifying residential sites (ZR 12-10 definition; criteria not evaluated by this prototype)."
+  },
+  {
+   "id": "R6A.far.res.std",
+   "districts": [
+    "R6A"
+   ],
+   "field": "maxFar.residential",
+   "value": 3.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 R7B | 3.00 | 3.90",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 4
+   },
+   "note": null
+  },
+  {
+   "id": "R6A.far.res.qah",
+   "districts": [
+    "R6A"
+   ],
+   "field": "maxFar.residential_qualifying_affordable",
+   "value": 3.9,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 R7B | 3.00 | 3.90",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 4
+   },
+   "note": null
+  },
+  {
+   "id": "R6.far.res.std.wide100",
+   "districts": [
+    "R6"
+   ],
+   "field": "maxFar.residential",
+   "value": 3.0,
+   "unit": "ratio",
+   "when": {
+    "within100ftWideStreet": true
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 R7B | 3.00 | 3.90 — 1 For zoning lots, or portions thereof, located within 100 feet of a wide street",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 3
+   },
+   "note": null
+  },
+  {
+   "id": "R6.far.res.qah.wide100",
+   "districts": [
+    "R6"
+   ],
+   "field": "maxFar.residential_qualifying_affordable",
+   "value": 3.9,
+   "unit": "ratio",
+   "when": {
+    "within100ftWideStreet": true
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 R7B | 3.00 | 3.90 — 1 For zoning lots, or portions thereof, located within 100 feet of a wide street",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 3
+   },
+   "note": null
+  },
+  {
+   "id": "R6.far.res.std",
+   "districts": [
+    "R6"
+   ],
+   "field": "maxFar.residential",
+   "value": 2.2,
+   "unit": "ratio",
+   "when": {
+    "within100ftWideStreet": false
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 | 2.20 | 3.90",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 3
+   },
+   "note": null
+  },
+  {
+   "id": "R6.far.res.qah",
+   "districts": [
+    "R6"
+   ],
+   "field": "maxFar.residential_qualifying_affordable",
+   "value": 3.9,
+   "unit": "ratio",
+   "when": {
+    "within100ftWideStreet": false
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 | 2.20 | 3.90",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 3
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.far.res.std",
+   "districts": [
+    "R6B"
+   ],
+   "field": "maxFar.residential",
+   "value": 2.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R6B | 2.00 | 2.40",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 5
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.far.res.qah",
+   "districts": [
+    "R6B"
+   ],
+   "field": "maxFar.residential_qualifying_affordable",
+   "value": 2.4,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R6B | 2.00 | 2.40",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 5
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.far.res.std",
+   "districts": [
+    "R7A"
+   ],
+   "field": "maxFar.residential",
+   "value": 4.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R7A R7-1¹ R7-2¹ | 4.00 | 5.01",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 6
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.far.res.qah",
+   "districts": [
+    "R7A"
+   ],
+   "field": "maxFar.residential_qualifying_affordable",
+   "value": 5.01,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R7A R7-1¹ R7-2¹ | 4.00 | 5.01",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 6
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.far.res.std",
+   "districts": [
+    "R8A"
+   ],
+   "field": "maxFar.residential",
+   "value": 6.02,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R8A R8X R8 | 6.02 | 7.20",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 7
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.far.res.qah",
+   "districts": [
+    "R8A"
+   ],
+   "field": "maxFar.residential_qualifying_affordable",
+   "value": 7.2,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-22",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-22",
+    "lastAmended": "12/5/2024",
+    "quote": "R8A R8X R8 | 6.02 | 7.20",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 7
+   },
+   "note": null
+  },
+  {
+   "id": "R5.far.cf",
+   "districts": [
+    "R5"
+   ],
+   "field": "maxFar.community_facility",
+   "value": 2.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R5 R5A R5B | 2.00 | 60 | 55",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R5.cov.cf.corner",
+   "districts": [
+    "R5"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 60,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R5 R5A R5B | 2.00 | 60 | 55",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R5.cov.cf.interior",
+   "districts": [
+    "R5"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 55,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R5 R5A R5B | 2.00 | 60 | 55",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R6A.far.cf",
+   "districts": [
+    "R6A"
+   ],
+   "field": "maxFar.community_facility",
+   "value": 3.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A | 3.00 | 80 | 60",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R6A.cov.cf.corner",
+   "districts": [
+    "R6A"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A | 3.00 | 80 | 60",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R6A.cov.cf.interior",
+   "districts": [
+    "R6A"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 60,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A | 3.00 | 80 | 60",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.far.cf",
+   "districts": [
+    "R6B"
+   ],
+   "field": "maxFar.community_facility",
+   "value": 2.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R6B | 2.00 | 80 | 60",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.cov.cf.corner",
+   "districts": [
+    "R6B"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R6B | 2.00 | 80 | 60",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.cov.cf.interior",
+   "districts": [
+    "R6B"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 60,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R6B | 2.00 | 80 | 60",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.far.cf",
+   "districts": [
+    "R7A"
+   ],
+   "field": "maxFar.community_facility",
+   "value": 4.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R7A | 4.00 | 80 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.cov.cf.corner",
+   "districts": [
+    "R7A"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R7A | 4.00 | 80 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.cov.cf.interior",
+   "districts": [
+    "R7A"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 65,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R7A | 4.00 | 80 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.far.cf",
+   "districts": [
+    "R8A"
+   ],
+   "field": "maxFar.community_facility",
+   "value": 6.5,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R8A | 6.50 | 80 | 70",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.cov.cf.corner",
+   "districts": [
+    "R8A"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R8A | 6.50 | 80 | 70",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.cov.cf.interior",
+   "districts": [
+    "R8A"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 70,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R8A | 6.50 | 80 | 70",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R6.far.cf",
+   "districts": [
+    "R6"
+   ],
+   "field": "maxFar.community_facility",
+   "value": 4.8,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 R6-1 | 4.80 | 70 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R6.cov.cf.corner",
+   "districts": [
+    "R6"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 70,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 R6-1 | 4.80 | 70 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R6.cov.cf.interior",
+   "districts": [
+    "R6"
+   ],
+   "field": "lotCoverage.community_facility",
+   "value": 65,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "24-11",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-4/24-11",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 R6-1 | 4.80 | 70 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "R6.cov.res.interior",
+   "districts": [
+    "R6"
+   ],
+   "field": "lotCoverage.max",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ],
+    "siteCategory": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-362",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 8
+   },
+   "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify."
+  },
+  {
+   "id": "R6.cov.res.corner",
+   "districts": [
+    "R6"
+   ],
+   "field": "lotCoverage.max",
+   "value": 100,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ],
+    "siteCategory": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-362",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 8
+   },
+   "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify."
+  },
+  {
+   "id": "R6A.cov.res.interior",
+   "districts": [
+    "R6A"
+   ],
+   "field": "lotCoverage.max",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ],
+    "siteCategory": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-362",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 8
+   },
+   "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify."
+  },
+  {
+   "id": "R6A.cov.res.corner",
+   "districts": [
+    "R6A"
+   ],
+   "field": "lotCoverage.max",
+   "value": 100,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ],
+    "siteCategory": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-362",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 8
+   },
+   "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify."
+  },
+  {
+   "id": "R6B.cov.res.interior",
+   "districts": [
+    "R6B"
+   ],
+   "field": "lotCoverage.max",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ],
+    "siteCategory": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-362",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 8
+   },
+   "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify."
+  },
+  {
+   "id": "R6B.cov.res.corner",
+   "districts": [
+    "R6B"
+   ],
+   "field": "lotCoverage.max",
+   "value": 100,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ],
+    "siteCategory": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-362",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 8
+   },
+   "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify."
+  },
+  {
+   "id": "R7A.cov.res.interior",
+   "districts": [
+    "R7A"
+   ],
+   "field": "lotCoverage.max",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ],
+    "siteCategory": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-362",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 8
+   },
+   "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify."
+  },
+  {
+   "id": "R7A.cov.res.corner",
+   "districts": [
+    "R7A"
+   ],
+   "field": "lotCoverage.max",
+   "value": 100,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ],
+    "siteCategory": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-362",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 8
+   },
+   "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify."
+  },
+  {
+   "id": "R8A.cov.res.interior",
+   "districts": [
+    "R8A"
+   ],
+   "field": "lotCoverage.max",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ],
+    "siteCategory": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-362",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 8
+   },
+   "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify."
+  },
+  {
+   "id": "R8A.cov.res.corner",
+   "districts": [
+    "R8A"
+   ],
+   "field": "lotCoverage.max",
+   "value": 100,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ],
+    "siteCategory": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-362",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-362",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 8
+   },
+   "note": "For standard lots only (ZR 23-362 \"For standard lots\"). Eligible sites under ZR 23-434 have different maximums (65% / 50%) — not modelled; flagged for lots that may qualify."
+  },
+  {
+   "id": "R5.cov.res.md.interior",
+   "districts": [
+    "R5"
+   ],
+   "field": "lotCoverage.max",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ],
+    "buildingType": "multiple_dwelling"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-361",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-361",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 10
+   },
+   "note": null
+  },
+  {
+   "id": "R5.cov.res.md.corner",
+   "districts": [
+    "R5"
+   ],
+   "field": "lotCoverage.max",
+   "value": 100,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ],
+    "buildingType": "multiple_dwelling"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-361",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-361",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum residential lot coverage for interior lots or through lots shall be 80 percent and the maximum residential lot coverage for corner lots shall be 100 percent.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 10
+   },
+   "note": null
+  },
+  {
+   "id": "R5.cov.res.12f.interior",
+   "districts": [
+    "R5"
+   ],
+   "field": "lotCoverage.max",
+   "value": 60,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "interior",
+     "through"
+    ],
+    "buildingType": "one_two_family"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-361",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-361",
+    "lastAmended": "12/5/2024",
+    "quote": "R4 R5 | 60 | 80",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 10
+   },
+   "note": null
+  },
+  {
+   "id": "R5.cov.res.12f.corner",
+   "districts": [
+    "R5"
+   ],
+   "field": "lotCoverage.max",
+   "value": 80,
+   "unit": "percent",
+   "when": {
+    "lotType": [
+     "corner"
+    ],
+    "buildingType": "one_two_family"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-361",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-361",
+    "lastAmended": "12/5/2024",
+    "quote": "R4 R5 | 60 | 80",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 10
+   },
+   "note": null
+  },
+  {
+   "id": "ALL.rear.attached.narrowlot",
+   "districts": [
+    "R5",
+    "R6",
+    "R6A",
+    "R6B",
+    "R7A",
+    "R8A"
+   ],
+   "field": "yards.rear",
+   "value": 30,
+   "unit": "ft",
+   "when": {
+    "lotType": [
+     "interior"
+    ],
+    "buildingType": [
+     "attached",
+     "semi_detached"
+    ],
+    "lotWidthLt": 40
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-342",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+    "lastAmended": "12/5/2024",
+    "quote": "for zoning lots with a lot width of less than 40 feet, a rear yard with a depth of not less than 30 feet shall be provided at every rear lot line on any zoning lot",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 12
+   },
+   "note": null
+  },
+  {
+   "id": "ALL.rear.attached.widelot",
+   "districts": [
+    "R5",
+    "R6",
+    "R6A",
+    "R6B",
+    "R7A",
+    "R8A"
+   ],
+   "field": "yards.rear",
+   "value": 20,
+   "unit": "ft",
+   "when": {
+    "lotType": [
+     "interior"
+    ],
+    "buildingType": [
+     "attached",
+     "semi_detached"
+    ],
+    "lotWidthGte": 40
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-342",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+    "lastAmended": "12/5/2024",
+    "quote": "for zoning lots with a lot width of 40 feet or greater, for buildings or portions thereof at or below a height of 75 feet, as measured from base plane, a rear yard with a depth of not less than 20 feet shall be provided at every rear lot line on any zoning lot, and for portions above 75 feet, where permitted, a rear yard with a depth of 30 feet shall be provided.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 12
+   },
+   "note": null
+  },
+  {
+   "id": "ALL.rear.attached.widelot.above75",
+   "districts": [
+    "R5",
+    "R6",
+    "R6A",
+    "R6B",
+    "R7A",
+    "R8A"
+   ],
+   "field": "yards.rearAbove75",
+   "value": 30,
+   "unit": "ft",
+   "when": {
+    "lotType": [
+     "interior"
+    ],
+    "buildingType": [
+     "attached",
+     "semi_detached"
+    ],
+    "lotWidthGte": 40
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-342",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+    "lastAmended": "12/5/2024",
+    "quote": "for zoning lots with a lot width of 40 feet or greater, for buildings or portions thereof at or below a height of 75 feet, as measured from base plane, a rear yard with a depth of not less than 20 feet shall be provided at every rear lot line on any zoning lot, and for portions above 75 feet, where permitted, a rear yard with a depth of 30 feet shall be provided.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 12
+   },
+   "note": null
+  },
+  {
+   "id": "ALL.rear.detached",
+   "districts": [
+    "R5",
+    "R6",
+    "R6A",
+    "R6B",
+    "R7A",
+    "R8A"
+   ],
+   "field": "yards.rear",
+   "value": 20,
+   "unit": "ft",
+   "when": {
+    "lotType": [
+     "interior"
+    ],
+    "buildingType": [
+     "detached",
+     "zero_lot_line"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-342",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+    "lastAmended": "12/5/2024",
+    "quote": "For detached and zero lot line buildings, for buildings or portions thereof at or below a height of 75 feet, as measured from base plane, a rear yard with a depth of not less than 20 feet shall be provided at every rear lot line on any zoning lot, and for portions above 75 feet, where permitted, a rear yard with a depth of 30 feet shall be provided",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 12
+   },
+   "note": null
+  },
+  {
+   "id": "ALL.rear.detached.above75",
+   "districts": [
+    "R5",
+    "R6",
+    "R6A",
+    "R6B",
+    "R7A",
+    "R8A"
+   ],
+   "field": "yards.rearAbove75",
+   "value": 30,
+   "unit": "ft",
+   "when": {
+    "lotType": [
+     "interior"
+    ],
+    "buildingType": [
+     "detached",
+     "zero_lot_line"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-342",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+    "lastAmended": "12/5/2024",
+    "quote": "For detached and zero lot line buildings, for buildings or portions thereof at or below a height of 75 feet, as measured from base plane, a rear yard with a depth of not less than 20 feet shall be provided at every rear lot line on any zoning lot, and for portions above 75 feet, where permitted, a rear yard with a depth of 30 feet shall be provided",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 12
+   },
+   "note": null
+  },
+  {
+   "id": "ALL.rear.heightBreak.detached",
+   "districts": [
+    "R5",
+    "R6",
+    "R6A",
+    "R6B",
+    "R7A",
+    "R8A"
+   ],
+   "field": "yards.rearHeightBreak",
+   "value": 75,
+   "unit": "ft",
+   "when": {
+    "lotType": [
+     "interior"
+    ],
+    "buildingType": [
+     "detached",
+     "zero_lot_line"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-342",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+    "lastAmended": "12/5/2024",
+    "quote": "For detached and zero lot line buildings, for buildings or portions thereof at or below a height of 75 feet, as measured from base plane, a rear yard with a depth of not less than 20 feet shall be provided at every rear lot line on any zoning lot, and for portions above 75 feet, where permitted, a rear yard with a depth of 30 feet shall be provided",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 12
+   },
+   "note": null
+  },
+  {
+   "id": "ALL.rear.heightBreak.attached.widelot",
+   "districts": [
+    "R5",
+    "R6",
+    "R6A",
+    "R6B",
+    "R7A",
+    "R8A"
+   ],
+   "field": "yards.rearHeightBreak",
+   "value": 75,
+   "unit": "ft",
+   "when": {
+    "lotType": [
+     "interior"
+    ],
+    "buildingType": [
+     "attached",
+     "semi_detached"
+    ],
+    "lotWidthGte": 40
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-342",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-342",
+    "lastAmended": "12/5/2024",
+    "quote": "for zoning lots with a lot width of 40 feet or greater, for buildings or portions thereof at or below a height of 75 feet, as measured from base plane, a rear yard with a depth of not less than 20 feet shall be provided at every rear lot line on any zoning lot, and for portions above 75 feet, where permitted, a rear yard with a depth of 30 feet shall be provided.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 12
+   },
+   "note": null
+  },
+  {
+   "id": "R6up.front.none",
+   "districts": [
+    "R6",
+    "R6A",
+    "R6B",
+    "R7A",
+    "R8A"
+   ],
+   "field": "yards.front",
+   "value": 0,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-322",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-322",
+    "lastAmended": "12/5/2024",
+    "quote": "In the districts indicated, no front yard requirements shall apply.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 15
+   },
+   "note": "No front yard required (value 0 = none required)."
+  },
+  {
+   "id": "R5.front",
+   "districts": [
+    "R5"
+   ],
+   "field": "yards.front",
+   "value": 10,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-321",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-321",
+    "lastAmended": "12/5/2024",
+    "quote": "R3A R3X R4 R4-1 R4A R5 R5A | 10 feet",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 16
+   },
+   "note": null
+  },
+  {
+   "id": "R6up.side.none",
+   "districts": [
+    "R6",
+    "R6A",
+    "R6B",
+    "R7A",
+    "R8A"
+   ],
+   "field": "yards.side",
+   "value": 0,
+   "unit": "ft",
+   "when": {
+    "buildingType": [
+     "attached",
+     "semi_detached",
+     "multiple_dwelling",
+     "multiple_dwelling_detached"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-335",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-335",
+    "lastAmended": "12/5/2024",
+    "quote": "no side yards shall be required. However, if any open area extending along a side lot line is provided at any level, it shall have a minimum width of five feet",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 17
+   },
+   "note": "No side yard required; any side open area provided must be at least 5 ft wide."
+  },
+  {
+   "id": "R5.side.none.md",
+   "districts": [
+    "R5"
+   ],
+   "field": "yards.side",
+   "value": 0,
+   "unit": "ft",
+   "when": {
+    "buildingType": [
+     "attached",
+     "multiple_dwelling"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-332",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-332",
+    "lastAmended": "12/5/2024",
+    "quote": "no side yards shall be required. However, if any open area extending along a side lot line is provided at any level, it shall have a minimum width of five feet",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 18
+   },
+   "note": "No side yard required for other residences in R5; any side open area provided must be at least 5 ft wide."
+  },
+  {
+   "id": "R6A.base.min",
+   "districts": [
+    "R6A"
+   ],
+   "field": "baseHeight.min",
+   "value": 40,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 | 40 | 65 | 75 | 65 | 95",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6A.base.max.std",
+   "districts": [
+    "R6A"
+   ],
+   "field": "baseHeight.max",
+   "value": 65,
+   "unit": "ft",
+   "when": {
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 | 40 | 65 | 75 | 65 | 95",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6A.height.max.std",
+   "districts": [
+    "R6A"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 75,
+   "unit": "ft",
+   "when": {
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 | 40 | 65 | 75 | 65 | 95",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6A.base.max.qah",
+   "districts": [
+    "R6A"
+   ],
+   "field": "baseHeight.max",
+   "value": 65,
+   "unit": "ft",
+   "when": {
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 | 40 | 65 | 75 | 65 | 95",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6A.height.max.qah",
+   "districts": [
+    "R6A"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 95,
+   "unit": "ft",
+   "when": {
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 | 40 | 65 | 75 | 65 | 95",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.base.min",
+   "districts": [
+    "R6B"
+   ],
+   "field": "baseHeight.min",
+   "value": 30,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6B | 30 | 45 | 55 | 45 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.base.max.std",
+   "districts": [
+    "R6B"
+   ],
+   "field": "baseHeight.max",
+   "value": 45,
+   "unit": "ft",
+   "when": {
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6B | 30 | 45 | 55 | 45 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.height.max.std",
+   "districts": [
+    "R6B"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 55,
+   "unit": "ft",
+   "when": {
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6B | 30 | 45 | 55 | 45 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.base.max.qah",
+   "districts": [
+    "R6B"
+   ],
+   "field": "baseHeight.max",
+   "value": 45,
+   "unit": "ft",
+   "when": {
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6B | 30 | 45 | 55 | 45 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.height.max.qah",
+   "districts": [
+    "R6B"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 65,
+   "unit": "ft",
+   "when": {
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6B | 30 | 45 | 55 | 45 | 65",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.base.min",
+   "districts": [
+    "R7A"
+   ],
+   "field": "baseHeight.min",
+   "value": 40,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.base.max.std",
+   "districts": [
+    "R7A"
+   ],
+   "field": "baseHeight.max",
+   "value": 75,
+   "unit": "ft",
+   "when": {
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.height.max.std",
+   "districts": [
+    "R7A"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 85,
+   "unit": "ft",
+   "when": {
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.base.max.qah",
+   "districts": [
+    "R7A"
+   ],
+   "field": "baseHeight.max",
+   "value": 85,
+   "unit": "ft",
+   "when": {
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.height.max.qah",
+   "districts": [
+    "R7A"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 115,
+   "unit": "ft",
+   "when": {
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R7A R7-1¹ R7-2¹ | 40 | 75 | 85 | 85 | 115",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.base.min",
+   "districts": [
+    "R8A"
+   ],
+   "field": "baseHeight.min",
+   "value": 60,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R8A | 60 | 95 | 125 | 105 | 145",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.base.max.std",
+   "districts": [
+    "R8A"
+   ],
+   "field": "baseHeight.max",
+   "value": 95,
+   "unit": "ft",
+   "when": {
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R8A | 60 | 95 | 125 | 105 | 145",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.height.max.std",
+   "districts": [
+    "R8A"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 125,
+   "unit": "ft",
+   "when": {
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R8A | 60 | 95 | 125 | 105 | 145",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.base.max.qah",
+   "districts": [
+    "R8A"
+   ],
+   "field": "baseHeight.max",
+   "value": 105,
+   "unit": "ft",
+   "when": {
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R8A | 60 | 95 | 125 | 105 | 145",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.height.max.qah",
+   "districts": [
+    "R8A"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 145,
+   "unit": "ft",
+   "when": {
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R8A | 60 | 95 | 125 | 105 | 145",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.base.min.w100",
+   "districts": [
+    "R6"
+   ],
+   "field": "baseHeight.min",
+   "value": 40,
+   "unit": "ft",
+   "when": {
+    "within100ftWideStreet": true
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 | 40 | 65 | 75 | 65 | 95 — Footnote 1: For zoning lots or portions thereof within 100 feet of a wide street",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.base.max.std.w100",
+   "districts": [
+    "R6"
+   ],
+   "field": "baseHeight.max",
+   "value": 65,
+   "unit": "ft",
+   "when": {
+    "within100ftWideStreet": true,
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 | 40 | 65 | 75 | 65 | 95 — Footnote 1: For zoning lots or portions thereof within 100 feet of a wide street",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.height.max.std.w100",
+   "districts": [
+    "R6"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 75,
+   "unit": "ft",
+   "when": {
+    "within100ftWideStreet": true,
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 | 40 | 65 | 75 | 65 | 95 — Footnote 1: For zoning lots or portions thereof within 100 feet of a wide street",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.base.max.qah.w100",
+   "districts": [
+    "R6"
+   ],
+   "field": "baseHeight.max",
+   "value": 65,
+   "unit": "ft",
+   "when": {
+    "within100ftWideStreet": true,
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 | 40 | 65 | 75 | 65 | 95 — Footnote 1: For zoning lots or portions thereof within 100 feet of a wide street",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.height.max.qah.w100",
+   "districts": [
+    "R6"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 95,
+   "unit": "ft",
+   "when": {
+    "within100ftWideStreet": true,
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6A R6¹ R6-1 | 40 | 65 | 75 | 65 | 95 — Footnote 1: For zoning lots or portions thereof within 100 feet of a wide street",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.base.min.n",
+   "districts": [
+    "R6"
+   ],
+   "field": "baseHeight.min",
+   "value": 30,
+   "unit": "ft",
+   "when": {
+    "within100ftWideStreet": false
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6² | 30 | 45 | 55 | 65 | 85 — Footnote 2: For zoning lots or portions thereof on a narrow street beyond 100 feet of a wide street or, for zoning lots with only wide street frontage, portions of such zoning lot beyond 100 feet of the street line",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.base.max.std.n",
+   "districts": [
+    "R6"
+   ],
+   "field": "baseHeight.max",
+   "value": 45,
+   "unit": "ft",
+   "when": {
+    "within100ftWideStreet": false,
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6² | 30 | 45 | 55 | 65 | 85 — Footnote 2: For zoning lots or portions thereof on a narrow street beyond 100 feet of a wide street or, for zoning lots with only wide street frontage, portions of such zoning lot beyond 100 feet of the street line",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.height.max.std.n",
+   "districts": [
+    "R6"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 55,
+   "unit": "ft",
+   "when": {
+    "within100ftWideStreet": false,
+    "program": "standard"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6² | 30 | 45 | 55 | 65 | 85 — Footnote 2: For zoning lots or portions thereof on a narrow street beyond 100 feet of a wide street or, for zoning lots with only wide street frontage, portions of such zoning lot beyond 100 feet of the street line",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.base.max.qah.n",
+   "districts": [
+    "R6"
+   ],
+   "field": "baseHeight.max",
+   "value": 65,
+   "unit": "ft",
+   "when": {
+    "within100ftWideStreet": false,
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6² | 30 | 45 | 55 | 65 | 85 — Footnote 2: For zoning lots or portions thereof on a narrow street beyond 100 feet of a wide street or, for zoning lots with only wide street frontage, portions of such zoning lot beyond 100 feet of the street line",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.height.max.qah.n",
+   "districts": [
+    "R6"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 85,
+   "unit": "ft",
+   "when": {
+    "within100ftWideStreet": false,
+    "program": "qualifying_affordable"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-432",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-432",
+    "lastAmended": "12/5/2024",
+    "quote": "R6² | 30 | 45 | 55 | 65 | 85 — Footnote 2: For zoning lots or portions thereof on a narrow street beyond 100 feet of a wide street or, for zoning lots with only wide street frontage, portions of such zoning lot beyond 100 feet of the street line",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 21
+   },
+   "note": null
+  },
+  {
+   "id": "R6.setback.wide",
+   "districts": [
+    "R6"
+   ],
+   "field": "setback.depth",
+   "value": 10,
+   "unit": "ft",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-433",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 22
+   },
+   "note": null
+  },
+  {
+   "id": "R6.setback.narrow",
+   "districts": [
+    "R6"
+   ],
+   "field": "setback.depth",
+   "value": 15,
+   "unit": "ft",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-433",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 22
+   },
+   "note": null
+  },
+  {
+   "id": "R6A.setback.wide",
+   "districts": [
+    "R6A"
+   ],
+   "field": "setback.depth",
+   "value": 10,
+   "unit": "ft",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-433",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 22
+   },
+   "note": null
+  },
+  {
+   "id": "R6A.setback.narrow",
+   "districts": [
+    "R6A"
+   ],
+   "field": "setback.depth",
+   "value": 15,
+   "unit": "ft",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-433",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 22
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.setback.wide",
+   "districts": [
+    "R6B"
+   ],
+   "field": "setback.depth",
+   "value": 10,
+   "unit": "ft",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-433",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 22
+   },
+   "note": null
+  },
+  {
+   "id": "R6B.setback.narrow",
+   "districts": [
+    "R6B"
+   ],
+   "field": "setback.depth",
+   "value": 15,
+   "unit": "ft",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-433",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 22
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.setback.wide",
+   "districts": [
+    "R7A"
+   ],
+   "field": "setback.depth",
+   "value": 10,
+   "unit": "ft",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-433",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 22
+   },
+   "note": null
+  },
+  {
+   "id": "R7A.setback.narrow",
+   "districts": [
+    "R7A"
+   ],
+   "field": "setback.depth",
+   "value": 15,
+   "unit": "ft",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-433",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 22
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.setback.wide",
+   "districts": [
+    "R8A"
+   ],
+   "field": "setback.depth",
+   "value": 10,
+   "unit": "ft",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-433",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 22
+   },
+   "note": null
+  },
+  {
+   "id": "R8A.setback.narrow",
+   "districts": [
+    "R8A"
+   ],
+   "field": "setback.depth",
+   "value": 15,
+   "unit": "ft",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-433",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-433",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 22
+   },
+   "note": null
+  },
+  {
+   "id": "R5.setback.wide",
+   "districts": [
+    "R5"
+   ],
+   "field": "setback.depth",
+   "value": 10,
+   "unit": "ft",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-423",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-423",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 20
+   },
+   "note": null
+  },
+  {
+   "id": "R5.setback.narrow",
+   "districts": [
+    "R5"
+   ],
+   "field": "setback.depth",
+   "value": 15,
+   "unit": "ft",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-423",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-423",
+    "lastAmended": "12/5/2024",
+    "quote": "a setback with a depth of at least 10 feet shall be provided from any street wall fronting on a wide street, and a setback with a depth of at least 15 feet shall be provided from any street wall fronting on a narrow street.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 20
+   },
+   "note": null
+  },
+  {
+   "id": "R5.base.max",
+   "districts": [
+    "R5"
+   ],
+   "field": "baseHeight.max",
+   "value": 35,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-422",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-422",
+    "lastAmended": "12/5/2024",
+    "quote": "In the district indicated, except R5 Districts with a letter suffix, the maximum base height shall be 35 feet, and the maximum building height shall be 45 feet.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 19
+   },
+   "note": null
+  },
+  {
+   "id": "R5.height.max",
+   "districts": [
+    "R5"
+   ],
+   "field": "maxBuildingHeight",
+   "value": 45,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-422",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-422",
+    "lastAmended": "12/5/2024",
+    "quote": "In the district indicated, except R5 Districts with a letter suffix, the maximum base height shall be 35 feet, and the maximum building height shall be 45 feet.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/residence-bulk-rules.md",
+    "claim": 19
+   },
+   "note": null
+  },
+  {
+   "id": "R6.sep.initialSetback.narrow",
+   "districts": [
+    "R6"
+   ],
+   "field": "sep.initialSetback",
+   "value": 20,
+   "unit": "ft",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-736",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 or R7 Districts | 20 | 15 | 60 feet or six stories, whichever is less | 60 | 2.7 | to 1 | 5.6 | to 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/manager-checks.md",
+    "claim": "M2"
+   },
+   "note": "Elective alternative (ZR 23-731); when elected, FAR per ZR 23-732 supersedes 23-22 (not in this rule set) and 23-36 lot coverage need not apply (23-735)."
+  },
+  {
+   "id": "R6.sep.initialSetback.wide",
+   "districts": [
+    "R6"
+   ],
+   "field": "sep.initialSetback",
+   "value": 15,
+   "unit": "ft",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-736",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 or R7 Districts | 20 | 15 | 60 feet or six stories, whichever is less | 60 | 2.7 | to 1 | 5.6 | to 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/manager-checks.md",
+    "claim": "M2"
+   },
+   "note": "Elective alternative (ZR 23-731); when elected, FAR per ZR 23-732 supersedes 23-22 (not in this rule set) and 23-36 lot coverage need not apply (23-735)."
+  },
+  {
+   "id": "R6.sep.startHeight",
+   "districts": [
+    "R6"
+   ],
+   "field": "sep.startHeight",
+   "value": 60,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-736",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 or R7 Districts | 20 | 15 | 60 feet or six stories, whichever is less | 60 | 2.7 | to 1 | 5.6 | to 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/manager-checks.md",
+    "claim": "M2"
+   },
+   "note": "Elective alternative (ZR 23-731); when elected, FAR per ZR 23-732 supersedes 23-22 (not in this rule set) and 23-36 lot coverage need not apply (23-735)."
+  },
+  {
+   "id": "R6.sep.slope.narrow",
+   "districts": [
+    "R6"
+   ],
+   "field": "sep.slope",
+   "value": 2.7,
+   "unit": "ratio",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-736",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 or R7 Districts | 20 | 15 | 60 feet or six stories, whichever is less | 60 | 2.7 | to 1 | 5.6 | to 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/manager-checks.md",
+    "claim": "M2"
+   },
+   "note": "Elective alternative (ZR 23-731); when elected, FAR per ZR 23-732 supersedes 23-22 (not in this rule set) and 23-36 lot coverage need not apply (23-735)."
+  },
+  {
+   "id": "R6.sep.slope.wide",
+   "districts": [
+    "R6"
+   ],
+   "field": "sep.slope",
+   "value": 5.6,
+   "unit": "ratio",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-736",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 or R7 Districts | 20 | 15 | 60 feet or six stories, whichever is less | 60 | 2.7 | to 1 | 5.6 | to 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/manager-checks.md",
+    "claim": "M2"
+   },
+   "note": "Elective alternative (ZR 23-731); when elected, FAR per ZR 23-732 supersedes 23-22 (not in this rule set) and 23-36 lot coverage need not apply (23-735)."
+  },
+  {
+   "id": "R6.sep.frontWallMax",
+   "districts": [
+    "R6"
+   ],
+   "field": "sep.frontWallMaxHeight",
+   "value": 60,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "23-736",
+    "url": "https://zr.planning.nyc.gov/article-ii/chapter-3/23-736",
+    "lastAmended": "12/5/2024",
+    "quote": "R6 or R7 Districts | 20 | 15 | 60 feet or six stories, whichever is less | 60 | 2.7 | to 1 | 5.6 | to 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/manager-checks.md",
+    "claim": "M2"
+   },
+   "note": "Text reads \"60 feet or six stories, whichever is less\"; the six-story limit is not modelled."
+  }
+ ],
+ "changeLog": [
+  {
+   "date": "2026-10-25",
+   "by": "manager",
+   "change": "Applied verifier findings (VERIFICATION.md): coverage rules scoped to siteCategory=standard; rear height break split by building type/lot width; removed undefined buildingType values one_two_family/multiple_dwelling_detached from 23-342 detached rules."
+  }
+ ]
+}

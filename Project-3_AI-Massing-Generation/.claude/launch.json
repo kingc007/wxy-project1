@@ -1,0 +1,28 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "3A-massing-studio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "3A_Massing-Studio/app",
+        "run",
+        "dev",
+        "--",
+        "-p",
+        "3105"
+      ],
+      "port": 3105
+    },
+    {
+      "name": "3A-prod",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd 3A_Massing-Studio/app && npm run build && npx next start -p 3110"
+      ],
+      "port": 3110
+    }
+  ]
+}

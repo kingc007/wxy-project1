@@ -1,0 +1,645 @@
+{
+ "jurisdiction": "nyc",
+ "code": "NYC Zoning Resolution",
+ "retrieved": "2026-10-25",
+ "districtsCovered": [
+  "C1-1",
+  "C1-2",
+  "C1-3",
+  "C1-4",
+  "C1-5",
+  "C2-1",
+  "C2-2",
+  "C2-3",
+  "C2-4",
+  "C2-5",
+  "C4-4A",
+  "M1-1",
+  "M1-2"
+ ],
+ "provenanceRule": "Only Verified=PASS rows of commercial-rules-and-uses.md (rows 24, 26, 29, 31, 32, 38, 40, 42, 43, 49, 53, 54). C6-2A FAR is NOT FOUND in the text and is deliberately absent. M1 residential use/bulk not researched → needs input.",
+ "residentialEquivalents": [
+  {
+   "district": "C4-4A",
+   "residentialEquivalent": "R7A",
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "34-112",
+    "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-112",
+    "lastAmended": "12/5/2024",
+    "quote": "the applicable bulk regulations are the bulk regulations for the residential equivalent of the Commercial District as set forth in the following table: Row: C1-6A C2-6A C4-4A C4-4L C4-5A ; R7A",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 29
+   }
+  }
+ ],
+ "commercialOverlays": {
+  "overlays": [
+   "C1-1",
+   "C1-2",
+   "C1-3",
+   "C1-4",
+   "C1-5",
+   "C2-1",
+   "C2-2",
+   "C2-3",
+   "C2-4",
+   "C2-5"
+  ],
+  "rule": "residential bulk of the underlying Residence District applies",
+  "citation": {
+   "source": "NYC Zoning Resolution",
+   "section": "34-111",
+   "url": "https://zr.planning.nyc.gov/article-iii/chapter-4/34-111",
+   "lastAmended": "12/5/2024",
+   "quote": "In the districts indicated, the bulk regulations for the Residence District within which such Commercial Districts are mapped apply, except that: on qualifying residential sites within the Greater Transit Zone, where such districts are mapped within R1 through R5 Districts, the bulk regulations for R5 Districts without a letter suffix shall apply",
+   "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+   "claim": 26
+  }
+ },
+ "splitLot": {
+  "farMethod": "area_weighted",
+  "citation": {
+   "source": "NYC Zoning Resolution",
+   "section": "77-22",
+   "url": "https://zr.planning.nyc.gov/article-vii/chapter-7/77-22",
+   "lastAmended": "12/5/2024",
+   "quote": "Each such floor area ratio shall be multiplied by the percentage of the zoning lot to which such floor area ratio applies. The sum of the products thus obtained shall be the adjusted maximum floor area ratio applicable to such zoning lot.",
+   "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+   "claim": 53
+  },
+  "heightSetback": {
+   "rule": "pro-rated by street frontage share (not modelled → manual)",
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "77-28",
+    "url": "https://zr.planning.nyc.gov/article-vii/chapter-7/77-28",
+    "lastAmended": "12/5/2024",
+    "quote": "the height and setback regulations of each street frontage of the zoning lot shall be determined by multiplying the quantitative requirements set forth in the regulations of the Chapters, which are applicable to each portion of such street frontage, by the percentage of such street frontage to which such regulations apply.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 54
+   }
+  },
+  "portions": {
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "77-02",
+    "url": "https://zr.planning.nyc.gov/article-vii/chapter-7/77-02",
+    "lastAmended": "12/5/2024",
+    "quote": "each portion of such zoning lot shall be regulated by all the provisions applicable to the district in which such portion of the zoning lot is located. However, the provisions of Section 77-22 (Floor Area Ratio) shall apply to zoning lots created at any time where different bulk regulations apply to different portions of such zoning lot.",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 49
+   }
+  }
+ },
+ "rules": [
+  {
+   "id": "overlay.inR6.far.commercial",
+   "districts": [
+    "C1-1",
+    "C1-2",
+    "C1-3",
+    "C1-4",
+    "C1-5",
+    "C2-1",
+    "C2-2",
+    "C2-3",
+    "C2-4",
+    "C2-5"
+   ],
+   "field": "maxFar.commercial",
+   "value": 2.0,
+   "unit": "ratio",
+   "when": {
+    "underlyingDistrict": [
+     "R6"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "33-121",
+    "url": "https://zr.planning.nyc.gov/article-iii/chapter-3/33-121",
+    "lastAmended": "12/5/2024",
+    "quote": "In the districts indicated, for a zoning lot containing a commercial or community facility use, the maximum floor area ratio is determined by the Residence District within which such Commercial District is mapped and shall not exceed the maximum floor area ratio set forth in the following table: Header: District ; Column A For Zoning Lots Containing only Commercial use ; Column B For Zoning Lots Containing only Community facility use ; Column C For Zoning Lots Containing both Commercial and Community facility uses. Row: R6 R6-1 R7-1 ; 2.00 ; 4.80 ; 4.80",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 24
+   },
+   "note": "Commercial overlay mapped within R6: Column A, zoning lots containing only commercial use. In mixed buildings total FAR may not exceed the greatest FAR permitted for any use (ZR 35-31)."
+  },
+  {
+   "id": "overlay.inR6A.far.commercial",
+   "districts": [
+    "C1-1",
+    "C1-2",
+    "C1-3",
+    "C1-4",
+    "C1-5",
+    "C2-1",
+    "C2-2",
+    "C2-3",
+    "C2-4",
+    "C2-5"
+   ],
+   "field": "maxFar.commercial",
+   "value": 2.0,
+   "unit": "ratio",
+   "when": {
+    "underlyingDistrict": [
+     "R6A"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "33-121",
+    "url": "https://zr.planning.nyc.gov/article-iii/chapter-3/33-121",
+    "lastAmended": "12/5/2024",
+    "quote": "In the districts indicated, for a zoning lot containing a commercial or community facility use, the maximum floor area ratio is determined by the Residence District within which such Commercial District is mapped and shall not exceed the maximum floor area ratio set forth in the following table: Header: District ; Column A For Zoning Lots Containing only Commercial use ; Column B For Zoning Lots Containing only Community facility use ; Column C For Zoning Lots Containing both Commercial and Community facility uses. Row: R6A R7B ; 2.00 ; 3.00 ; 3.00",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 24
+   },
+   "note": "Commercial overlay mapped within R6A: Column A, zoning lots containing only commercial use. In mixed buildings total FAR may not exceed the greatest FAR permitted for any use (ZR 35-31)."
+  },
+  {
+   "id": "overlay.inR7A.far.commercial",
+   "districts": [
+    "C1-1",
+    "C1-2",
+    "C1-3",
+    "C1-4",
+    "C1-5",
+    "C2-1",
+    "C2-2",
+    "C2-3",
+    "C2-4",
+    "C2-5"
+   ],
+   "field": "maxFar.commercial",
+   "value": 2.0,
+   "unit": "ratio",
+   "when": {
+    "underlyingDistrict": [
+     "R7A"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "33-121",
+    "url": "https://zr.planning.nyc.gov/article-iii/chapter-3/33-121",
+    "lastAmended": "12/5/2024",
+    "quote": "In the districts indicated, for a zoning lot containing a commercial or community facility use, the maximum floor area ratio is determined by the Residence District within which such Commercial District is mapped and shall not exceed the maximum floor area ratio set forth in the following table: Header: District ; Column A For Zoning Lots Containing only Commercial use ; Column B For Zoning Lots Containing only Community facility use ; Column C For Zoning Lots Containing both Commercial and Community facility uses. Row: R7A R8B ; 2.00 ; 4.00* ; 4.00",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 24
+   },
+   "note": "Commercial overlay mapped within R7A: Column A, zoning lots containing only commercial use. In mixed buildings total FAR may not exceed the greatest FAR permitted for any use (ZR 35-31)."
+  },
+  {
+   "id": "overlay.inR8A.far.commercial",
+   "districts": [
+    "C1-1",
+    "C1-2",
+    "C1-3",
+    "C1-4",
+    "C1-5",
+    "C2-1",
+    "C2-2",
+    "C2-3",
+    "C2-4",
+    "C2-5"
+   ],
+   "field": "maxFar.commercial",
+   "value": 2.0,
+   "unit": "ratio",
+   "when": {
+    "underlyingDistrict": [
+     "R8A"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "33-121",
+    "url": "https://zr.planning.nyc.gov/article-iii/chapter-3/33-121",
+    "lastAmended": "12/5/2024",
+    "quote": "In the districts indicated, for a zoning lot containing a commercial or community facility use, the maximum floor area ratio is determined by the Residence District within which such Commercial District is mapped and shall not exceed the maximum floor area ratio set forth in the following table: Header: District ; Column A For Zoning Lots Containing only Commercial use ; Column B For Zoning Lots Containing only Community facility use ; Column C For Zoning Lots Containing both Commercial and Community facility uses. Row: R7-2 R7-3 R8 R8A ; 2.00 ; 6.50 ; 6.50",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 24
+   },
+   "note": "Commercial overlay mapped within R8A: Column A, zoning lots containing only commercial use. In mixed buildings total FAR may not exceed the greatest FAR permitted for any use (ZR 35-31)."
+  },
+  {
+   "id": "overlay.inR6B.far.commercial",
+   "districts": [
+    "C1-1",
+    "C1-2",
+    "C1-3",
+    "C1-4",
+    "C1-5",
+    "C2-1",
+    "C2-2",
+    "C2-3",
+    "C2-4",
+    "C2-5"
+   ],
+   "field": "maxFar.commercial",
+   "value": 2.0,
+   "unit": "ratio",
+   "when": {
+    "underlyingDistrict": [
+     "R6B"
+    ]
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "33-121",
+    "url": "https://zr.planning.nyc.gov/article-iii/chapter-3/33-121",
+    "lastAmended": "12/5/2024",
+    "quote": "In the districts indicated, for a zoning lot containing a commercial or community facility use, the maximum floor area ratio is determined by the Residence District within which such Commercial District is mapped and shall not exceed the maximum floor area ratio set forth in the following table: Header: District ; Column A For Zoning Lots Containing only Commercial use ; Column B For Zoning Lots Containing only Community facility use ; Column C For Zoning Lots Containing both Commercial and Community facility uses. Row: R5D R6B ; 2.00 ; 2.00 ; 2.00",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 24
+   },
+   "note": "Commercial overlay mapped within R6B: Column A, zoning lots containing only commercial use. In mixed buildings total FAR may not exceed the greatest FAR permitted for any use (ZR 35-31)."
+  },
+  {
+   "id": "C4-4A.far.commercial",
+   "districts": [
+    "C4-4A"
+   ],
+   "field": "maxFar.commercial",
+   "value": 4.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "33-122",
+    "url": "https://zr.planning.nyc.gov/article-iii/chapter-3/33-122",
+    "lastAmended": "12/5/2024",
+    "quote": "In the districts indicated, the maximum floor area ratio for a zoning lot containing only commercial uses shall not exceed the floor area ratio set forth in the following table: Row: C4-4A C4-4L C4-5A C4-5X C5-1 C7-3 ; 4.00",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 31
+   },
+   "note": null
+  },
+  {
+   "id": "C4-4A.far.cf",
+   "districts": [
+    "C4-4A"
+   ],
+   "field": "maxFar.community_facility",
+   "value": 4.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "33-123",
+    "url": "https://zr.planning.nyc.gov/article-iii/chapter-3/33-123",
+    "lastAmended": "12/5/2024",
+    "quote": "the maximum floor area ratio for a zoning lot containing community facility uses, or for a zoning lot containing both commercial and community facility uses, shall not exceed the floor area ratio set forth in the following table: Row: C1-6A C2-6A C4-4A C4-4L C4-5A C7-3 ; 4.00",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 32
+   },
+   "note": null
+  },
+  {
+   "id": "M1-1.far.mfg",
+   "districts": [
+    "M1-1"
+   ],
+   "field": "maxFar.manufacturing",
+   "value": 1.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-12",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-12",
+    "lastAmended": "6/6/2024",
+    "quote": "Districts ; Maximum Permitted Floor Area Ratio — M1-1 ; 1.00 — M1-2* M1-4 M2-1 M2-3 M3 ; 2.00",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 38
+   },
+   "note": "One FAR for manufacturing or commercial use (ZR 43-12)."
+  },
+  {
+   "id": "M1-2.far.mfg",
+   "districts": [
+    "M1-2"
+   ],
+   "field": "maxFar.manufacturing",
+   "value": 2.0,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-12",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-12",
+    "lastAmended": "6/6/2024",
+    "quote": "Districts ; Maximum Permitted Floor Area Ratio — M1-1 ; 1.00 — M1-2* M1-4 M2-1 M2-3 M3 ; 2.00",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 38
+   },
+   "note": "One FAR for manufacturing or commercial use. Footnote (*): increased to 4.0 in a referenced Queens area for referenced uses — not modelled; check location."
+  },
+  {
+   "id": "M1-1.far.cf",
+   "districts": [
+    "M1-1"
+   ],
+   "field": "maxFar.community_facility",
+   "value": 2.4,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-122",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-122",
+    "lastAmended": "9/21/2011",
+    "quote": "Districts ; Maximum Permitted Floor Area Ratio — M1-1 ; 2.40 — M1-2 ; 4.80",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 40
+   },
+   "note": null
+  },
+  {
+   "id": "M1-2.far.cf",
+   "districts": [
+    "M1-2"
+   ],
+   "field": "maxFar.community_facility",
+   "value": 4.8,
+   "unit": "ratio",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-122",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-122",
+    "lastAmended": "9/21/2011",
+    "quote": "Districts ; Maximum Permitted Floor Area Ratio — M1-1 ; 2.40 — M1-2 ; 4.80",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 40
+   },
+   "note": null
+  },
+  {
+   "id": "M1-1.sep.initialSetback.narrow",
+   "districts": [
+    "M1-1"
+   ],
+   "field": "sep.initialSetback",
+   "value": 20,
+   "unit": "ft",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-1 Districts / 20 ; 15 ; 30 feet or 2 stories , whichever is less ; 30 ; 1 to ; 1 ; 1 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 42
+   },
+   "note": null
+  },
+  {
+   "id": "M1-1.sep.initialSetback.wide",
+   "districts": [
+    "M1-1"
+   ],
+   "field": "sep.initialSetback",
+   "value": 15,
+   "unit": "ft",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-1 Districts / 20 ; 15 ; 30 feet or 2 stories , whichever is less ; 30 ; 1 to ; 1 ; 1 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 42
+   },
+   "note": null
+  },
+  {
+   "id": "M1-1.sep.startHeight",
+   "districts": [
+    "M1-1"
+   ],
+   "field": "sep.startHeight",
+   "value": 30,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-1 Districts / 20 ; 15 ; 30 feet or 2 stories , whichever is less ; 30 ; 1 to ; 1 ; 1 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 42
+   },
+   "note": null
+  },
+  {
+   "id": "M1-1.sep.frontWallMax",
+   "districts": [
+    "M1-1"
+   ],
+   "field": "sep.frontWallMaxHeight",
+   "value": 30,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-1 Districts / 20 ; 15 ; 30 feet or 2 stories , whichever is less ; 30 ; 1 to ; 1 ; 1 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 42
+   },
+   "note": "Text also limits the front wall by stories (\"or N stories, whichever is less\"); story limit not modelled."
+  },
+  {
+   "id": "M1-1.sep.slope.narrow",
+   "districts": [
+    "M1-1"
+   ],
+   "field": "sep.slope",
+   "value": 1,
+   "unit": "ratio",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-1 Districts / 20 ; 15 ; 30 feet or 2 stories , whichever is less ; 30 ; 1 to ; 1 ; 1 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 42
+   },
+   "note": null
+  },
+  {
+   "id": "M1-1.sep.slope.wide",
+   "districts": [
+    "M1-1"
+   ],
+   "field": "sep.slope",
+   "value": 1,
+   "unit": "ratio",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-1 Districts / 20 ; 15 ; 30 feet or 2 stories , whichever is less ; 30 ; 1 to ; 1 ; 1 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 42
+   },
+   "note": null
+  },
+  {
+   "id": "M1-2.sep.initialSetback.narrow",
+   "districts": [
+    "M1-2"
+   ],
+   "field": "sep.initialSetback",
+   "value": 20,
+   "unit": "ft",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-2, M1-4, M2-1, M2-3 or M3 Districts / 20 ; 15 ; 60 feet or 4 stories , whichever is less ; 60 ; 2.7 to ; 1 ; 5.6 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 43
+   },
+   "note": null
+  },
+  {
+   "id": "M1-2.sep.initialSetback.wide",
+   "districts": [
+    "M1-2"
+   ],
+   "field": "sep.initialSetback",
+   "value": 15,
+   "unit": "ft",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-2, M1-4, M2-1, M2-3 or M3 Districts / 20 ; 15 ; 60 feet or 4 stories , whichever is less ; 60 ; 2.7 to ; 1 ; 5.6 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 43
+   },
+   "note": null
+  },
+  {
+   "id": "M1-2.sep.startHeight",
+   "districts": [
+    "M1-2"
+   ],
+   "field": "sep.startHeight",
+   "value": 60,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-2, M1-4, M2-1, M2-3 or M3 Districts / 20 ; 15 ; 60 feet or 4 stories , whichever is less ; 60 ; 2.7 to ; 1 ; 5.6 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 43
+   },
+   "note": null
+  },
+  {
+   "id": "M1-2.sep.frontWallMax",
+   "districts": [
+    "M1-2"
+   ],
+   "field": "sep.frontWallMaxHeight",
+   "value": 60,
+   "unit": "ft",
+   "when": {},
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-2, M1-4, M2-1, M2-3 or M3 Districts / 20 ; 15 ; 60 feet or 4 stories , whichever is less ; 60 ; 2.7 to ; 1 ; 5.6 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 43
+   },
+   "note": "Text also limits the front wall by stories (\"or N stories, whichever is less\"); story limit not modelled."
+  },
+  {
+   "id": "M1-2.sep.slope.narrow",
+   "districts": [
+    "M1-2"
+   ],
+   "field": "sep.slope",
+   "value": 2.7,
+   "unit": "ratio",
+   "when": {
+    "street": "narrow"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-2, M1-4, M2-1, M2-3 or M3 Districts / 20 ; 15 ; 60 feet or 4 stories , whichever is less ; 60 ; 2.7 to ; 1 ; 5.6 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 43
+   },
+   "note": null
+  },
+  {
+   "id": "M1-2.sep.slope.wide",
+   "districts": [
+    "M1-2"
+   ],
+   "field": "sep.slope",
+   "value": 5.6,
+   "unit": "ratio",
+   "when": {
+    "street": "wide"
+   },
+   "citation": {
+    "source": "NYC Zoning Resolution",
+    "section": "43-43",
+    "url": "https://zr.planning.nyc.gov/article-iv/chapter-3/43-43",
+    "lastAmended": "8/14/2025",
+    "quote": "Within M1-2, M1-4, M2-1, M2-3 or M3 Districts / 20 ; 15 ; 60 feet or 4 stories , whichever is less ; 60 ; 2.7 to ; 1 ; 5.6 to ; 1",
+    "researchNote": "Project-1_Code-Zoning-Research-Assistant/1B_Site-Brief/research/commercial-rules-and-uses.md",
+    "claim": 43
+   },
+   "note": null
+  }
+ ],
+ "changeLog": [
+  {
+   "date": "2026-10-25",
+   "by": "manager",
+   "change": "Overlay quotes: header replaced with verbatim 33-121 header per VERIFICATION.md (values unchanged)."
+  }
+ ]
+}

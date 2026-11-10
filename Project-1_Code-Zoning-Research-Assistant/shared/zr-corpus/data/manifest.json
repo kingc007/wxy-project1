@@ -1,0 +1,103 @@
+{
+ "source": "https://zr.planning.nyc.gov",
+ "retrievedAt": "2026-10-25T19:45:07.767Z",
+ "sectionCount": 799,
+ "definitionCount": 484,
+ "chapters": [
+  {
+   "url": "https://zr.planning.nyc.gov/article-i/chapter-2",
+   "fetchedAt": "2026-10-25T19:44:50.160Z",
+   "sectionCount": 4
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-ii/chapter-1",
+   "fetchedAt": "2026-10-25T19:44:51.365Z",
+   "sectionCount": 6
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-ii/chapter-2",
+   "fetchedAt": "2026-10-25T19:44:52.969Z",
+   "sectionCount": 38
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-ii/chapter-3",
+   "fetchedAt": "2026-10-25T19:44:54.442Z",
+   "sectionCount": 108
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-ii/chapter-4",
+   "fetchedAt": "2026-10-25T19:44:55.784Z",
+   "sectionCount": 77
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-ii/chapter-5",
+   "fetchedAt": "2026-10-25T19:44:57.466Z",
+   "sectionCount": 93
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-iii/chapter-2",
+   "fetchedAt": "2026-10-25T19:44:58.959Z",
+   "sectionCount": 122
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-iii/chapter-3",
+   "fetchedAt": "2026-10-25T19:45:01.047Z",
+   "sectionCount": 73
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-iii/chapter-4",
+   "fetchedAt": "2026-10-25T19:45:02.304Z",
+   "sectionCount": 21
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-iii/chapter-5",
+   "fetchedAt": "2026-10-25T19:45:03.779Z",
+   "sectionCount": 46
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-iv/chapter-2",
+   "fetchedAt": "2026-10-25T19:45:05.074Z",
+   "sectionCount": 127
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-iv/chapter-3",
+   "fetchedAt": "2026-10-25T19:45:06.497Z",
+   "sectionCount": 58
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-vii/chapter-7",
+   "fetchedAt": "2026-10-25T19:45:07.767Z",
+   "sectionCount": 26
+  }
+ ],
+ "discoveryPages": [
+  {
+   "url": "https://zr.planning.nyc.gov/",
+   "fetchedAt": "2026-10-25T19:45:11.873Z"
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-i",
+   "fetchedAt": "2026-10-26T01:26:49.447Z"
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-ii",
+   "fetchedAt": "2026-10-26T01:26:50.441Z"
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-iii",
+   "fetchedAt": "2026-10-26T01:26:51.638Z"
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-iv",
+   "fetchedAt": "2026-10-26T01:26:52.731Z"
+  },
+  {
+   "url": "https://zr.planning.nyc.gov/article-vii",
+   "fetchedAt": "2026-10-26T01:26:53.830Z"
+  }
+ ],
+ "skipped": [],
+ "parseFailures": [],
+ "duplicateSectionIds": [],
+ "homepageCurrencyLine": "All text changes approved by the city council as of Oct 22, 2026"
+}

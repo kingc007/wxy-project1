@@ -1,0 +1,101 @@
+{
+  "sample": true,
+  "envelopeId": "sample-c-r10-through-sep",
+  "lat": 40.689,
+  "lng": -73.9755,
+  "latLngSource": "3A research/nyc-footprints-data.md (chosen point)",
+  "gridAngleDeg": 8.5,
+  "frontEdgeAngleDeg": 8.5,
+  "parkName": "Fort Greene Park",
+  "parkPolygonLocal": {
+    "outer": [
+      [
+        428.26,
+        1527.07
+      ],
+      [
+        -371.56,
+        1566.91
+      ],
+      [
+        -429.6,
+        1569.8
+      ],
+      [
+        -607.55,
+        1578.66
+      ],
+      [
+        -521.82,
+        1021.52
+      ],
+      [
+        -591.16,
+        1025.18
+      ],
+      [
+        -582.51,
+        970.44
+      ],
+      [
+        -582.48,
+        970.45
+      ],
+      [
+        -581.32,
+        963.12
+      ],
+      [
+        -557.27,
+        966.07
+      ],
+      [
+        -546.61,
+        967.37
+      ],
+      [
+        -448.19,
+        322.34
+      ],
+      [
+        -336.07,
+        316.8
+      ],
+      [
+        -194.32,
+        309.81
+      ],
+      [
+        618.82,
+        269.68
+      ]
+    ],
+    "holes": []
+  },
+  "contextFile": "data/context-fort-greene.json",
+  "removedContextBins": [
+    3058798,
+    3058801,
+    3058797,
+    3058792,
+    3058796,
+    3058799,
+    3058800,
+    3058794,
+    3058802,
+    3058793,
+    3058795,
+    3058818,
+    3058816,
+    3058815,
+    3058813,
+    3058817,
+    3058814,
+    3058822,
+    3058823,
+    3058820,
+    3058821,
+    3058819
+  ],
+  "removalNote": "SAMPLE: existing buildings on the hypothetical lot removed"
+}

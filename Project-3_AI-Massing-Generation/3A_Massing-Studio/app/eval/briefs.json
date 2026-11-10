@@ -1,0 +1,17 @@
+{
+  "_note": "Eval briefs written by the Project 3 manager (design briefs, not facts). Each brief is run against all three SAMPLE envelopes.",
+  "briefs": [
+    {
+      "id": "courtyard-park",
+      "text": "About 120 units, ground-floor retail, a public courtyard, and step the building down toward the park to the north."
+    },
+    {
+      "id": "civic-streetwall",
+      "text": "Mixed-use: roughly 60,000 sf of housing above about 8,000 sf of community facility (a library branch) on the lower two floors. Keep a strong, continuous street wall."
+    },
+    {
+      "id": "slender-terraces",
+      "text": "A slender residential building, around 200 units, with a two-story commercial base and generous roof terraces. Keep the open space at grade above 30%."
+    }
+  ]
+}

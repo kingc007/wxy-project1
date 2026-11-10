@@ -1,0 +1,344 @@
+{
+ "description": "1B eval gold — hand-written by the manager from verified research only (PLUTO values: test-parcels.md L1–L10, verifier PASS; rule values: residence-bulk-rules.md PASS rows / shared/rules VERIFICATION.md). Values are NOT copied from engine output. null = the system must NOT produce a number (needs input / manual).",
+ "assumptionsUsed": {
+  "intendedUse": "residential",
+  "program": "standard",
+  "buildingType": "attached",
+  "siteCategory": "standard"
+ },
+ "written": "2026-10-25",
+ "parcels": [
+  {
+   "bbl": "1020500004",
+   "address": "287 CONVENT AVENUE",
+   "query": "287 Convent Avenue, Manhattan",
+   "category": "interior R6A",
+   "assumptions": {
+    "intendedUse": "residential",
+    "program": "standard",
+    "buildingType": "attached",
+    "siteCategory": "standard"
+   },
+   "expect": {
+    "zoneDist": [
+     "R6A"
+    ],
+    "lotArea": 4675,
+    "lotType": "interior",
+    "maxFar.residential": 3.0,
+    "maxFloorArea.residential": 14025,
+    "lotCoverage.max": 80,
+    "yards.rear": 20,
+    "baseHeight.min": 40,
+    "baseHeight.max": 65,
+    "maxBuildingHeight": 75
+   },
+   "expectFlags": [],
+   "sources": {
+    "pluto": "research/test-parcels.md L1 (PASS)",
+    "rules": "research/residence-bulk-rules.md"
+   },
+   "conditional": null,
+   "notes": "FAR rows 4 (23-22); coverage row 8 (23-362 standard lot); rear yard row 12 / 23-342 (attached, lot width 46.75 ft ≥ 40 ft → 20 ft up to 75 ft); heights row 21 (23-432 R6A 40/65/75)."
+  },
+  {
+   "bbl": "1003450002",
+   "address": "152 ATTORNEY STREET",
+   "query": "152 Attorney Street, Manhattan",
+   "category": "interior R7A",
+   "assumptions": {
+    "intendedUse": "residential",
+    "program": "standard",
+    "buildingType": "attached",
+    "siteCategory": "standard"
+   },
+   "expect": {
+    "zoneDist": [
+     "R7A"
+    ],
+    "lotArea": 2500,
+    "lotType": "interior",
+    "maxFar.residential": 4.0,
+    "maxFloorArea.residential": 10000,
+    "lotCoverage.max": 80,
+    "yards.rear": 30,
+    "baseHeight.min": 40,
+    "baseHeight.max": 75,
+    "maxBuildingHeight": 85
+   },
+   "expectFlags": [],
+   "sources": {
+    "pluto": "research/test-parcels.md L2 (PASS)",
+    "rules": "research/residence-bulk-rules.md"
+   },
+   "conditional": null,
+   "notes": "Rear yard 30 ft: attached building, lot width 25 ft < 40 ft (23-342)."
+  },
+  {
+   "bbl": "3039730022",
+   "address": "261 SHEPHERD AVENUE",
+   "query": "261 Shepherd Avenue, Brooklyn",
+   "category": "interior R8A",
+   "assumptions": {
+    "intendedUse": "residential",
+    "program": "standard",
+    "buildingType": "attached",
+    "siteCategory": "standard"
+   },
+   "expect": {
+    "zoneDist": [
+     "R8A"
+    ],
+    "lotArea": 5000,
+    "lotType": "interior",
+    "maxFar.residential": 6.02,
+    "maxFloorArea.residential": 30100,
+    "lotCoverage.max": 80,
+    "yards.rear": 20,
+    "baseHeight.min": 60,
+    "baseHeight.max": 95,
+    "maxBuildingHeight": 125
+   },
+   "expectFlags": [
+    "data_conflict"
+   ],
+   "sources": {
+    "pluto": "research/test-parcels.md L3 (PASS)",
+    "rules": "research/residence-bulk-rules.md"
+   },
+   "conditional": null,
+   "notes": "PLUTO lists R8A only; DCP layer shows an R6B portion → data_conflict flag expected, not split (manager rule)."
+  },
+  {
+   "bbl": "2022720049",
+   "address": "501 EAST 145 STREET",
+   "query": "501 East 145 Street, Bronx",
+   "category": "corner R6 / C1-4",
+   "assumptions": {
+    "intendedUse": "residential",
+    "program": "standard",
+    "buildingType": "attached",
+    "siteCategory": "standard"
+   },
+   "expect": {
+    "zoneDist": [
+     "R6"
+    ],
+    "lotArea": 2498,
+    "lotType": "corner",
+    "maxFar.residential": 3.0,
+    "maxFloorArea.residential": 7494,
+    "lotCoverage.max": 100,
+    "yards.rear": null,
+    "baseHeight.min": 40,
+    "baseHeight.max": 65,
+    "maxBuildingHeight": 75
+   },
+   "expectFlags": [],
+   "sources": {
+    "pluto": "research/test-parcels.md L4 (PASS)",
+    "rules": "research/residence-bulk-rules.md"
+   },
+   "conditional": "R6 values assume the lot is within 100 ft of a wide street (Brook Avenue; DCM Streetwidth from live data — street width is data, not a verified research claim). If narrow-only: FAR 2.20, ZFA 5,495.6 sf, heights 30/45/55.",
+   "notes": "Corner lot: ZR 23-342 sets rear yards for interior lots only → rear yard must be null (needs input/manual), never guessed."
+  },
+  {
+   "bbl": "1003720008",
+   "address": "270 EAST 3 STREET",
+   "query": "270 East 3 Street, Manhattan",
+   "category": "corner R7A / C2-5",
+   "assumptions": {
+    "intendedUse": "residential",
+    "program": "standard",
+    "buildingType": "attached",
+    "siteCategory": "standard"
+   },
+   "expect": {
+    "zoneDist": [
+     "R7A"
+    ],
+    "lotArea": 2021,
+    "lotType": "corner",
+    "maxFar.residential": 4.0,
+    "maxFloorArea.residential": 8084,
+    "lotCoverage.max": 100,
+    "yards.rear": null,
+    "baseHeight.min": 40,
+    "baseHeight.max": 75,
+    "maxBuildingHeight": 85
+   },
+   "expectFlags": [],
+   "sources": {
+    "pluto": "research/test-parcels.md L5 (PASS)",
+    "rules": "research/residence-bulk-rules.md"
+   },
+   "conditional": null,
+   "notes": null
+  },
+  {
+   "bbl": "1003980028",
+   "address": "196 EAST 3 STREET",
+   "query": "196 East 3 Street, Manhattan",
+   "category": "split R7A + R8B",
+   "assumptions": {
+    "intendedUse": "residential",
+    "program": "standard",
+    "buildingType": "attached",
+    "siteCategory": "standard"
+   },
+   "expect": {
+    "zoneDist": [
+     "R7A",
+     "R8B"
+    ],
+    "lotArea": 2568,
+    "split": true,
+    "maxFar.residential": null
+   },
+   "expectFlags": [
+    "split_lot"
+   ],
+   "sources": {
+    "pluto": "research/test-parcels.md L6 (PASS)",
+    "rules": "research/residence-bulk-rules.md"
+   },
+   "conditional": null,
+   "notes": "Split lot must be flagged, not guessed. R8B is outside the verified rule set → no combined FAR."
+  },
+  {
+   "bbl": "2027570124",
+   "address": "1039 LOWELL STREET",
+   "query": "1039 Lowell Street, Bronx",
+   "category": "split M1-1 + R7-1",
+   "assumptions": {
+    "intendedUse": "residential",
+    "program": "standard",
+    "buildingType": "attached",
+    "siteCategory": "standard"
+   },
+   "expect": {
+    "zoneDist": [
+     "M1-1",
+     "R7-1"
+    ],
+    "lotArea": 2500,
+    "split": true,
+    "maxFar.residential": null
+   },
+   "expectFlags": [
+    "split_lot"
+   ],
+   "sources": {
+    "pluto": "research/test-parcels.md L7 (PASS)",
+    "rules": "research/residence-bulk-rules.md"
+   },
+   "conditional": null,
+   "notes": null
+  },
+  {
+   "bbl": "1007330055",
+   "address": "430 WEST 36 STREET",
+   "query": "430 West 36 Street, Manhattan",
+   "category": "special district HY, R8A / C2-5",
+   "assumptions": {
+    "intendedUse": "residential",
+    "program": "standard",
+    "buildingType": "attached",
+    "siteCategory": "standard"
+   },
+   "expect": {
+    "zoneDist": [
+     "R8A"
+    ],
+    "lotArea": 2513,
+    "lotType": "interior",
+    "maxFar.residential": 6.02,
+    "maxFloorArea.residential": 15128.26,
+    "lotCoverage.max": 80,
+    "yards.rear": 30,
+    "baseHeight.min": 60,
+    "baseHeight.max": 95,
+    "maxBuildingHeight": 125
+   },
+   "expectFlags": [
+    "special_district"
+   ],
+   "sources": {
+    "pluto": "research/test-parcels.md L8 (PASS)",
+    "rules": "research/residence-bulk-rules.md"
+   },
+   "conditional": null,
+   "notes": "Underlying R8A values; special district HY may modify them → confidence must not be 'cited'."
+  },
+  {
+   "bbl": "2025500028",
+   "address": "618 EAST 138 STREET",
+   "query": "618 East 138 Street, Bronx",
+   "category": "individual landmark, R6 / C1-4",
+   "assumptions": {
+    "intendedUse": "residential",
+    "program": "standard",
+    "buildingType": "attached",
+    "siteCategory": "standard"
+   },
+   "expect": {
+    "zoneDist": [
+     "R6"
+    ],
+    "lotArea": 5000,
+    "lotType": "interior",
+    "maxFar.residential": 3.0,
+    "maxFloorArea.residential": 15000,
+    "lotCoverage.max": 80,
+    "yards.rear": 20,
+    "baseHeight.min": 40,
+    "baseHeight.max": 65,
+    "maxBuildingHeight": 75
+   },
+   "expectFlags": [
+    "landmark"
+   ],
+   "sources": {
+    "pluto": "research/test-parcels.md L9 (PASS)",
+    "rules": "research/residence-bulk-rules.md"
+   },
+   "conditional": "R6 values assume within 100 ft of a wide street (East 138 Street; DCM width from live data). If narrow-only: FAR 2.20, ZFA 11,000 sf, heights 30/45/55.",
+   "notes": null
+  },
+  {
+   "bbl": "1004630033",
+   "address": "123 2 AVENUE",
+   "query": "123 2 Avenue, Manhattan",
+   "category": "historic district, R7A / C1-5",
+   "assumptions": {
+    "intendedUse": "residential",
+    "program": "standard",
+    "buildingType": "attached",
+    "siteCategory": "standard"
+   },
+   "expect": {
+    "zoneDist": [
+     "R7A"
+    ],
+    "lotArea": 2500,
+    "lotType": "interior",
+    "maxFar.residential": 4.0,
+    "maxFloorArea.residential": 10000,
+    "lotCoverage.max": 80,
+    "yards.rear": 30,
+    "baseHeight.min": 40,
+    "baseHeight.max": 75,
+    "maxBuildingHeight": 85
+   },
+   "expectFlags": [
+    "historic_district"
+   ],
+   "sources": {
+    "pluto": "research/test-parcels.md L10 (PASS)",
+    "rules": "research/residence-bulk-rules.md"
+   },
+   "conditional": null,
+   "notes": null
+  }
+ ]
+}

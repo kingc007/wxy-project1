@@ -1,0 +1,18 @@
+import { launch } from "./lib.mjs";
+const { b, p, errs, reqs } = await launch(process.argv[2]);
+await p.getByRole("button", { name: /Interior lot/ }).first().click();
+await p.getByLabel("Project brief").fill("About 120 units, ground-floor retail, a public courtyard, and step the building down toward the park to the north.");
+await p.getByRole("button", { name: "Read brief" }).click();
+await p.waitForTimeout(800);
+while (await p.getByRole("button", { name: /^Accept / }).count()) await p.getByRole("button", { name: /^Accept / }).first().click();
+await p.getByRole("button", { name: "Confirm schedule" }).click();
+await p.getByRole("button", { name: "Generate 6 options" }).click();
+await p.waitForFunction(() => /Option 6/.test(document.body.innerText), null, { timeout: 120000 });
+await p.waitForTimeout(1500);
+await p.keyboard.press("3");
+await p.waitForTimeout(1500);
+console.log(await p.evaluate(() => document.querySelector("body").innerText.slice(0, 4000)));
+console.log(await p.evaluate(() => [...document.querySelectorAll("button,textarea,input,[role=tab]")].map(e=>e.tagName+":"+(e.getAttribute("aria-label")||e.innerText||e.placeholder||"").slice(0,60).replace(/\n/g," ")).join("\n")));
+await p.screenshot({ path: process.argv[3] });
+console.log(errs, reqs);
+await b.close();

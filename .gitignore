@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.env
+.env.local
+*.log
+.DS_Store
+.obsidian/
+coverage/
+*.tsbuildinfo
+.git-nested/
+.claude/settings.local.json
+.wxy-*.log

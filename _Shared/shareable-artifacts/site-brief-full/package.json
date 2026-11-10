@@ -1,0 +1,26 @@
+{
+  "name": "site-brief-full",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Single-file, browser-only build of the WXY Site Brief app on preloaded NYC lots (claude.ai Artifact).",
+  "scripts": {
+    "envelopes": "SOURCE_MODE=offline tsx scripts/envelopes.ts",
+    "build:app": "vite build",
+    "build": "npm run build:app && npm run envelopes",
+    "verify": "node scripts/verify.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "playwright-core": "^1.64.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vite-plugin-singlefile": "^2.3.4"
+  }
+}

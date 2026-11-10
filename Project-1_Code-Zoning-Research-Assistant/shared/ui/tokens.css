@@ -1,0 +1,236 @@
+/* Manual dark theme only; the OS-level preference is handled by the media query below. */
+@custom-variant dark (&:is(:root[data-theme="dark"] *));
+
+@theme inline {
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-heading: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-condensed: var(--font-archivo), sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sheet-set tokens as Tailwind colours: bg-paper, text-ink-3, border-rule, text-signal ... */
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-sheet: var(--sheet);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-signal: var(--signal);
+  --color-accent-wash: var(--accent-wash);
+  --color-flag: var(--flag);
+
+  /* Radius: 2px on controls and tags; sheets and tables use rounded-none. */
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --radius-xl: 2px;
+  --radius-2xl: 2px;
+  --radius-3xl: 2px;
+  --radius-4xl: 2px;
+
+  /* No drop shadows. */
+  --shadow-2xs: 0 0 #0000;
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
+  --shadow-md: 0 0 #0000;
+  --shadow-lg: 0 0 #0000;
+  --shadow-xl: 0 0 #0000;
+  --shadow-2xl: 0 0 #0000;
+}
+
+/*
+ * Token naming note: the design guide calls the blue token "--accent". shadcn already uses --accent for
+ * hover/selected fills, so the guide's accent is exposed as --signal and shadcn's --accent maps to --accent-wash.
+ */
+:root {
+  --paper: #eef0ee;
+  --paper-2: #e3e6e3;
+  --sheet: #fafbfa;
+  --ink: #191c1f;
+  --ink-2: #474d53;
+  --ink-3: #5f666d;
+  --rule: #cdd2cf;
+  --rule-strong: #868c92;
+  --grid: rgb(25 28 31 / 0.04);
+  --signal: #2b44c4;
+  --accent-wash: rgb(43 68 196 / 0.09);
+  --flag: #b4321c;
+  color-scheme: light;
+}
+
+/* Blueprint theme (selected theme, not an inversion). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1b2e;
+    --paper-2: #132439;
+    --sheet: #11203a;
+    --ink: #e4ebf2;
+    --ink-2: #b0becd;
+    --ink-3: #91a3b7;
+    --rule: #243a5a;
+    --rule-strong: #5f7aa0;
+    --grid: rgb(228 235 242 / 0.045);
+    --signal: #9db4ff;
+    --accent-wash: rgb(157 180 255 / 0.13);
+    --flag: #ff9a80;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1b2e;
+  --paper-2: #132439;
+  --sheet: #11203a;
+  --ink: #e4ebf2;
+  --ink-2: #b0becd;
+  --ink-3: #91a3b7;
+  --rule: #243a5a;
+  --rule-strong: #5f7aa0;
+  --grid: rgb(228 235 242 / 0.045);
+  --signal: #9db4ff;
+  --accent-wash: rgb(157 180 255 / 0.13);
+  --flag: #ff9a80;
+  color-scheme: dark;
+}
+
+/* shadcn variables mapped onto the sheet-set tokens (values follow the active theme automatically). */
+:root {
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--sheet);
+  --card-foreground: var(--ink);
+  --popover: var(--sheet);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: var(--ink-3);
+  --accent: var(--accent-wash);
+  --accent-foreground: var(--ink);
+  --destructive: var(--flag);
+  --border: var(--rule);
+  --input: var(--rule-strong);
+  --ring: var(--signal);
+  --chart-1: var(--ink);
+  --chart-2: var(--ink-2);
+  --chart-3: var(--ink-3);
+  --chart-4: var(--rule-strong);
+  --chart-5: var(--rule);
+  --radius: 2px;
+  --sidebar: var(--paper-2);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--ink);
+  --sidebar-primary-foreground: var(--paper);
+  --sidebar-accent: var(--accent-wash);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--rule);
+  --sidebar-ring: var(--signal);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    /* Plan grid: 8px minor, 64px major. Page only; sheets are opaque. */
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 64px 64px, 64px 64px, 8px 8px, 8px 8px;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 2px;
+  }
+  @media (prefers-contrast: more) {
+    :root {
+      --rule: var(--rule-strong);
+    }
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+  .title-block-label {
+    font-family: var(--font-condensed);
+    font-stretch: 75%;
+    font-variation-settings: "wdth" 75;
+    font-weight: 600;
+    font-size: 0.75rem;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.04em;
+    color: var(--ink-3);
+  }
+}
+
+/* Theme toggle icon: moon while light, sun while dark. */
+.theme-icon-sun { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-icon-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-icon-moon { display: none; }
+}
+:root[data-theme="dark"] .theme-icon-sun { display: block; }
+:root[data-theme="dark"] .theme-icon-moon { display: none; }
+
+/* Step rail running arc and RefTag leader draw. Static under reduced motion. */
+@keyframes rail-spin { to { transform: rotate(360deg); } }
+.rail-arc { transform-origin: center; animation: rail-spin 1s linear infinite; }
+@keyframes leader-draw { from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; } }
+.leader-line { stroke-dasharray: 24; animation: leader-draw 180ms ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .rail-arc { animation: none; }
+  .leader-line { animation: none; stroke-dasharray: none; }
+}
+
+/* Focus indicator (WCAG 2.4.7): unlayered and !important so it wins over shadcn's outline-none / ring utilities. */
+:focus-visible {
+  outline: 2px solid var(--signal) !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" role="img" aria-label="Site Brief data flow: public NYC datasets feed source adapters; the deterministic engine combines site data with the verified rules table to produce every number; the Claude layer only adds a cited narrative and flags, never values." font-family="IBM Plex Sans, Helvetica, Arial, sans-serif" font-size="12">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6B7076"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F6BD0"/></marker>
+  </defs>
+  <g fill="none" stroke="#6B7076" stroke-width="1">
+    <!-- column 1: public sources -->
+    <rect x="20" y="40" width="200" height="250"/>
+    <!-- column 2: adapters -->
+    <rect x="255" y="40" width="185" height="110"/>
+    <!-- rules + corpus -->
+    <rect x="255" y="190" width="185" height="100"/>
+    <!-- engine -->
+    <rect x="475" y="40" width="205" height="250" stroke="#2F6BD0" stroke-width="1.5"/>
+    <!-- outputs -->
+    <rect x="730" y="40" width="215" height="60"/>
+    <rect x="730" y="115" width="215" height="60"/>
+    <rect x="730" y="190" width="215" height="60"/>
+    <!-- claude layer -->
+    <rect x="475" y="340" width="230" height="80" stroke-dasharray="4 3"/>
+  </g>
+  <g fill="#6B7076">
+    <text x="120" y="30" text-anchor="middle" font-weight="600">Public NYC data</text>
+    <text x="32" y="64">GeoSearch v2 (address→BBL)</text>
+    <text x="32" y="90">PLUTO 26v2 (Socrata)</text>
+    <text x="32" y="116">MapPLUTO lot polygon</text>
+    <text x="32" y="130" font-size="11">EPSG:2263 ft</text>
+    <text x="32" y="156">DCP zoning layers</text>
+    <text x="32" y="170" font-size="11">nyzd · nyco · nysp · MIH · LH</text>
+    <text x="32" y="196">DCM street widths</text>
+    <text x="32" y="222">zr.planning.nyc.gov</text>
+    <text x="32" y="236" font-size="11">Zoning Resolution text</text>
+    <text x="32" y="270" font-size="11">fixtures/http = offline cache</text>
+
+    <text x="347" y="30" text-anchor="middle" font-weight="600">lib/sources</text>
+    <text x="267" y="66">fetch + disk cache</text>
+    <text x="267" y="90">edge classification</text>
+    <text x="267" y="114">district shares (planar)</text>
+    <text x="267" y="138" font-size="11">→ SiteData + provenance</text>
+
+    <text x="267" y="214" font-weight="600">Verified inputs</text>
+    <text x="267" y="238">rules table (PASS only)</text>
+    <text x="267" y="258">ZR corpus (799 sections)</text>
+    <text x="267" y="278" font-size="11">shared/rules · shared/zr-corpus</text>
+
+    <text x="577" y="30" text-anchor="middle" font-weight="600" fill="#2F6BD0">lib/zoning (deterministic)</text>
+    <text x="487" y="66">assumptions ledger</text>
+    <text x="487" y="90">rule resolver → citations</text>
+    <text x="487" y="114">calculators → formulas</text>
+    <text x="487" y="138">review flags (split, landmark…)</text>
+    <text x="487" y="162">envelope + Ajv validation</text>
+    <text x="487" y="186">provenance check (100%)</text>
+    <text x="487" y="270" font-size="11" fill="#2F6BD0">every number comes from here</text>
+
+    <text x="742" y="64">Memo UI (SSE) + source pane</text>
+    <text x="742" y="84" font-size="11">map · 3D envelope · overrides</text>
+    <text x="742" y="139">Exports: PDF sheet · .md · .json</text>
+    <text x="742" y="159" font-size="11">title block · north arrow · scale bar</text>
+    <text x="742" y="214">ZoningEnvelope v1.0.0</text>
+    <text x="742" y="234" font-size="11">→ Project 3 (3A / 3B / 3C)</text>
+
+    <text x="487" y="362" font-weight="600">lib/llm (optional, needs key)</text>
+    <text x="487" y="384">Sonnet narrative + Citations</text>
+    <text x="487" y="404">rule cross-check · Opus escalation</text>
+  </g>
+  <g stroke="#6B7076" stroke-width="1" fill="none">
+    <line x1="220" y1="95" x2="251" y2="95" marker-end="url(#a)"/>
+    <line x1="220" y1="228" x2="251" y2="240" marker-end="url(#a)"/>
+    <line x1="440" y1="95" x2="471" y2="95" marker-end="url(#a)"/>
+    <line x1="440" y1="240" x2="471" y2="240" marker-end="url(#a)"/>
+    <line x1="680" y1="70" x2="726" y2="70" marker-end="url(#a)"/>
+    <line x1="680" y1="145" x2="726" y2="145" marker-end="url(#a)"/>
+    <line x1="680" y1="220" x2="726" y2="220" marker-end="url(#a)"/>
+  </g>
+  <g stroke="#2F6BD0" stroke-width="1" fill="none" stroke-dasharray="4 3">
+    <line x1="577" y1="290" x2="577" y2="336" marker-end="url(#b)"/>
+    <path d="M705,380 L710,380 L710,88 L726,88" marker-end="url(#b)"/>
+  </g>
+  <g fill="#2F6BD0" font-size="11">
+    <text x="583" y="318">brief + cited sections</text>
+    <text x="716" y="300">narrative ·</text><text x="716" y="314">flags only,</text><text x="716" y="328">never values</text>
+  </g>
+</svg>
